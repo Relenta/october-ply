@@ -14,7 +14,6 @@ sudo: false
 
 before_script:
   - git clone https://github.com/octobercms/october.git
-  - mkdir -p ./october/plugins/relenta/ply
   - mv plugins/relenta october/plugins/
   - mv themes/ply october/themes
   - cd october
