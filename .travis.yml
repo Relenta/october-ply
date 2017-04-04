@@ -17,6 +17,7 @@ before_script:
   - mv plugins/relenta october/plugins/
   - mv themes/ply october/themes
   - cd october
+  - php artisan theme:use ply --force
   - composer self-update
   - travis_retry composer install --no-interaction --prefer-source
   - cd plugins/relenta/ply
