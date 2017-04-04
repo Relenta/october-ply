@@ -6,7 +6,7 @@
 !/.gitignore
 !/plugins
 /plugins/*
-!/plugins/ply
+!/plugins/relenta
 !/themes
 /themes/*
 !/themes/ply
