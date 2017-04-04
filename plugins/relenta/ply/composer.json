@@ -1,0 +1,16 @@
+{
+    "name": "relenta/ply",
+    "type": "october-plugin",
+    "description": "GetPly platform",
+    "homepage": "http://getply.com",
+    "keywords": ["getply", "ply", "relenta", "language"],
+    "authors": [
+        {
+            "name": "Relenta, Inc.",
+            "email": "relenta@relenta.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    }
+}

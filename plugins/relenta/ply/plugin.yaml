@@ -1,0 +1,6 @@
+plugin:
+    name: 'relenta.ply::lang.plugin.name'
+    description: 'relenta.ply::lang.plugin.description'
+    author: Relenta
+    icon: oc-icon-language
+    homepage: ''
