@@ -2,6 +2,7 @@
 *.log
 /*
 
+!/.travis.yml
 !/README.md
 !/.gitignore
 
