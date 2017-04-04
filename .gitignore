@@ -4,9 +4,11 @@
 /*
 !/README.md
 !/.gitignore
+
 !/plugins
 /plugins/*
-!/plugins/relenta/
+!/plugins/relenta
+
 !/themes
 /themes/*
 !/themes/ply
