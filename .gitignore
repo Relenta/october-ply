@@ -1,0 +1,11 @@
+.DS_Store
+*.log
+/*
+!/README.md
+!/.gitignore
+!/plugins
+/plugins/*
+!/plugins/ply
+!/themes
+/themes/*
+!/themes/ply
