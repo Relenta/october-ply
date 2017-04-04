@@ -1,0 +1,23 @@
+{
+    "name": "october/ply-theme",
+    "type": "ply-theme",
+    "description": "GetPly theme",
+    "keywords": ["october", "cms", "getply", "theme"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Relenta, Inc.",
+            "email": "relenta@relenta.com",
+            "role": "Co-founder"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
