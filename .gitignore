@@ -5,6 +5,7 @@
 !/.travis.yml
 !/README.md
 !/.gitignore
+!/selenium.php
 
 !/plugins
 /plugins/*
