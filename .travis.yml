@@ -12,6 +12,17 @@ matrix:
 
 sudo: false
 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+install:
+  - export DISPLAY=':99'
+  - Xvfb :99 -screen 0 1280x1024x16 +extension RANDR > /dev/null 2>&1 &
+
+
 before_script:
   - git clone https://github.com/octobercms/october.git
   - mv plugins/relenta october/plugins/
@@ -23,6 +34,12 @@ before_script:
   - cd plugins/relenta/ply
   - composer install
   - cd ../../../
+  - "wget http://selenium-release.storage.googleapis.com/3.0-beta3/selenium-server-standalone-3.0.0-beta3.jar -O selenium-server-standalone.jar && sudo mv selenium-server-standalone.jar /usr/local/bin"
+  - "wget http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip -O chromedriver.zip && unzip chromedriver.zip && sudo mv chromedriver /usr/local/bin"
+  - "java  -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver  -jar /usr/local/bin/selenium-server-standalone.jar &"
+  - sleep 3
+  - sudo whereis google-chrome
+
 
 script:
   - ./vendor/bin/phpunit tests/functional 
