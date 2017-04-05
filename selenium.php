@@ -6,7 +6,7 @@ define('TEST_SELENIUM_PORT', 4444);
 define('TEST_SELENIUM_BROWSER', '*firefox');
 
 // Back-end URL
-define('TEST_SELENIUM_URL', 'http://127.0.0.1:4444/backend');
+define('TEST_SELENIUM_URL', 'http://localhost/backend');
 
 // Active Theme
 define('TEST_SELENIUM_THEME', 'demo');
