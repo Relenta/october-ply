@@ -2,10 +2,14 @@
 
 use Illuminate\Support\Facades\DB;
 use Relenta\Ply\Models\Category;
+use Relenta\Ply\Traits\Database\DisableForeignKeys;
 use Seeder;
 
 class SeedRelentaPlyCategory extends Seeder
 {
+
+    use DisableForeignKeys;
+
     public function run()
     {
         $categories = [
@@ -59,12 +63,12 @@ class SeedRelentaPlyCategory extends Seeder
             ],
         ];
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        $this->disableForeignKeys();
 
         foreach ($categories as $category) {
             Category::create($category);
         }
-        
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
+        $this->enableForeignKeys();
     }
 }

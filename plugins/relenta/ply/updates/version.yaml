@@ -9,3 +9,6 @@
     - create_relenta_ply_card_side.php
     - seed_relenta_ply_category.php
     - seed_relenta_ply_course.php
+    - seed_relenta_ply_unit.php
+    - seed_relenta_ply_card.php
+    - seed_relenta_ply_card_side.php

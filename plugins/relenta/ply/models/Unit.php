@@ -3,23 +3,22 @@
 use Model;
 
 /**
- * Category Model
+ * Unit Model
  */
-class Category extends Model
+class Unit extends Model
 {
 
-    use \October\Rain\Database\Traits\SimpleTree;
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'relenta_ply_category';
+    public $table = 'relenta_ply_unit';
 
     /**
      * @var string Primary key field name
      */
-    public $primaryKey = 'category_id';
+    public $primaryKey = 'unit_id';
 
     /**
      * @var bool Indicates if the model should be timestamped.
@@ -32,27 +31,22 @@ class Category extends Model
     protected $guarded = [];
 
     /**
-     * @var array Fillable fields
+     * @var array Relations
      */
-    protected $fillable = [];
+    public $belongsTo = [
+        'course' => ['Relenta\Ply\Models\Course'],
+    ];
 
     /**
      * @var array Relations
      */
     public $hasMany = [
-        'courses' => ['Relenta\Ply\Models\Course'],
-    ];
-
-    /**
-     * @var array Relations
-     */
-    public $hasOne = [
-        'parent' => ['Relenta\Ply\Models\Category'],
+        'cards' => ['Relenta\Ply\Models\Card'],
     ];
 
     /**
      * @var array Attributes that support translation, if available.
      */
-    public $translatable = ['category_title'];
+    public $translatable = ['unit_title'];
 
 }
