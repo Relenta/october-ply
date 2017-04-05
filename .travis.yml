@@ -19,8 +19,11 @@ before_script:
   - cd october
   - composer self-update
   - travis_retry composer install --no-interaction --prefer-source
-  - php artisan theme:use ply --force
   - cd plugins/relenta/ply
   - composer install
+  - cd ../../../
 
-script: ../../../vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+script: 
+  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - cd plugins/relenta/ply
+  - ../../../vendor/bin/phpunit --coverage-clover build/logs/clover.xml
