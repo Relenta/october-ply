@@ -26,12 +26,7 @@ class Course extends Model
     /**
      * @var array Guarded fields
      */
-    protected $guarded = [];
-
-    /**
-     * @var array Fillable fields
-     */
-    protected $fillable = [];
+    protected $guarded = ['author_id'];
 
     /**
      * @var array Relations
