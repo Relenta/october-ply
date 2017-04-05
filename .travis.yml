@@ -23,7 +23,8 @@ before_script:
   - composer install
   - cd ../../../
 
-script: 
+script:
+  - ./vendor/bin/phpunit tests/functional 
   - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
   - cd plugins/relenta/ply
   - ../../../vendor/bin/phpunit --coverage-clover build/logs/clover.xml
