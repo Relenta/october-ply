@@ -12,8 +12,7 @@ class CreateRelentaPlyCourse extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('course_id')->unsigned();
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->timestamps();
             $table->dateTime('deleted_at')->nullable();
             $table->dateTime('published_at')->nullable();
             $table->integer('author_id')->unsigned()->index('course_author')->nullable()->default(0);

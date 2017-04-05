@@ -1,10 +1,11 @@
 1.0.1: 
     - 'Initialize plugin'
 1.0.2: 
-    - 'Create base tables (category, course, unit, card, card_side)'
+    - 'Create and seed base tables (category, course, unit, card, card_side)'
     - create_relenta_ply_category.php
     - create_relenta_ply_course.php
     - create_relenta_ply_unit.php
     - create_relenta_ply_card.php
     - create_relenta_ply_card_side.php
     - seed_relenta_ply_category.php
+    - seed_relenta_ply_course.php
