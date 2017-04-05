@@ -25,6 +25,11 @@ install:
 
 
 before_script:
+  - "wget http://selenium-release.storage.googleapis.com/3.3/selenium-server-standalone-3.3.0.jar -O selenium-server-standalone.jar"
+  - "wget http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip -O chromedriver.zip && unzip chromedriver.zip"
+  - "java  -Dwebdriver.chrome.driver=./chromedriver  -jar selenium-server-standalone.jar &"
+  - sleep 3
+  - sudo whereis google-chrome
   - git clone https://github.com/octobercms/october.git
   - mv plugins/relenta october/plugins/
   - mv themes/ply october/themes
@@ -35,12 +40,6 @@ before_script:
   - cd plugins/relenta/ply
   - composer install
   - cd ../../../
-  - "wget http://selenium-release.storage.googleapis.com/3.3/selenium-server-standalone-3.3.0.jar -O selenium-server-standalone.jar"
-  - "wget http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip -O chromedriver.zip && unzip chromedriver.zip"
-  - "java  -Dwebdriver.chrome.driver=./chromedriver  -jar selenium-server-standalone.jar &"
-  - sleep 3
-  - sudo whereis google-chrome
-
 
 script:
   - ./vendor/bin/phpunit tests/functional 
