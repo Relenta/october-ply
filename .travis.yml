@@ -16,6 +16,7 @@ before_script:
   - git clone https://github.com/octobercms/october.git
   - mv plugins/relenta october/plugins/
   - mv themes/ply october/themes
+  - mv selenium.php october/
   - cd october
   - composer self-update
   - travis_retry composer install --no-interaction --prefer-source
