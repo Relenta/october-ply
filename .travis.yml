@@ -29,7 +29,6 @@ before_script:
   - "wget http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip -O chromedriver.zip && unzip chromedriver.zip"
   - "java  -Dwebdriver.chrome.driver=./chromedriver  -jar selenium-server-standalone.jar &"
   - sleep 3
-  - sudo whereis google-chrome
   - git clone https://github.com/octobercms/october.git
   - mv plugins/relenta october/plugins/
   - mv themes/ply october/themes
