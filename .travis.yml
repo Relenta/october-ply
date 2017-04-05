@@ -35,9 +35,9 @@ before_script:
   - cd plugins/relenta/ply
   - composer install
   - cd ../../../
-  - "wget http://selenium-release.storage.googleapis.com/3.0-beta3/selenium-server-standalone-3.0.0-beta3.jar -O selenium-server-standalone.jar && sudo mv selenium-server-standalone.jar /usr/local/bin"
-  - "wget http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip -O chromedriver.zip && unzip chromedriver.zip && sudo mv chromedriver /usr/local/bin"
-  - "java  -Dwebdriver.chrome.driver=/usr/local/bin/chromedriver  -jar /usr/local/bin/selenium-server-standalone.jar &"
+  - "wget http://selenium-release.storage.googleapis.com/3.3/selenium-server-standalone-3.3.0.jar -O selenium-server-standalone.jar"
+  - "wget http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip -O chromedriver.zip && unzip chromedriver.zip"
+  - "java  -Dwebdriver.chrome.driver=./chromedriver  -jar selenium-server-standalone.jar &"
   - sleep 3
   - sudo whereis google-chrome
 
