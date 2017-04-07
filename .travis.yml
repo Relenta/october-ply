@@ -19,29 +19,38 @@ addons:
       - google-chrome
     packages:
       - google-chrome-stable
+      - nginx
+      - realpath
+
 install:
   - export DISPLAY=':99'
   - Xvfb :99 -screen 0 1280x1024x16 +extension RANDR > /dev/null 2>&1 &
 
 
 before_script:
-  - "wget http://selenium-release.storage.googleapis.com/3.3/selenium-server-standalone-3.3.0.jar -O selenium-server-standalone.jar"
-  - "wget http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip -O chromedriver.zip && unzip chromedriver.zip"
-  - "java  -Dwebdriver.chrome.driver=./chromedriver  -jar selenium-server-standalone.jar &"
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
   - sleep 3
+  - wget http://goo.gl/qTy1IB -O selenium-server-standalone.jar
+  - java -jar selenium-server-standalone.jar &
+#  - "wget http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip -O chromedriver.zip && unzip chromedriver.zip"
+#  - "java  -Dwebdriver.chrome.driver=./chromedriver -jar selenium-server-standalone.jar &"
+#  - sleep 3
   - git clone https://github.com/octobercms/october.git
   - mv plugins/relenta october/plugins/
   - mv themes/ply october/themes
-  - mv selenium.php october/
+#  - mv selenium.php october/
   - cd october
   - composer self-update
   - travis_retry composer install --no-interaction --prefer-source
   - cd plugins/relenta/ply
   - composer install
-  - cd ../../../
+  - cd tests/travis
+  - install-nginx.sh 
+  - cd ../../../../../
 
 script:
-  - ./vendor/bin/phpunit tests/functional 
-  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+#  - ./vendor/bin/phpunit tests/functional 
+#  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
   - cd plugins/relenta/ply
   - ../../../vendor/bin/phpunit --coverage-clover build/logs/clover.xml
