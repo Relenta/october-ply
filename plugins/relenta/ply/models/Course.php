@@ -1,7 +1,6 @@
 <?php namespace Relenta\Ply\Models;
 
 use Model;
-use ApplicationException;
 
 /**
  * Course Model
@@ -13,34 +12,29 @@ class Course extends Model
      * @var string The database table used by the model.
      */
     protected $table = 'relenta_ply_course';
-    
+
     /**
      * @var string Primary key field name
      */
     public $primaryKey = 'course_id';
-    
+
     /**
      * @var bool Indicates if the model should be timestamped.
-     */ 
-    public $timestamps = false;
+     */
+    public $timestamps = true;
 
     /**
      * @var array Guarded fields
      */
-    protected $guarded = [];
-
-    /**
-     * @var array Fillable fields
-     */
-    protected $fillable = [];
+    protected $guarded = ['author_id'];
 
     /**
      * @var array Relations
      */
-    //public $hasMany = [
-    //    'units' => ['Relenta\Ply\Models\Unit'],
-    //    'cards' => ['Relenta\Ply\Models\Card']
-    //];
+    public $hasMany = [
+        'units' => ['Relenta\Ply\Models\Unit'],
+        'cards' => ['Relenta\Ply\Models\Card'],
+    ];
 
     /**
      * @var array Relations
