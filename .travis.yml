@@ -41,10 +41,10 @@ before_script:
   - mv themes/ply october/themes
 #  - mv selenium.php october/
   - cd october
-### +++ - composer self-update
-  - travis_retry composer install --no-interaction --prefer-source
+  - composer self-update
+### +++ - travis_retry composer install --no-interaction --prefer-source
   - cd plugins/relenta/ply
-### +++ - composer install
+  - composer install
   - cd tests/travis
   - sh install-nginx.sh 
   - cd ../../../../../
