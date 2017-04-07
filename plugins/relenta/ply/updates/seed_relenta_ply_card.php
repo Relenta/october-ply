@@ -8,7 +8,7 @@ class SeedRelentaPlyCard extends Seeder
 {
     use DisableForeignKeys;
 
-    protected $cardsPerUnit = 10;
+    protected $cardsPerUnit = 3;
 
     public function run()
     {

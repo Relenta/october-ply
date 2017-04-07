@@ -8,7 +8,7 @@ class SeedRelentaPlyUnit extends Seeder
 {
     use DisableForeignKeys;
 
-    protected $unitsPerCourse = 3;
+    protected $unitsPerCourse = 2;
 
     public function run()
     {
