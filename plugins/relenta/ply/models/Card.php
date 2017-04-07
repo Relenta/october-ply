@@ -31,7 +31,7 @@ class Card extends Model
      * @var array Relations
      */
     public $hasMany = [
-        'sides' => ['Relenta\Ply\Models\CardSide'],
+        'sides' => ['Relenta\Ply\Models\Cardside'],
     ];
 
 }

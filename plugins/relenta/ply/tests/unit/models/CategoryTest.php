@@ -2,6 +2,7 @@
 
 use PluginTestCase;
 use Relenta\Ply\Models\Category;
+use Relenta\Ply\Models\Course;
 use Relenta\Ply\Traits\Database\DisableForeignKeys;
 
 class CategoryTest extends PluginTestCase
@@ -25,5 +26,63 @@ class CategoryTest extends PluginTestCase
         $this->assertEquals($category->category_id, $fetched->category_id);
 
         $this->enableForeignKeys();
+    }
+
+    public function testUpdateCourseRelation()
+    {
+        $this->disableForeignKeys();
+        Category::truncate();
+        Course::truncate();
+
+        $category = Category::create([
+            "category_id"    => 2,
+            "category_title" => "Test category",
+        ]);
+
+        $course = Course::create([
+            "course_id"    => 2,
+            "course_title" => "Test course",
+        ]);
+
+        $this->enableForeignKeys();
+
+        $this->assertNull($category->courses()->first());
+
+        $category->courses()->add($course);
+
+        $this->assertNotNull($category->courses()->first());
+
+        $category->courses()->remove($course);
+
+        $this->assertNull($category->courses()->first());
+    }
+
+    public function testCreateCourseRelation()
+    {
+        $this->disableForeignKeys();
+        Category::truncate();
+        Course::truncate();
+
+        $category = Category::create([
+            "category_id"    => 2,
+            "category_title" => "Test category",
+        ]);
+
+        $course = Course::make([
+            "course_id"    => 2,
+            "course_title" => "Test course",
+        ]);
+
+        $this->enableForeignKeys();
+
+        $this->assertNull($category->courses()->first());
+
+        $category->courses()->add($course);
+
+        $this->assertNotNull($category->courses()->first());
+
+        $category->courses()->remove($course);
+
+        $this->assertNull($category->courses()->first());
     }
 }
