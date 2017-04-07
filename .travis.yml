@@ -46,7 +46,7 @@ before_script:
   - cd plugins/relenta/ply
   - composer install
   - cd tests/travis
-  - sh install-nginx.sh 
+  - bash install-nginx.sh 
   - cd ../../../../../
 
 script:
