@@ -5,8 +5,8 @@ set -x
 
 DIR=$(realpath $(dirname "$0"))
 USER=$(whoami)
-#PHP_VERSION=$(phpenv version-name)
-PHP_VERSION="7.1.0"
+PHP_VERSION=$(phpenv version-name)
+#PHP_VERSION="7.1.0"
 ROOT=$(realpath "$DIR/../../../../..")
 PORT=9000
 SERVER="/tmp/php.sock"
@@ -40,8 +40,8 @@ then
         --mode=daemon \
         --config="$HHVM_CONF"
 else
-    #PHP_FPM_BIN="$HOME/.phpenv/versions/$PHP_VERSION/sbin/php-fpm"
-	PHP_FPM_BIN="/usr/sbin/php-fpm"
+    PHP_FPM_BIN="$HOME/.phpenv/versions/$PHP_VERSION/sbin/php-fpm"
+	#PHP_FPM_BIN="/usr/sbin/php-fpm"
     PHP_FPM_CONF="$DIR/nginx/php-fpm.conf"
 
     # Build the php-fpm.conf.
