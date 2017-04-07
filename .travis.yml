@@ -42,7 +42,7 @@ before_script:
 #  - mv selenium.php october/
   - cd october
   - composer self-update
-### +++ - travis_retry composer install --no-interaction --prefer-source
+  - travis_retry composer install --no-interaction --prefer-source
   - cd plugins/relenta/ply
   - composer install
   - cd tests/travis
