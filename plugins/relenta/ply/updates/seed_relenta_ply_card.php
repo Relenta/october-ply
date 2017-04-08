@@ -19,8 +19,8 @@ class SeedRelentaPlyCard extends Seeder
         foreach ($units as $unit) {
             for ($i = 0; $i < $this->cardsPerUnit; $i++) {
                 $unit->cards()->create([
-                    'card_title'     => $unit->title . ' card #' . $i,
-                    'card_data' => $unit->title . ' card #' . $i . ' DATA',
+                    'title'     => $unit->title . ' card #' . $i,
+                    'data' => $unit->title . ' card #' . $i . ' DATA',
                 ]);
             }
         }

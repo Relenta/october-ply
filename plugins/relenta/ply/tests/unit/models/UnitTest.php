@@ -14,18 +14,18 @@ class UnitTest extends PluginTestCase
         Unit::truncate();
 
         $unit = Unit::create([
-            "unit_id"    => 2,
+            "id"    => 2,
             "title" => "Test unit",
-            "unit_data"  => "Unit data",
+            "data"  => "Unit data",
         ]);
 
-        $this->assertEquals(2, $unit->unit_id);
+        $this->assertEquals(2, $unit->id);
 
-        $fetched = Unit::find($unit->unit_id);
+        $fetched = Unit::find($unit->id);
 
-        $this->assertEquals($unit->unit_id, $fetched->unit_id);
+        $this->assertEquals($unit->id, $fetched->id);
         $this->assertEquals("Test unit", $fetched->title);
-        $this->assertEquals("Unit data", $fetched->unit_data);
+        $this->assertEquals("Unit data", $fetched->data);
 
         $this->enableForeignKeys();
     }

@@ -17,11 +17,6 @@ class Category extends Model
     public $table = 'relenta_ply_category';
 
     /**
-     * @var string Primary key field name
-     */
-    public $primaryKey = 'category_id';
-
-    /**
      * @var bool Indicates if the model should be timestamped.
      */
     public $timestamps = false;
@@ -53,6 +48,6 @@ class Category extends Model
     /**
      * @var array Attributes that support translation, if available.
      */
-    public $translatable = ['category_title'];
+    public $translatable = ['title'];
 
 }

@@ -14,18 +14,18 @@ class CardTest extends PluginTestCase
         Card::truncate();
 
         $card = Card::create([
-            "card_id"    => 2,
-            "card_title" => "Test card",
-            "card_data"  => "Card data",
+            "id"    => 2,
+            "title" => "Test card",
+            "data"  => "Card data",
         ]);
 
-        $this->assertEquals(2, $card->card_id);
+        $this->assertEquals(2, $card->id);
 
-        $fetched = Card::find($card->card_id);
+        $fetched = Card::find($card->id);
 
-        $this->assertEquals($card->card_id, $fetched->card_id);
-        $this->assertEquals("Test card", $fetched->card_title);
-        $this->assertEquals("Card data", $fetched->card_data);
+        $this->assertEquals($card->id, $fetched->id);
+        $this->assertEquals("Test card", $fetched->title);
+        $this->assertEquals("Card data", $fetched->data);
 
         $this->enableForeignKeys();
     }

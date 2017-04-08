@@ -19,8 +19,8 @@ class SeedRelentaPlyCardside extends Seeder
         foreach ($cards as $card) {
             for ($i = 1; $i <= $this->sidesPerCard; $i++) {
                 $card->sides()->create([
-                    'side_number' => $i,
-                    'side_data'  => $card->card_title . ' side #' . $i . ' DATA',
+                    'number' => $i,
+                    'data'  => $card->title . ' side #' . $i . ' DATA',
                 ]);
             }
         }

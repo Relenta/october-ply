@@ -14,16 +14,16 @@ class CardsideTest extends PluginTestCase
         Cardside::truncate();
 
         $cardSide = Cardside::create([
-            "card_side_id"    => 2,
-            "side_data"  => "Cardside data",
+            "id"    => 2,
+            "data"  => "Cardside data",
         ]);
 
-        $this->assertEquals(2, $cardSide->card_side_id);
+        $this->assertEquals(2, $cardSide->id);
 
-        $fetched = Cardside::find($cardSide->card_side_id);
+        $fetched = Cardside::find($cardSide->id);
 
-        $this->assertEquals($cardSide->card_side_id, $fetched->card_side_id);
-        $this->assertEquals("Cardside data", $fetched->side_data);
+        $this->assertEquals($cardSide->id, $fetched->id);
+        $this->assertEquals("Cardside data", $fetched->data);
 
         $this->enableForeignKeys();
     }

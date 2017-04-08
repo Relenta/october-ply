@@ -10,11 +10,11 @@ class CreateRelentaPlyCardSide extends Migration
         Schema::create('relenta_ply_card_side', function($table)
         {
             $table->engine = 'InnoDB';
-            $table->increments('card_side_id')->unsigned();
+            $table->increments('id')->unsigned();
             $table->integer('card_id')->unsigned()->index('card_side_card')->default(0);
-            $table->foreign('card_id', 'card_side_card_ref')->references('card_id')->on('relenta_ply_card')->onUpdate('cascade')->onDelete('cascade');
-            $table->integer('side_number')->nullable()->unsigned()->default(1);
-            $table->mediumtext('side_data');
+            $table->foreign('card_id', 'card_side_card_ref')->references('id')->on('relenta_ply_card')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('number')->nullable()->unsigned()->default(1);
+            $table->mediumtext('data');
         });
     }
     

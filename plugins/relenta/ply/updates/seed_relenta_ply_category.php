@@ -14,52 +14,52 @@ class SeedRelentaPlyCategory extends Seeder
     {
         $categories = [
             [
-                'category_id'    => 1,
-                'category_title' => 'Languages',
+                'id'    => 1,
+                'title' => 'Languages',
             ],
             [
-                'category_id'    => 2,
-                'category_title' => 'Math',
+                'id'    => 2,
+                'title' => 'Math',
             ],
             [
-                'category_id'    => 3,
-                'category_title' => 'Computer science',
-            ],
-            [
-                'parent_id'      => 1,
-                'category_title' => 'English for beginners',
+                'id'    => 3,
+                'title' => 'Computer science',
             ],
             [
                 'parent_id'      => 1,
-                'category_title' => 'Intermediate English',
+                'title' => 'English for beginners',
             ],
             [
                 'parent_id'      => 1,
-                'category_title' => 'English for Spanish speakers',
+                'title' => 'Intermediate English',
+            ],
+            [
+                'parent_id'      => 1,
+                'title' => 'English for Spanish speakers',
             ],
             [
                 'parent_id'      => 2,
-                'category_title' => 'Math for beginners',
+                'title' => 'Math for beginners',
             ],
             [
                 'parent_id'      => 2,
-                'category_title' => 'Euclidean geometry',
+                'title' => 'Euclidean geometry',
             ],
             [
                 'parent_id'      => 2,
-                'category_title' => 'Discrete mathematics',
+                'title' => 'Discrete mathematics',
             ],
             [
                 'parent_id'      => 3,
-                'category_title' => 'Database design',
+                'title' => 'Database design',
             ],
             [
                 'parent_id'      => 3,
-                'category_title' => 'Learning Javascript',
+                'title' => 'Learning Javascript',
             ],
             [
                 'parent_id'      => 3,
-                'category_title' => 'PHP language constructions',
+                'title' => 'PHP language constructions',
             ],
         ];
 

@@ -13,11 +13,6 @@ class Card extends Model
     public $table = 'relenta_ply_card';
 
     /**
-     * @var string Primary key field name
-     */
-    public $primaryKey = 'card_id';
-
-    /**
      * @var array Guarded fields
      */
     protected $guarded = [];

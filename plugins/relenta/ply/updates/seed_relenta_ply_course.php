@@ -16,9 +16,9 @@ class SeedRelentaPlyCourse extends Seeder
         foreach ($categories as $category) {
             for ($i = 0; $i < $this->coursesPerCategory; $i++) {
                 $category->courses()->create([
-                    'course_title' => $category->category_title . ' child course #' . $i,
+                    'title' => $category->title . ' child course #' . $i,
                     'lang'         => 'en',
-                    'course_data'  => $category->category_title . ' child course #' . $i . ' DATA',
+                    'data'  => $category->title . ' child course #' . $i . ' DATA',
                 ]);
             }
 

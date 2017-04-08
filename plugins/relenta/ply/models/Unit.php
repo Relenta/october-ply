@@ -16,11 +16,6 @@ class Unit extends Model
     public $table = 'relenta_ply_unit';
 
     /**
-     * @var string Primary key field name
-     */
-    public $primaryKey = 'unit_id';
-
-    /**
      * @var bool Indicates if the model should be timestamped.
      */
     public $timestamps = false;
@@ -47,6 +42,6 @@ class Unit extends Model
     /**
      * @var array Attributes that support translation, if available.
      */
-    public $translatable = ['unit_title'];
+    public $translatable = ['title'];
 
 }

@@ -14,15 +14,15 @@ class CourseTest extends PluginTestCase
         Course::truncate();
 
         $course = Course::create([
-            "course_id"    => 2,
-            "course_title" => "Test course",
+            "id"    => 2,
+            "title" => "Test course",
         ]);
 
-        $this->assertEquals(2, $course->course_id);
+        $this->assertEquals(2, $course->id);
 
-        $fetched = Course::find($course->course_id);
+        $fetched = Course::find($course->id);
 
-        $this->assertEquals($course->course_id, $fetched->course_id);
+        $this->assertEquals($course->id, $fetched->id);
 
         $this->enableForeignKeys();
     }
@@ -32,11 +32,11 @@ class CourseTest extends PluginTestCase
         $this->disableForeignKeys();
         Course::truncate();
 
-        $course = Course::make(['author_id' => 1, "course_title" => "Test guarded author_id field"]);
+        $course = Course::make(['author_id' => 1, "title" => "Test guarded author_id field"]);
 
         $this->assertNull($course->author_id);
 
-        $course = Course::create(['author_id' => 2, "course_title" => "Test guarded author_id field"]);
+        $course = Course::create(['author_id' => 2, "title" => "Test guarded author_id field"]);
 
         $this->assertNull($course->author_id);
         $this->enableForeignKeys();

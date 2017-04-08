@@ -14,11 +14,6 @@ class Course extends Model
     protected $table = 'relenta_ply_course';
 
     /**
-     * @var string Primary key field name
-     */
-    public $primaryKey = 'course_id';
-
-    /**
      * @var bool Indicates if the model should be timestamped.
      */
     public $timestamps = true;

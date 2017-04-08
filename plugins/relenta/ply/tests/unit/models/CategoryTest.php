@@ -15,15 +15,15 @@ class CategoryTest extends PluginTestCase
         Category::truncate();
 
         $category = Category::create([
-            "category_id"    => 2,
-            "category_title" => "Test category",
+            "id"    => 2,
+            "title" => "Test category",
         ]);
 
-        $this->assertEquals(2, $category->category_id);
+        $this->assertEquals(2, $category->id);
 
-        $fetched = Category::find($category->category_id);
+        $fetched = Category::find($category->id);
 
-        $this->assertEquals($category->category_id, $fetched->category_id);
+        $this->assertEquals($category->id, $fetched->id);
 
         $this->enableForeignKeys();
     }
@@ -35,13 +35,13 @@ class CategoryTest extends PluginTestCase
         Course::truncate();
 
         $category = Category::create([
-            "category_id"    => 2,
-            "category_title" => "Test category",
+            "id"    => 2,
+            "title" => "Test category",
         ]);
 
         $course = Course::create([
-            "course_id"    => 2,
-            "course_title" => "Test course",
+            "id"    => 2,
+            "title" => "Test course",
         ]);
 
         $this->enableForeignKeys();
@@ -64,13 +64,13 @@ class CategoryTest extends PluginTestCase
         Course::truncate();
 
         $category = Category::create([
-            "category_id"    => 2,
-            "category_title" => "Test category",
+            "id"    => 2,
+            "title" => "Test category",
         ]);
 
         $course = Course::make([
-            "course_id"    => 2,
-            "course_title" => "Test course",
+            "id"    => 2,
+            "title" => "Test course",
         ]);
 
         $this->enableForeignKeys();

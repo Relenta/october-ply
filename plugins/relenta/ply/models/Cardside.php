@@ -14,11 +14,6 @@ class Cardside extends Model
     public $table = 'relenta_ply_card_side';
 
     /**
-     * @var string Primary key field name
-     */
-    public $primaryKey = 'card_side_id';
-
-    /**
      * @var array Guarded fields
      */
     protected $guarded = [];

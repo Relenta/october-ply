@@ -19,8 +19,8 @@ class SeedRelentaPlyUnit extends Seeder
         foreach ($courses as $course) {
             for ($i = 0; $i < $this->unitsPerCourse; $i++) {
                 $course->units()->create([
-                    'title' => $course->course_title . ' unit #' . $i,
-                    'unit_data'  => $course->course_title . ' unit #' . $i . ' DATA',
+                    'title' => $course->title . ' unit #' . $i,
+                    'data'  => $course->title . ' unit #' . $i . ' DATA',
                 ]);
             }
         }
