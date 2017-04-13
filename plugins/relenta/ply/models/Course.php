@@ -31,6 +31,10 @@ class Course extends Model
         'cards' => ['Relenta\Ply\Models\Card'],
     ];
 
+    public $belongsTo = [
+        'category' => ['Relenta\Ply\Models\Category'],
+    ];
+
     /**
      * @var array Relations
      */
