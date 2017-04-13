@@ -5,7 +5,7 @@ use Model;
 /**
  * Category Model
  */
-class Cardside extends Model
+class CardSide extends Model
 {
 
     /**
