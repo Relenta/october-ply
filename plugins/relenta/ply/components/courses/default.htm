@@ -1,0 +1,8 @@
+{% set courses = __SELF__.courses %}
+<ul>
+    {% for course in courses %}
+    <li>
+        <a href="">{{ course.title }}</a>
+    </li>
+    {% endfor %}
+</ul>

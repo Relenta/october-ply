@@ -2,7 +2,7 @@
 <ul>
     {% for category in categories %}
     <li>
-        <a href="">{{ category }}</a>
+        <a href="{{ 'courses'|page({ category_id: category.id }) }}">{{ category.title }}</a>
     </li>
     {% endfor %}
 </ul>

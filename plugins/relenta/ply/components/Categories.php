@@ -1,7 +1,7 @@
 <?php namespace Relenta\Ply\Components;
 
 use Cms\Classes\ComponentBase;
-use Relenta\Ply\Models\Category as Category;
+use Relenta\Ply\Models\Category;
 
 class Categories extends ComponentBase
 {
@@ -21,7 +21,11 @@ class Categories extends ComponentBase
 
     public function onRun()
     {
-        $this->categories = ["Russian", "English", "French"];
-        // TODO get categories
+        $this->categories = $this->getCategories();
+    }
+
+    public function getCategories()
+    {
+        return Category::all();
     }
 }
