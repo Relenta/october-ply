@@ -1,7 +1,7 @@
 <?php namespace Relenta\Ply\Tests\Unit\Models;
 
 use PluginTestCase;
-use Relenta\Ply\Models\Cardside;
+use Relenta\Ply\Models\CardSide;
 use Relenta\Ply\Traits\Database\DisableForeignKeys;
 
 class CardSideTest extends PluginTestCase
