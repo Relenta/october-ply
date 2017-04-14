@@ -1,0 +1,17 @@
+{% set units = __SELF__.units %}
+{% set course = __SELF__.course %}
+<h1>
+    {{ course.title }}
+</h1>
+<h2>
+    Units
+</h2>
+<ul>
+    {% for unit in units %}
+        <li>
+            <a href="{{ 'cards' |page({ course_id: course.id, unit_id: unit.id }) }}">
+                {{ unit.title }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

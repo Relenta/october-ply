@@ -37,7 +37,7 @@ class Courses extends ComponentBase
     public function onRun()
     {
         $this->courses = $this->getCourses();
-        //$this->category = $this->courses[0]->category()->get();
+        $this->category = $this->getCategory();
     }
 
     /**
@@ -55,5 +55,11 @@ class Courses extends ComponentBase
     {
         return Course::where('category_id', $this->categoryId())
             ->get();
+    }
+
+    public function getCategory()
+    {
+        return Category::where('id', $this->categoryId())
+            ->first();
     }
 }
