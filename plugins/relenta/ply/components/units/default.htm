@@ -9,9 +9,25 @@
 <ul>
     {% for unit in units %}
         <li>
-            <a href="{{ 'cards' |page({ course_id: course.id, unit_id: unit.id }) }}">
+            {% if unit.cards.count != 0 %}
+                <a href="{{ 'cards' |page({ course_id: course.id, unit_id: unit.id }) }}">
+                    {{ unit.title }}
+                </a>
+            {% else %}
                 {{ unit.title }}
-            </a>
+            {% endif %}
+
+            {% if unit.children %}
+            <ul>
+                {% for parent_unit in unit.children %}
+                <li>
+                    <a href="{{ 'cards'|page({ course_id: course.id, unit_id: parent_unit.id }) }}">
+                        {{ parent_unit.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </li>
     {% endfor %}
 </ul>
