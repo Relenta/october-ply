@@ -8,6 +8,7 @@ use Model;
 class Unit extends Model
 {
 
+    use \October\Rain\Database\Traits\SimpleTree;
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
     /**
