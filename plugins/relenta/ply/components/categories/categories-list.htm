@@ -1,0 +1,21 @@
+{% for category in categories %}
+    <li>
+        {% if category.courses.count > 0 %}
+        <a href="{{ 'courses'|page({ category_id: category.id }) }}">
+            {{ category.title }}
+        </a>
+        {% else %}
+        <b>
+            {{ category.title }}
+        </b>
+        {% endif %}
+
+        {% if category.children %}
+            <ul>
+                {% partial "@categories-list" categories=category.children %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}
+
+

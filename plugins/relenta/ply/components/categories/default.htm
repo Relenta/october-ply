@@ -1,28 +1,4 @@
 {% set categories = __SELF__.categories %}
 <ul>
-    {% for category in categories %}
-    <li>
-        {% if category.courses.count != 0 %}
-            <a href="{{ 'courses'|page({ category_id: category.id }) }}">
-                {{ category.title }}
-            </a>
-        {% else %}
-            <b>
-                {{ category.title }}
-            </b>
-        {% endif %}
-
-        {% if category.children %}
-            <ul>
-                {% for parent_category in category.children %}
-                    <li>
-                        <a href="{{ 'courses'|page({ category_id: parent_category.id }) }}">
-                            {{ parent_category.title }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </li>
-    {% endfor %}
+    {% partial "@categories-list" categories=categories %}
 </ul>

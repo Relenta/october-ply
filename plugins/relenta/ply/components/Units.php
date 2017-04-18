@@ -54,7 +54,7 @@ class Units extends ComponentBase
     public function getUnits()
     {
         return Unit::where('course_id', $this->courseId())
-            ->get();
+            ->get()->toNested();
     }
 
     public function getCourse()

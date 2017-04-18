@@ -26,7 +26,6 @@ class Categories extends ComponentBase
 
     public function getCategories()
     {
-        return Category::has("children")->get();
-        //return Category::all();
+        return Category::All()->toNested();
     }
 }
