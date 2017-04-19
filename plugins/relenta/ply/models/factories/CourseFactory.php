@@ -18,7 +18,7 @@ class CourseFactory
      * File name to search in a zip archive, which contains CardSide related phrases
      * @var string
      */
-    protected $csvFileName   = 'phrases.csv';
+    protected $csvFileName = 'phrases.csv';
 
     /**
      * Minimum value for csv columns count
@@ -30,7 +30,7 @@ class CourseFactory
      * The path of temporary folder for archive extraction
      * @var string
      */
-    private $folderPath      = '';
+    private $folderPath = '';
 
     /**
      * Initialize folderPath with unique descriptor
@@ -41,31 +41,29 @@ class CourseFactory
     }
 
     /**
-     * @param $name - new course name
+     * @param $name new course name
      * @param File $zipFile archive with course data
-     * @return bool
+     * @return Course instance of a newly created course or null if failed
      */
     public function create($categoryId, $name, $zipFile = '')
     {
-        //temp code for testing
-        if (empty($zipFile)) {
-            $zipFile = storage_path() . '/app/test/valid.zip';
-        }
-
         try {
             File::makeDirectory($this->folderPath);
             Zip::extract($zipFile, $this->folderPath);
 
             if (!$this->isZipContentValid()) {
-                return 'Zip format invalid';
+                echo 'not valid';
+                return null;
             }
 
             $newCourse = Category::findOrFail($categoryId)->courses()->create([
                 'title' => $name,
             ]);
             $this->createCourseData($newCourse);
+
+            return $newCourse;
         } catch (Exception $e) {
-            die('Error when creating course from zip file');
+            return null;
         } finally {
             if (File::exists($this->folderPath)) {
                 File::deleteDirectory($this->folderPath);
@@ -80,34 +78,31 @@ class CourseFactory
      */
     private function createCourseData(Course $newCourse)
     {
-        $csvFile = $this->getCsvFilePath($this->folderPath);
+        $csvFilePath = $this->getCsvFilePath($this->folderPath);
 
-        $fileHandle = fopen($csvFile, 'r');
-
-        $rowIndex = 1;
-        while (!feof($fileHandle)) {
-            $rowArray = fgetcsv($fileHandle, 1024);
+        $csvArr = file($csvFilePath);
+        foreach ($csvArr as $rowIndex => $line) {
+            $cardIndex = $rowIndex + 1;
+            $rowArr    = str_getcsv($line);
 
             $card = Card::make([
-                'title'   => 'Card ' . $rowIndex,
+                'title'   => 'Card ' . $cardIndex,
                 'data'    => 'DATA',
                 'unit_id' => null,
-                'sort'    => $rowIndex,
+                'sort'    => $cardIndex,
             ]);
+
             $newCourse->cards()->save($card);
 
-            for ($i = 1; $i < count($rowArray); $i++) {
-                $mediaFilePath = $this->folderPath . '/' . $i . '/' . $rowIndex . '.mp3';
+            for ($i = 1; $i < count($rowArr); $i++) {
+                $mediaFilePath = $this->folderPath . '/' . $i . '/' . $cardIndex . '.mp3';
                 $card->sides()->create([
-                    'data'   => $rowArray[$i],
+                    'data'   => $rowArr[$i],
                     'media'  => $mediaFilePath,
                     'number' => $i,
                 ]);
             }
-
-            $rowIndex++;
         }
-        fclose($fileHandle);
 
         return true;
     }
@@ -118,20 +113,18 @@ class CourseFactory
      */
     private function isZipContentValid()
     {
-        $csvFile = $this->getCsvFilePath($this->folderPath);
+        $csvFilePath = $this->getCsvFilePath($this->folderPath);
+        if (!$csvFilePath) {
+            return false;
+        }
 
-        $fileHandle = fopen($csvFile, 'r');
-        $rowIndex   = 1;
-
-        while (!feof($fileHandle)) {
-            $rowArray = fgetcsv($fileHandle, 1024);
-            if (!$this->isCsvRowValid($rowArray, $rowIndex)) {
+        $csvArr = file($csvFilePath);
+        foreach ($csvArr as $rowIndex => $line) {
+            $rowArr = str_getcsv($line);
+            if (!$this->isCsvRowValid($rowArr, $rowIndex + 1)) {
                 return false;
             }
-            $rowIndex++;
         }
-        fclose($fileHandle);
-
         return true;
     }
 
@@ -168,7 +161,7 @@ class CourseFactory
         $csvFile = $this->folderPath . '/' . $this->csvFileName;
 
         if (!File::exists($csvFile)) {
-            throw new FileNotFoundException($csvFile);
+            return false;
         }
 
         return $csvFile;

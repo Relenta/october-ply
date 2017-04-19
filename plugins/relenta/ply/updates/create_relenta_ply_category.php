@@ -10,7 +10,7 @@ class CreateRelentaPlyCategory extends Migration
         Schema::create('relenta_ply_category', function($table)
         {
             $table->increments('id')->unsigned();
-            $table->integer('parent_id')->unsigned()->index('category_parent')->default(0);
+            $table->integer('parent_id')->unsigned()->index('category_parent')->nullable();
             $table->foreign('parent_id', 'category_parent_ref')->references('id')->on('relenta_ply_category')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('sort')->unsigned()->index()->default(0);
             $table->text('title');
