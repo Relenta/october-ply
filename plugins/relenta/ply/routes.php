@@ -1,5 +1,7 @@
 <?php
 
+use Relenta\Ply\Models\Factories\CourseFactory;
+
 Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () {
     //
     Route::resource('categories', 'Relenta\Ply\Http\Controllers\Categories');
@@ -12,4 +14,9 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () {
 
     Route::resource('cardsides', 'Relenta\Ply\Http\Controllers\CardSides');
 
+});
+
+Route::get('courses/create', function() {
+    $factory = new CourseFactory();
+    return $factory->create(11, 'New Course');
 });
