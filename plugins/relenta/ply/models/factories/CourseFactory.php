@@ -52,7 +52,6 @@ class CourseFactory
             Zip::extract($zipFile, $this->folderPath);
 
             if (!$this->isZipContentValid()) {
-                echo 'not valid';
                 return null;
             }
 

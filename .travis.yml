@@ -17,8 +17,10 @@ addons:
   apt:
     sources:
       - google-chrome
+	  - firefox
     packages:
       - google-chrome-stable
+	  - firefox
       - nginx
       - realpath
 
@@ -34,17 +36,28 @@ before_script:
   - wget http://goo.gl/qTy1IB -O selenium-server-standalone.jar
   - java -jar selenium-server-standalone.jar &
 #  - "wget http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip -O chromedriver.zip && unzip chromedriver.zip"
-#  - "java  -Dwebdriver.chrome.driver=./chromedriver -jar selenium-server-standalone.jar &"
+#  - "java -Dwebdriver.chrome.driver=./chromedriver -jar selenium-server-standalone.jar &"
 #  - sleep 3
   - git clone https://github.com/octobercms/october.git
   - mv plugins/relenta october/plugins/
   - mv themes/ply october/themes
 #  - mv selenium.php october/
   - cd october
+##  install required october plugins  
+##  REST API generator plugin
+  - mkdir -p plugins/autumn/api
+  - git clone https://github.com/gpasztor87/oc-api-plugin.git plugins/autumn/api
+#
   - composer self-update
+  - sed -i -- 's/\"merge-dev\"\: false/\"merge-dev\"\: true/g' composer.json
   - travis_retry composer install --no-interaction --prefer-source
+  - cp plugins/relenta/ply/tests/.env ./
+  - php artisan october:up --no-interaction
+  - php artisan theme:use ply --no-interaction --force
+#
+##  GetPly Platform plugin
   - cd plugins/relenta/ply
-  - composer install
+##  - composer install --no-interaction --prefer-dist
   - cd tests/travis
   - bash install-nginx.sh 
   - cd ../../../../../
