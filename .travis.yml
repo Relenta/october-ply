@@ -17,8 +17,10 @@ addons:
   apt:
     sources:
       - google-chrome
+	  - firefox
     packages:
       - google-chrome-stable
+	  - firefox
       - nginx
       - realpath
 
@@ -50,6 +52,7 @@ before_script:
   - sh plugins/relenta/ply/tests/build.sh
   - travis_retry composer install --no-interaction --prefer-source
   - cp plugins/relenta/ply/tests/.env ./
+  - "> storage/database.sqlite"
   - php artisan october:up --no-interaction
   - php artisan theme:use ply --no-interaction --force
 #
