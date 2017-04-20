@@ -47,7 +47,7 @@ before_script:
   - git clone https://github.com/gpasztor87/oc-api-plugin.git plugins/autumn/api
 #
   - composer self-update
-  - sed -i -- 's/\"merge-dev\"\: false/\"merge-dev\"\: true/g' composer.json
+  - sh plugins/relenta/ply/tests/build.sh
   - travis_retry composer install --no-interaction --prefer-source
   - cp plugins/relenta/ply/tests/.env ./
   - php artisan october:up --no-interaction
