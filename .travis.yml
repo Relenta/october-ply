@@ -17,10 +17,10 @@ addons:
   apt:
     sources:
       - google-chrome
-	  - firefox
+      - firefox
     packages:
       - google-chrome-stable
-	  - firefox
+      - firefox
       - nginx
       - realpath
 
