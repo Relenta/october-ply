@@ -23,4 +23,8 @@ class CardSide extends Model
      */
     public $timestamps = false;
 
+    public $attachOne = [
+        'media' => ['System\Models\File', 'public' => false]
+    ];
+
 }

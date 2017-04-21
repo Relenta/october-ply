@@ -15,7 +15,7 @@ class CardSideTest extends PluginTestCase
 
         $cardSide = CardSide::create([
             "id"    => 2,
-            "data"  => "CardSide data",
+            "content"  => "CardSide content",
         ]);
 
         $this->assertEquals(2, $cardSide->id);
@@ -23,7 +23,7 @@ class CardSideTest extends PluginTestCase
         $fetched = CardSide::find($cardSide->id);
 
         $this->assertEquals($cardSide->id, $fetched->id);
-        $this->assertEquals("CardSide data", $fetched->data);
+        $this->assertEquals("CardSide content", $fetched->content);
 
         $this->enableForeignKeys();
     }
