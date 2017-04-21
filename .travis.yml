@@ -51,6 +51,8 @@ before_script:
   - composer self-update
   - sh plugins/relenta/ply/tests/build.sh
   - travis_retry composer install --no-interaction --prefer-source
+  - php artisan october:env
+  - rm -f .env
   - cp plugins/relenta/ply/tests/.env ./
   - "> storage/database.sqlite"
   - php artisan october:up --no-interaction
