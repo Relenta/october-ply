@@ -7,6 +7,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
+            '\Relenta\Ply\Components\CourseUpdate' => 'course_update',
             '\Relenta\Ply\Components\Categories' => 'categories',
             '\Relenta\Ply\Components\Courses' => 'courses',
             '\Relenta\Ply\Components\Units' => 'units',
