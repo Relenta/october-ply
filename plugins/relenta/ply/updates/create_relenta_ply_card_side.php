@@ -14,8 +14,7 @@ class CreateRelentaPlyCardSide extends Migration
             $table->integer('card_id')->unsigned()->index('card_side_card')->default(0);
             $table->foreign('card_id', 'card_side_card_ref')->references('id')->on('relenta_ply_card')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('number')->nullable()->unsigned()->default(1);
-            $table->mediumtext('media')->nullable();
-            $table->mediumtext('data');
+            $table->mediumtext('content');
 
         });
     }

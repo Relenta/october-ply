@@ -34,7 +34,7 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
   - wget http://goo.gl/qTy1IB -O selenium-server-standalone.jar
-  - java -jar selenium-server-standalone.jar &
+  - java -jar selenium-server-standalone.jar -log /tmp/selenium_log.log > /tmp/selenium.log 2>&1 &
 #  - "wget http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip -O chromedriver.zip && unzip chromedriver.zip"
 #  - "java -Dwebdriver.chrome.driver=./chromedriver -jar selenium-server-standalone.jar &"
 #  - sleep 3
@@ -51,6 +51,8 @@ before_script:
   - composer self-update
   - sh plugins/relenta/ply/tests/build.sh
   - travis_retry composer install --no-interaction --prefer-source
+  - php artisan october:env
+  - rm -f .env
   - cp plugins/relenta/ply/tests/.env ./
   - "> storage/database.sqlite"
   - php artisan october:up --no-interaction
@@ -67,4 +69,5 @@ script:
 #  - ./vendor/bin/phpunit tests/functional 
 #  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
   - cd plugins/relenta/ply
-  - ../../../vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+#  - ../../../vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - ../../../vendor/bin/phpunit

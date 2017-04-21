@@ -20,7 +20,7 @@ class SeedRelentaPlyCardside extends Seeder
             for ($i = 1; $i <= $this->sidesPerCard; $i++) {
                 $card->sides()->create([
                     'number' => $i,
-                    'data'  => $card->title . ' side #' . $i . ' DATA',
+                    'content'  => $card->title . ' side #' . $i . ' CONTENT',
                 ]);
             }
         }

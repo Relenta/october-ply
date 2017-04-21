@@ -96,7 +96,7 @@ class CourseFactory
             for ($i = 1; $i < count($rowArr); $i++) {
                 $mediaFilePath = $this->folderPath . '/' . $i . '/' . $cardIndex . '.mp3';
                 $card->sides()->create([
-                    'data'   => $rowArr[$i],
+                    'content'   => $rowArr[$i],
                     'media'  => $mediaFilePath,
                     'number' => $i,
                 ]);
