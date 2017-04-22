@@ -9,13 +9,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ 'home'|page }}">Getply demo theme</a>
         </div>
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
-                <li class="separator hidden-xs"></li>
+                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Home</a></li>
                 <li class="{% if this.page.id == 'categories' %}active{% endif %}"><a href="{{ 'categories'|page }}">Categories</a></li>
                 <li class="{% if this.page.id == 'account' %}active{% endif %}"><a href="{{ 'account'|page }}">Account</a></li>
+                <li class="{% if this.page.id == 'update-course' %}active{% endif %}"><a href="{{ 'update-course'|page }}">Update course</a></li>
             </ul>
         </div>
     </div>
