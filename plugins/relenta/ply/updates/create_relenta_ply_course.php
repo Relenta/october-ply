@@ -20,7 +20,8 @@ class CreateRelentaPlyCourse extends Migration
             $table->integer('category_id')->unsigned()->index('course_category')->nullable()->default(0);
             $table->foreign('category_id', 'course_category_ref')->references('id')->on('relenta_ply_category')->onUpdate('cascade')->onDelete('set null');
             $table->char('lang', 5)->default('');
-            $table->text('title')->default('');
+            $table->text('title');
+            $table->string('slug')->nullable()->index()->unique();
             $table->mediumtext('data')->default('');
         });
     }

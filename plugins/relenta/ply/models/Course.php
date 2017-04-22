@@ -8,6 +8,13 @@ use Model;
 class Course extends Model
 {
 
+    use \October\Rain\Database\Traits\Sluggable;
+
+    /**
+     * @var array Generate slugs for these attributes.
+     */
+    protected $slugs = ['slug' => 'title'];
+    
     /**
      * @var string The database table used by the model.
      */

@@ -14,6 +14,7 @@ class CreateRelentaPlyCategory extends Migration
             $table->foreign('parent_id', 'category_parent_ref')->references('id')->on('relenta_ply_category')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('sort')->unsigned()->index()->default(0);
             $table->text('title');
+            $table->string('slug')->nullable()->index()->unique();
         });
     }
     

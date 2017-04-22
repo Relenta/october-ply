@@ -16,6 +16,7 @@ class CreateRelentaPlyUnit extends Migration
             $table->foreign('course_id', 'unit_course_ref')->references('id')->on('relenta_ply_course')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('sort')->unsigned()->default(0);
             $table->text('title');
+            $table->string('slug')->nullable()->index()->unique();
             $table->mediumtext('data');
         });
     }

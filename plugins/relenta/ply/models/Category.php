@@ -9,6 +9,13 @@ class Category extends Model
 {
 
     use \October\Rain\Database\Traits\SimpleTree;
+    use \October\Rain\Database\Traits\Sluggable;
+
+    /**
+     * @var array Generate slugs for these attributes.
+     */
+    protected $slugs = ['slug' => 'title'];
+
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
     /**
