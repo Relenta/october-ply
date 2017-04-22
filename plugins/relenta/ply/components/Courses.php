@@ -24,42 +24,40 @@ class Courses extends ComponentBase
     public function defineProperties()
     {
         return [
-            'categoryIdParam' => [
-                'title'             => 'Category Id Parameter',
-                'description'       => 'Name of variable, which contains category id',
+            'categorySlug' => [
+                'title'             => 'Category Slug Parameter',
+                'description'       => 'Name of variable, which contains category slug',
                 'type'              => 'string',
                 'required'          => true,
-                'validationMessage' => 'Category Id parameter is required'
+                'validationMessage' => 'Category Slug parameter is required'
             ]
         ];
     }
 
     public function onRun()
     {
-        $this->courses = $this->getCourses();
         $this->category = $this->getCategory();
+        $this->courses = $this->getCourses();
     }
 
     /**
-     * Returns the category id from the URL
+     * Returns the category slug from the URL
      * @return string
      */
-    public function categoryId()
+    public function categorySlug()
     {
-        $routeParameter = $this->property('categoryIdParam');
+        $routeParameter = $this->property('categorySlug');
 
         return $this->param($routeParameter);
     }
 
     public function getCourses()
     {
-        return Course::where('category_id', $this->categoryId())
-            ->get();
+        return Course::where('category_id', $this->category->id)->get();
     }
 
     public function getCategory()
     {
-        return Category::where('id', $this->categoryId())
-            ->first();
+        return Category::where('slug', $this->categorySlug())->first();
     }
 }

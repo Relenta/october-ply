@@ -25,52 +25,52 @@ class Cards extends ComponentBase
     public function defineProperties()
     {
         return [
-            'courseIdParam' => [
-                'title'             => 'Course Id Parameter',
-                'description'       => 'Name of variable, which contains course id',
+            'courseSlug' => [
+                'title'             => 'Course Slug Parameter',
+                'description'       => 'Name of variable, which contains course slug',
                 'type'              => 'string',
                 'required'          => true,
-                'validationMessage' => 'Course id parameter is required'
+                'validationMessage' => 'Course slug parameter is required'
             ],
-            'unitIdParam' => [
-                'title'             => 'Unit Id Parameter',
-                'description'       => 'Name of variable, which contains unit id',
+            'unitSlug' => [
+                'title'             => 'Unit Slug Parameter',
+                'description'       => 'Name of variable, which contains unit slug',
                 'type'              => 'string',
                 'required'          => true,
-                'validationMessage' => 'Unit id parameter is required'
+                'validationMessage' => 'Unit slug parameter is required'
             ],
         ];
     }
 
     public function onRun()
     {
-        $this->cards = $this->getCards();
         $this->unit = $this->getUnit();
+        $this->cards = $this->getCards();
     }
 
-    public function courseId()
+    public function courseSlug()
     {
-        $routeParameter = $this->property('courseIdParam');
+        $routeParameter = $this->property('courseSlug');
 
         return $this->param($routeParameter);
     }
 
-    public function unitId()
+    public function unitSlug()
     {
-        $routeParameter = $this->property('unitIdParam');
+        $routeParameter = $this->property('unitSlug');
 
         return $this->param($routeParameter);
     }
 
     public function getCards()
     {
-        return Card::where('unit_id', $this->unitId())
+        return Card::where('unit_id', $this->unit->id)
             ->get();
     }
 
     public function getUnit()
     {
-        return Unit::where('id', $this->unitId())
+        return Unit::where('slug', $this->unitSlug())
             ->first();
     }
 

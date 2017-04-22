@@ -6,7 +6,7 @@
 <ul>
     {% for course in courses %}
     <li>
-        <a href="{{ 'course'|page({ course_id: course.id }) }}">{{ course.title }}</a>
+        <a href="{{ 'course'|page({ slug: course.slug }) }}">{{ course.title }}</a>
     </li>
     {% endfor %}
 </ul>

@@ -1,7 +1,7 @@
 {% for category in categories %}
     <li>
         {% if category.courses.count > 0 %}
-        <a href="{{ 'courses'|page({ category_id: category.id }) }}">
+        <a href="{{ 'courses'|page({ slug: category.slug }) }}">
             {{ category.title }}
         </a>
         {% else %}

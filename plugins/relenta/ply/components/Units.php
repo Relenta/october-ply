@@ -24,42 +24,43 @@ class Units extends ComponentBase
     public function defineProperties()
     {
         return [
-            'courseIdParam' => [
-                'title'             => 'Course Id Parameter',
-                'description'       => 'Name of variable, which contains course id',
+            'courseSlug' => [
+                'title'             => 'Course Slug Parameter',
+                'description'       => 'Name of variable, which contains course slug',
                 'type'              => 'string',
                 'required'          => true,
-                'validationMessage' => 'Course id parameter is required'
+                'validationMessage' => 'Course slug parameter is required'
             ]
         ];
     }
 
     public function onRun()
     {
-        $this->units = $this->getUnits();
         $this->course = $this->getCourse();
+        $this->units = $this->getUnits();
     }
 
     /**
-     * Returns the course id from the URL
+     * Returns the course slug from the URL
      * @return string
      */
-    public function courseId()
+    public function courseSlug()
     {
-        $routeParameter = $this->property('courseIdParam');
+        $routeParameter = $this->property('courseSlug');
 
         return $this->param($routeParameter);
     }
 
     public function getUnits()
     {
-        return Unit::where('course_id', $this->courseId())
-            ->get()->toNested();
+        return Unit::where('course_id', $this->course->id)
+            ->get()
+            ->toNested();
     }
 
     public function getCourse()
     {
-        return Course::where('id', $this->courseId())
+        return Course::where('slug', $this->courseSlug())
             ->first();
     }
 }
