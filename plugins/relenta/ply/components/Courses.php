@@ -37,6 +37,12 @@ class Courses extends ComponentBase
     public function onRun()
     {
         $this->category = $this->getCategory();
+
+        if (!$this->category) {
+            $this->setStatusCode(404);
+            return $this->controller->run('404');
+        }
+
         $this->courses = $this->getCourses();
     }
 

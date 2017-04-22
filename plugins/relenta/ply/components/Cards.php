@@ -45,6 +45,12 @@ class Cards extends ComponentBase
     public function onRun()
     {
         $this->unit = $this->getUnit();
+
+        if (!$this->unit) {
+            $this->setStatusCode(404);
+            return $this->controller->run('404');
+        }
+
         $this->cards = $this->getCards();
     }
 

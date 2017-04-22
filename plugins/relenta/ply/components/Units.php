@@ -37,6 +37,12 @@ class Units extends ComponentBase
     public function onRun()
     {
         $this->course = $this->getCourse();
+
+        if (!$this->course) {
+            $this->setStatusCode(404);
+            return $this->controller->run('404');
+        }
+
         $this->units = $this->getUnits();
     }
 
