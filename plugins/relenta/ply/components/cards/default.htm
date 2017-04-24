@@ -1,8 +1,10 @@
 {% set cards = __SELF__.cards %}
 {% set unit = __SELF__.unit %}
-<h2>
-    {{ unit.title }}
-</h2>
+{% if unit %}
+    <h2>
+        {{ unit.title }}
+    </h2>
+{% endif %}
 <ul>
     {% for key, card in cards %}
         <div class="panel panel-default">

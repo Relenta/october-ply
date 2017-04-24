@@ -4,6 +4,11 @@
     {{ course.title }}
 </h1>
 
-<ul>
-    {% partial "@units-list" units=units course=course %}
-</ul>
+{% if units.count > 0 %}
+    <ul>
+        {% partial __SELF__ ~ "::units-list" units=units course=course %}
+    </ul>
+{% else %}
+    No units in this course
+    {% component 'cards' %}
+{% endif %}

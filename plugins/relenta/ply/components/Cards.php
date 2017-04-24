@@ -1,8 +1,10 @@
 <?php namespace Relenta\Ply\Components;
 
 use Cms\Classes\ComponentBase;
+use October\Rain\Exception\SystemException;
 use Relenta\Ply\Models\Card;
 use Relenta\Ply\Models\CardSide;
+use Relenta\Ply\Models\Course;
 use Relenta\Ply\Models\Unit;
 
 class Cards extends ComponentBase
@@ -13,6 +15,7 @@ class Cards extends ComponentBase
      */
     public $cards;
     public $unit;
+    public $course;
 
     public function componentDetails()
     {
@@ -34,30 +37,62 @@ class Cards extends ComponentBase
             ],
             'unitSlug' => [
                 'title'             => 'Unit Slug Parameter',
-                'description'       => 'Name of variable, which contains unit slug',
+                'description'       => 'If Unit slug is not declared, cards will be searched by course.',
                 'type'              => 'string',
-                'required'          => true,
-                'validationMessage' => 'Unit slug parameter is required'
+                'required'          => false
             ],
         ];
     }
 
     public function onRun()
     {
-        $this->unit = $this->getUnit();
+        if ($this->unitSlug() != '')
+        {
+            $this->unit = $this->getUnit();
 
-        if (!$this->unit) {
-            $this->setStatusCode(404);
-            return $this->controller->run('404');
+            if (!$this->unit)
+                $this->callNotFoundPage();
+
+            $this->cards = $this->getCardsByUnit();
+        }
+        else if ($this->courseSlug() != '')
+        {
+            $this->course = $this->getCourse();
+
+            if (!$this->course)
+                $this->callNotFoundPage();
+
+            $this->cards = $this->getCardsByCourse();
+        }
+        else {
+            throw new SystemException('Relenta/Ply/Components/Cards: Wrong slug definition.');
         }
 
-        $this->cards = $this->getCards();
+
+
+        /*if (!$this->unit)
+        {
+
+
+            if (!$this->course)
+            {
+                $this->setStatusCode(404);
+                return $this->controller->run('404');
+            }
+
+            $this->cards = $this->getCardsByCourse();
+        }
+        else
+        {
+            $this->cards = $this->getCardsByUnit();
+        }*/
+
+
     }
 
     public function courseSlug()
     {
         $routeParameter = $this->property('courseSlug');
-
         return $this->param($routeParameter);
     }
 
@@ -68,9 +103,15 @@ class Cards extends ComponentBase
         return $this->param($routeParameter);
     }
 
-    public function getCards()
+    public function getCardsByUnit()
     {
         return Card::where('unit_id', $this->unit->id)
+            ->get();
+    }
+
+    public function getCardsByCourse()
+    {
+        return Card::where('course_id', $this->course->id)
             ->get();
     }
 
@@ -78,6 +119,16 @@ class Cards extends ComponentBase
     {
         return Unit::where('slug', $this->unitSlug())
             ->first();
+    }
+
+    public function getCourse() {
+        return Course::where('slug', $this->courseSlug())
+            ->first();
+    }
+
+    public function callNotFoundPage() {
+        $this->setStatusCode(404);
+        return $this->controller->run('404');
     }
 
 }
