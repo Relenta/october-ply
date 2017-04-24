@@ -24,22 +24,14 @@ class CourseUpdate extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'GetPly Course Update',
-            'description' => 'Displays a form with course.'
+            'name'          => 'relenta.ply::lang.components.course_update.name',
+            'description'   => 'relenta.ply::lang.components.course_update.description'
         ];
     }
 
     public function defineProperties()
     {
-        return [
-            /*'courseIdParam' => [
-                'title'             => 'Course Id Parameter',
-                'description'       => 'Name of variable, which contains course id',
-                'type'              => 'string',
-                'required'          => true,
-                'validationMessage' => 'Course id parameter is required'
-            ]*/
-        ];
+        return [];
     }
 
     public function onRun()

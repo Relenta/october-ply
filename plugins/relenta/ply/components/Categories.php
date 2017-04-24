@@ -14,8 +14,8 @@ class Categories extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'GetPly Categories',
-            'description' => 'Displays a collection of categories (themes).'
+            'name'          => 'relenta.ply::lang.components.categories.name',
+            'description'   => 'relenta.ply::lang.components.categories.description'
         ];
     }
 

@@ -20,8 +20,8 @@ class Cards extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'GetPly Cards',
-            'description' => 'Displays a collection of cards.'
+            'name'          => 'relenta.ply::lang.components.cards.name',
+            'description'   => 'relenta.ply::lang.components.cards.description'
         ];
     }
 
@@ -29,15 +29,15 @@ class Cards extends ComponentBase
     {
         return [
             'courseSlug' => [
-                'title'             => 'Course Slug Parameter',
-                'description'       => 'Name of variable, which contains course slug',
+                'title'             => 'relenta.ply::lang.properties.course_slug_title',
+                'description'       => 'relenta.ply::lang.properties.course_slug_description',
                 'type'              => 'string',
                 'required'          => true,
-                'validationMessage' => 'Course slug parameter is required'
+                'validationMessage' => 'relenta.ply::lang.properties.course_slug_validation_message'
             ],
             'unitSlug' => [
-                'title'             => 'Unit Slug Parameter',
-                'description'       => 'If Unit slug is not declared, cards will be searched by course.',
+                'title'             => 'relenta.ply::lang.properties.unit_slug_title',
+                'description'       => 'relenta.ply::lang.properties.unit_slug_description',
                 'type'              => 'string',
                 'required'          => false
             ],
@@ -65,29 +65,8 @@ class Cards extends ComponentBase
             $this->cards = $this->getCardsByCourse();
         }
         else {
-            throw new SystemException('Relenta/Ply/Components/Cards: Wrong slug definition.');
+            throw new SystemException('Relenta/Ply/Components/Cards: Wrong params definition.');
         }
-
-
-
-        /*if (!$this->unit)
-        {
-
-
-            if (!$this->course)
-            {
-                $this->setStatusCode(404);
-                return $this->controller->run('404');
-            }
-
-            $this->cards = $this->getCardsByCourse();
-        }
-        else
-        {
-            $this->cards = $this->getCardsByUnit();
-        }*/
-
-
     }
 
     public function courseSlug()

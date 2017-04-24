@@ -16,8 +16,8 @@ class Courses extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'GetPly Courses',
-            'description' => 'Displays a collection of courses.'
+            'name'          => 'relenta.ply::lang.components.courses.name',
+            'description'   => 'relenta.ply::lang.components.courses.description'
         ];
     }
 
@@ -25,11 +25,11 @@ class Courses extends ComponentBase
     {
         return [
             'categorySlug' => [
-                'title'             => 'Category Slug Parameter',
-                'description'       => 'Name of variable, which contains category slug',
+                'title'             => 'relenta.ply::lang.properties.category_slug_title',
+                'description'       => 'relenta.ply::lang.properties.category_slug_description',
                 'type'              => 'string',
                 'required'          => true,
-                'validationMessage' => 'Category Slug parameter is required'
+                'validationMessage' => 'relenta.ply::lang.properties.category_slug_validation_message'
             ]
         ];
     }

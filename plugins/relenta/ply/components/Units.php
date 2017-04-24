@@ -16,8 +16,8 @@ class Units extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'GetPly Units',
-            'description' => 'Displays a collection of units.'
+            'name'          => 'relenta.ply::lang.components.units.name',
+            'description'   => 'relenta.ply::lang.components.units.description'
         ];
     }
 
@@ -25,11 +25,11 @@ class Units extends ComponentBase
     {
         return [
             'courseSlug' => [
-                'title'             => 'Course Slug Parameter',
-                'description'       => 'Name of variable, which contains course slug',
+                'title'             => 'relenta.ply::lang.properties.course_slug_title',
+                'description'       => 'relenta.ply::lang.properties.course_slug_description',
                 'type'              => 'string',
                 'required'          => true,
-                'validationMessage' => 'Course slug parameter is required'
+                'validationMessage' => 'relenta.ply::lang.properties.course_slug_validation_message'
             ]
         ];
     }
