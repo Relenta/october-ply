@@ -1,0 +1,34 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <form data-request="onSignin">
+            <div class="form-group">
+                <label for="userSigninEmail">{{ emailAttributeLabel }}</label>
+                <input name="email"
+                       type="email"
+                       class="form-control"
+                       id="userSigninEmail"
+                       placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="userSigninPassword">Password</label>
+                <input name="password"
+                       type="password"
+                       class="form-control"
+                       id="userSigninPassword"
+                       placeholder="Enter your password">
+            </div>
+
+            <p class="text-right">
+                or sign in with SOCIAL BUTTONS
+                {# for name, link in social_login_links %}
+                    <a href="{{ link }}?s={{ 'home'|page }}&f={{ 'account'|page }}">{{ name }}</a>
+                {% endfor #}
+            </p>
+
+            <button type="submit" class="btn btn-default">Sign in</button>
+        </form>
+    </div>
+</div>
+

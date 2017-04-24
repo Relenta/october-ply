@@ -3,8 +3,8 @@ description = "Default layout"
 [localePicker]
 forceUrl = 0
 
-[localePicker localePicker2]
-forceUrl = 0
+[session]
+security = "all"
 ==
 <!DOCTYPE html>
 <html>
@@ -30,7 +30,14 @@ forceUrl = 0
     </head>
 
     <body>
-        {% component 'localePicker' %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    {% component 'localePicker' %}
+                </div>
+            </div>
+        </div>
+
         {{ 'Test'|_ }}
         
         <!-- Header -->

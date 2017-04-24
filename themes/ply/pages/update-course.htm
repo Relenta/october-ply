@@ -1,8 +1,21 @@
 title = "Course update"
-url = "/profile/courses/update"
+url = "/account/courses/update"
 layout = "default"
 is_hidden = 0
 
 [course_update]
 ==
-{% component "course_update" %}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-4">
+            {% partial 'account/navigation' %}
+        </div>
+
+        <div class="col-md-8">
+            {% component "course_update" %}
+        </div>
+
+    </div>
+</div>
+
