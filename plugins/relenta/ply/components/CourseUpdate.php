@@ -1,8 +1,8 @@
 <?php namespace Relenta\Ply\Components;
 
 use Cms\Classes\ComponentBase;
-use League\Flysystem\Exception;
-use Relenta\Ply\Models\Course;
+use Validator;
+use ValidationException;
 use Relenta\Ply\Models\Category;
 use Relenta\Ply\Models\Factories\CourseFactory;
 use Illuminate\Support\Facades\Input;
@@ -21,6 +21,13 @@ class CourseUpdate extends ComponentBase
      */
     public $categories;
 
+    /**
+     * An object with form validation errors
+     * @var ValidationException
+     */
+    public $error;
+
+
     public function componentDetails()
     {
         return [
@@ -36,31 +43,57 @@ class CourseUpdate extends ComponentBase
 
     public function onRun()
     {
-        $this->categories = $this->getCategories();
+        $this->categories = $this->page['categories'] = $this->getCategories();
     }
 
+    /**
+     * Returns the collection of categories
+     * @return Collection
+     */
     public function getCategories()
     {
         return Category::all();
     }
 
+    /**
+     * Checks post data and calls CourseFactory::create
+     */
     public function onSubmit() {
         try {
-            // Data collect
-            $course_name = post("course-name");
-            $category_id = post("category");
-            $zip_file = Input::file('file-input');
 
-            //dump($course_name);
-            //dump($zip_file->getRealPath());
-            //dump($category_id);
-            //echo phpversion();
+            $data = post();
+            $data['file-input'] = Input::file('file-input');
+
+            $rules = [
+                'course-name' => [
+                    'required',
+                    'min:6',
+                    'max:255'
+                ],
+                'category' => [
+                    'required',
+                    'numeric'
+                ],
+                'file-input' => [
+                    'required',
+                    'mimes:zip'
+                ]
+            ];
+
+            $validation = Validator::make($data, $rules);
+            if ($validation->fails()) {
+                throw new ValidationException($validation);
+            }
+
             $courseFactory = new CourseFactory();
-            $result = $courseFactory->create($category_id, $course_name, $zip_file->getRealPath());
-            return $result;
-        } catch (Exception $ex) {
 
-            throw $ex;
+            $this->course = $this->page['course'] = $courseFactory->create(
+                $data['category'],
+                $data['course-name'],
+                $data['file-input']->getRealPath()
+            );
+        } catch (ValidationException $ex) {
+            $this->error = $this->page['error'] = $ex;
         }
 
     }

@@ -1,22 +1,64 @@
-{% set categories = __SELF__.categories %}
-
 {{ form_open({ files: "true", request: __SELF__ ~ '::onSubmit'}) }}
     <div class="form-group">
-        <label for="course-name">Course name</label>
-        <input type="text" class="form-control" id="course-name" name="course-name" required>
+        <label class="control-label" for="course-name">
+            Course name
+        </label>
+
+        <input type="text"
+               class="form-control"
+               id="course-name"
+               name="course-name"
+               required>
     </div>
-    <div class="form-input">
-        <label for="category">Category</label>
-        <select class="form-control" id="category" name="category" required>
+
+
+    <div class="form-group">
+        <label class="control-label" for="category">
+            Category
+        </label>
+
+        <select class="form-control"
+                id="category"
+                name="category"
+                required>
             {% for category in categories %}
-                <option value="{{ category.id }}">{{ category.title }}</option>
+                <option value="{{ category.id }}">
+                    {{ category.title }}
+                </option>
             {% endfor %}
         </select>
     </div>
+
+
     <div class="form-group">
-        <label for="file-input">File input</label>
+        <label class="control-label" for="file-input">
+            File input
+        </label>
+
         <input type="file" id="file-input" name="file-input" required>
         <p class="help-block">Only zip-file supports.</p>
     </div>
+
     <button type="submit" class="btn btn-default">Submit</button>
 {{ form_close() }}
+
+{# This block shows errors, if form was submitted incorrectly #}
+{% if error %}
+    <div class="alert alert-danger" role="alert">
+        <ul>
+            {% for field in error.errors.messages %}
+                {% for field_error in field %}
+                    <li>{{ field_error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+{# This block shows created course, if form submitted correctly #}
+{% if course %}
+    <div class="alert alert-success" role="alert">
+        <b>{{ course.title }}</b> has created.
+        Course category: <b>{{ course.category.title }}</b>
+    </div>
+{% endif %}

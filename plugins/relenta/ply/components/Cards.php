@@ -14,7 +14,17 @@ class Cards extends ComponentBase
      * @var Collection
      */
     public $cards;
+
+    /**
+     * Current unit
+     * @var Unit
+     */
     public $unit;
+
+    /**
+     * Current course
+     * @var Course
+     */
     public $course;
 
     public function componentDetails()
@@ -48,33 +58,41 @@ class Cards extends ComponentBase
     {
         if ($this->unitSlug() != '')
         {
-            $this->unit = $this->getUnit();
+            $this->unit = $this->page['unit'] = $this->getUnit();
 
             if (!$this->unit)
                 $this->callNotFoundPage();
 
-            $this->cards = $this->getCardsByUnit();
+            $this->cards = $this->page['cards'] = $this->getCardsByUnit();
         }
         else if ($this->courseSlug() != '')
         {
-            $this->course = $this->getCourse();
+            $this->course = $this->page['course'] = $this->getCourse();
 
             if (!$this->course)
                 $this->callNotFoundPage();
 
-            $this->cards = $this->getCardsByCourse();
+            $this->cards = $this->page['cards'] = $this->getCardsByCourse();
         }
         else {
             throw new SystemException('Relenta/Ply/Components/Cards: Wrong params definition.');
         }
     }
 
+    /**
+     * Returns the course slug from the URL
+     * @return string
+     */
     public function courseSlug()
     {
         $routeParameter = $this->property('courseSlug');
         return $this->param($routeParameter);
     }
 
+    /**
+     * Returns the unit slug from the URL
+     * @return string
+     */
     public function unitSlug()
     {
         $routeParameter = $this->property('unitSlug');
@@ -82,29 +100,49 @@ class Cards extends ComponentBase
         return $this->param($routeParameter);
     }
 
+    /**
+     * Returns the collection of cards by unit
+     * @return Collection
+     */
     public function getCardsByUnit()
     {
         return Card::where('unit_id', $this->unit->id)
             ->get();
     }
 
+    /**
+     * Returns the collection of cards by course
+     * @return Collection
+     */
     public function getCardsByCourse()
     {
         return Card::where('course_id', $this->course->id)
             ->get();
     }
 
+    /**
+     * Returns unit by slug
+     * @return Unit
+     */
     public function getUnit()
     {
         return Unit::where('slug', $this->unitSlug())
             ->first();
     }
 
+    /**
+     * Returns course by slug
+     * @return Course
+     */
     public function getCourse() {
         return Course::where('slug', $this->courseSlug())
             ->first();
     }
 
+    /**
+     * Returns not-found page with 404 status code
+     * @return Response
+     */
     public function callNotFoundPage() {
         $this->setStatusCode(404);
         return $this->controller->run('404');

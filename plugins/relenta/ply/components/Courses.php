@@ -11,6 +11,11 @@ class Courses extends ComponentBase
      * @var Collection
      */
     public $courses;
+
+    /**
+     * Current category
+     * @var Category
+     */
     public $category;
     
     public function componentDetails()
@@ -36,14 +41,15 @@ class Courses extends ComponentBase
 
     public function onRun()
     {
-        $this->category = $this->getCategory();
+        $this->category = $this->page['category'] = $this->getCategory();
 
-        if (!$this->category) {
+        if (!$this->category) 
+        {
             $this->setStatusCode(404);
             return $this->controller->run('404');
         }
 
-        $this->courses = $this->getCourses();
+        $this->courses = $this->page['courses'] = $this->getCourses();
     }
 
     /**
@@ -57,13 +63,23 @@ class Courses extends ComponentBase
         return $this->param($routeParameter);
     }
 
+    /**
+     * Returns the collection of courses by category
+     * @return Collection
+     */
     public function getCourses()
     {
-        return Course::where('category_id', $this->category->id)->get();
+        return Course::where('category_id', $this->category->id)
+            ->get();
     }
 
+    /**
+     * Returns category by slug
+     * @return Category
+     */
     public function getCategory()
     {
-        return Category::where('slug', $this->categorySlug())->first();
+        return Category::where('slug', $this->categorySlug())
+            ->first();
     }
 }

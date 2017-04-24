@@ -1,12 +1,11 @@
-{% set courses = __SELF__.courses %}
-{% set category = __SELF__.category %}
 <h2>
    {{ category.title }}
 </h2>
+
 <ul>
     {% for course in courses %}
-    <li>
-        <a href="{{ 'course'|page({ slug: course.slug }) }}">{{ course.title }}</a>
-    </li>
+        <li>
+            <a href="{{ 'course'|page({ slug: course.slug }) }}">{{ course.title }}</a>
+        </li>
     {% endfor %}
 </ul>

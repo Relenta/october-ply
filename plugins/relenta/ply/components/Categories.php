@@ -21,9 +21,13 @@ class Categories extends ComponentBase
 
     public function onRun()
     {
-        $this->categories = $this->getCategories();
+        $this->categories = $this->page['categories'] = $this->getCategories();
     }
 
+    /**
+     * Returns the nested collection of categories
+     * @return Collection
+     */
     public function getCategories()
     {
         return Category::All()->toNested();

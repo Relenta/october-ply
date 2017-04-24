@@ -11,6 +11,11 @@ class Units extends ComponentBase
      * @var Collection
      */
     public $units;
+
+    /**
+     * Current course
+     * @var Course
+     */
     public $course;
 
     public function componentDetails()
@@ -36,6 +41,7 @@ class Units extends ComponentBase
 
     public function init()
     {
+        /* Load Relenta\Ply\Components\Cards component */
         $this->addComponent('Relenta\Ply\Components\Cards', 'cards', [
             'courseSlug' => $this->property('courseSlug')
         ]);
@@ -43,14 +49,15 @@ class Units extends ComponentBase
 
     public function onRun()
     {
-        $this->course = $this->getCourse();
+        $this->course = $this->page['course'] = $this->getCourse();
 
-        if (!$this->course) {
+        if (!$this->course)
+        {
             $this->setStatusCode(404);
             return $this->controller->run('404');
         }
 
-        $this->units = $this->getUnits();
+        $this->units = $this->page['units'] = $this->getUnits();
     }
 
     /**
@@ -64,6 +71,10 @@ class Units extends ComponentBase
         return $this->param($routeParameter);
     }
 
+    /**
+     * Returns the nested collection of units by course
+     * @return Collection
+     */
     public function getUnits()
     {
         return Unit::where('course_id', $this->course->id)
@@ -71,6 +82,10 @@ class Units extends ComponentBase
             ->toNested();
     }
 
+    /**
+     * Returns course by slug
+     * @return Course
+     */
     public function getCourse()
     {
         return Course::where('slug', $this->courseSlug())

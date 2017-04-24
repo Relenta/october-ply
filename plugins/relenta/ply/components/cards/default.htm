@@ -1,27 +1,23 @@
-{% set cards = __SELF__.cards %}
-{% set unit = __SELF__.unit %}
 {% if unit %}
     <h2>
         {{ unit.title }}
     </h2>
 {% endif %}
-<ul>
-    {% for key, card in cards %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    Card {{ key }}
-                </h3>
-            </div>
-            <div class="panel-body">
-                <ul>
-                    {% for side in card.sides %}
-                        <li>{{ side }}</li>
-                    {% endfor %}
-                </ul>
 
-            </div>
+{% for key, card in cards %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                Card {{ key }}
+            </h3>
         </div>
-        </li>
-    {% endfor %}
-</ul>
+
+        <div class="panel-body">
+            <ul>
+                {% for side in card.sides %}
+                    <li>{{ side }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endfor %}
