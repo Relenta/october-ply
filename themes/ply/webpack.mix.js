@@ -12,8 +12,15 @@ let mix = require('laravel-mix');
  */
 
 mix
-    .js('assets/js/app.js', 'dist/js')
-    .less('assets/less/styles.less', 'dist/css');
+    .options({
+        processCssUrls: false
+    })
+    .setPublicPath('./dist')
+    .copyDirectory('assets/fonts', 'fonts')
+    .copyDirectory('assets/images', 'images')
+    .js('assets/js/app.js', 'js')
+    .less('assets/less/theme.less', 'css')
+    .less('assets/less/vendor.less', 'css');
 
 mix.browserSync({
     proxy: 'getply.dev',
