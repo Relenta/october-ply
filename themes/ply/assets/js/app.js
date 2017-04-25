@@ -1,6 +1,4 @@
-/*
- * Application
- */
+require('./common.js')
 
 $(document).tooltip({
     selector: "[data-toggle=tooltip]"
@@ -46,3 +44,10 @@ jQuery(document).ready(function($){
         scrolling = false
     }
 });
+
+Vue.component('PlyCard', require('./components/PlyCard.vue'));
+
+const app = new Vue({
+    el: '#app'
+});
+

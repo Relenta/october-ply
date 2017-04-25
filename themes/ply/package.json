@@ -1,6 +1,11 @@
 {
   "devDependencies": {
-    "laravel-mix": "^0.11.3"
+    "laravel-mix": "^0.11.3",
+    "vue": "^2.2.6",
+    "axios": "^0.15.3",
+    "vue-loader": "^11.3.4",
+    "vue-template-compiler": "^2.2.6",
+    "moment": "^2.18.1"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",

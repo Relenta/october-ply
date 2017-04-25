@@ -17,8 +17,8 @@ security = "all"
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="OctoberCMS">
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
-        <link href="{{ 'dist/css/vendor.css'|theme }}" rel="stylesheet">
-        <link href="{{ 'dist/css/theme.css'|theme }}" rel="stylesheet">
+        <link href="{{ mix('/css/vendor.css', 'themes/ply/dist') }}" rel="stylesheet">
+        <link href="{{ mix('/css/theme.css', 'themes/ply/dist') }}" rel="stylesheet">
 
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -31,36 +31,35 @@ security = "all"
     </head>
 
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2">
-                    {% component 'localePicker' %}
+        <div id="app">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        {% component 'localePicker' %}
+                    </div>
                 </div>
             </div>
+
+            {{ 'Test'|_ }}
+            
+            <!-- Header -->
+            <header id="layout-header">
+                {% partial 'site/header' %}
+            </header>
+
+            <!-- Content -->
+            <section id="layout-content">
+                {% page %}
+            </section>
+
+            <!-- Footer -->
+            <footer id="layout-footer">
+                {% partial 'site/footer' %}
+            </footer>
         </div>
-
-        {{ 'Test'|_ }}
-        
-        <!-- Header -->
-        <header id="layout-header">
-            {% partial 'site/header' %}
-        </header>
-
-        <!-- Content -->
-        <section id="layout-content">
-            {% page %}
-        </section>
-
-        <!-- Footer -->
-        <footer id="layout-footer">
-            {% partial 'site/footer' %}
-        </footer>
-
-        <!-- Scripts -->
-        <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
-        <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
-        <script src="{{ 'dist/js/app.js'|theme }}"></script>
-        {% framework extras %}
-        {% scripts %}
+            <!-- Scripts -->
+            <script src="{{ mix('/js/app.js', 'themes/ply/dist') }}"></script>
+            {% framework extras %}
+            {% scripts %}
     </body>
 </html>

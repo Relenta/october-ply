@@ -17,5 +17,8 @@
         "phpunit/phpunit": "*",
         "facebook/webdriver": "dev-master",
         "guzzlehttp/guzzle": ">=6.2"
-    }
+    },
+    "files": [
+        "classes/helpers.php"
+    ]
 }

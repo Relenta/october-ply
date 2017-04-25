@@ -27,7 +27,8 @@ mix.browserSync({
     host: 'getply.dev',
     notify: false,
     files: [
-        './dist/js/*.js',
+        './dist/js/**/*.js',
+        './dist/js/**/*.vue',
         './dist/css/*.css',
         './**/*.htm'
     ]
