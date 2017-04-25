@@ -22,9 +22,13 @@ mix
     .less('assets/less/theme.less', 'css')
     .less('assets/less/vendor.less', 'css');
 
+
+let dotenv = require('dotenv').config({path: '../../.env'});
+console.log(dotenv);
+
 mix.browserSync({
-    proxy: 'getply.dev',
-    host: 'getply.dev',
+    proxy: process.env.APP_URL,
+    host: process.env.APP_URL,
     notify: false,
     files: [
         './dist/js/**/*.js',

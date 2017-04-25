@@ -1,12 +1,12 @@
 <template>
-  <p>{{ title }}</p>
+  <p>{{ title }}2333</p>
 </template>
 
 <script>
   export default {
     data() {
       return {
-        title: `Hello, I'm example PlyCard`
+        title: `Hello, I'm example PlyCard22`
       }
     }
   }
