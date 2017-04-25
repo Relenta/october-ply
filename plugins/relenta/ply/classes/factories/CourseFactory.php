@@ -1,5 +1,5 @@
 <?php
-namespace Relenta\Ply\Models\Factories;
+namespace Relenta\Ply\Classes\Factories;
 
 use Illuminate\Support\Facades\File;
 use October\Rain\Filesystem\Zip;
@@ -133,7 +133,7 @@ class CourseFactory
      * @param  int     $rowIndex index of currently validated row (starts from 1)
      * @return boolean is row valid
      */
-    private function isCsvRowValid(array $rowArray, int $rowIndex)
+    private function isCsvRowValid($rowArray, $rowIndex)
     {
         if (count($rowArray) < $this->csvMinColumns) {
             return false;

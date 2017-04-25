@@ -4,7 +4,7 @@ use Cms\Classes\ComponentBase;
 use Validator;
 use ValidationException;
 use Relenta\Ply\Models\Category;
-use Relenta\Ply\Models\Factories\CourseFactory;
+use Relenta\Ply\Classes\Factories\CourseFactory;
 use Illuminate\Support\Facades\Input;
 
 class CourseUpdate extends ComponentBase

@@ -1,6 +1,7 @@
 <?php
 
-use Relenta\Ply\Models\Factories\CourseFactory;
+use Relenta\Ply\Classes\Factories\CourseFactory;
+
 
 Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () {
     //

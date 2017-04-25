@@ -1,11 +1,11 @@
-<?php namespace Relenta\Ply\Tests\Unit\Models\Factories;
+<?php namespace Relenta\Ply\Tests\Unit\Classes\Factories;
 
 use PluginTestCase;
 use Relenta\Ply\Models\Card;
 use Relenta\Ply\Models\CardSide;
 use Relenta\Ply\Models\Category;
 use Relenta\Ply\Models\Course;
-use Relenta\Ply\Models\Factories\CourseFactory;
+use Relenta\Ply\Classes\Factories\CourseFactory;
 use Relenta\Ply\Models\Unit;
 
 class CourseFactoryTest extends PluginTestCase
