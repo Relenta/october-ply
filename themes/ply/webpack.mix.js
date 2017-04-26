@@ -34,6 +34,7 @@ mix.browserSync({
         './dist/js/**/*.js',
         './dist/js/**/*.vue',
         './dist/css/*.css',
+        './**/*.less',
         './**/*.htm'
     ]
 });
