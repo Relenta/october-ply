@@ -17,4 +17,4 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () {
 
 });
 
-Route::get('learn', 'Relenta\Ply\Http\Controllers\Learn@index');
+Route::get('learn/{id}', 'Relenta\Ply\Http\Controllers\Learn@index');

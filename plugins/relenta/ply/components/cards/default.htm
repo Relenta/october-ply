@@ -6,9 +6,11 @@
 <hr>
 
 {# Vue.js component #}
-<ply-unit id="{{ unit.id }}"></ply-unit>
+<ply-unit-simple id="{{ unit.id }}"></ply-unit-simple>
 
+<hr>
 
+<ply-unit-timeout id="{{ unit.id }}" timeout="3000"></ply-unit-timeout>
 
 {#
 {% for key, card in cards %}

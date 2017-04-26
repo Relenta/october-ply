@@ -4,26 +4,17 @@
     <center>
       <ul class="pager">
         <li><a href="#" @click.prevent="current -= 1" v-if="current > 0">Previous</a></li>
-        <li><a href="#" @click.prevent="current += 1" v-if="current < cards.length">Next</a></li>
+        <li><a href="#" @click.prevent="current += 1" v-if="current < cards.length - 1">Next</a></li>
       </ul>
     </center>
   </div>
 </template>
 
 <script>
+  import PlyUnit from './PlyUnit.js';
+
   export default {
-    props: ['id'],
-    data() {
-      return {
-        cards: [],
-        current: 0
-      }
-    },
-    created() {
-      axios.get('/learn').then(({data}) => {
-        this.cards = data;
-      });
-    },
+    extends: PlyUnit,
     computed: {
       currentCard() {
         return this.cards[this.current] || null;

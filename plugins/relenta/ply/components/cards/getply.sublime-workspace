@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"cu",
+				"currentCard"
+			],
+			[
 				"mani",
 				"manifestDirectory"
 			],
@@ -347,36 +351,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/c/laragon/www/getply/themes/ply/assets/js/components/PlyCard.vue",
-			"settings":
-			{
-				"buffer_size": 199,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<template>\n  div.\n</template>\n\n<script>\n  export default {\n    data() {\n      return {\n        title: `Hello, I'm example PlyCard22`\n      }\n    }\n  }\n</script>\n\n<style>\n  \n</style>",
-			"file": "/c/laragon/www/getply/themes/ply/assets/js/components/PlyUnit.vue",
-			"file_size": 215,
-			"file_write_time": 131376312567781201,
-			"settings":
-			{
-				"buffer_size": 181,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "{% if unit %}\n    <h2>\n        {{ unit.title }}\n    </h2>\n\n    <div class=\"jumbotron\">\n        <ply-unit entity=\"unit.id\"></ply-unit>\n    </div>\n{% endif %}\n\n{##}\n{% for key, card in cards %}\n    <div class=\"panel panel-default\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">\n                Card {{ key }}\n            </h3>\n        </div>\n\n        <div class=\"panel-body\">\n            <ul>\n                {% for side in card.sides %}\n                    <li>{{ side }}</li>\n                {% endfor %}\n            </ul>\n        </div>\n    </div>\n{% endfor %}",
-			"file": "/c/laragon/www/getply/plugins/relenta/ply/components/cards/default.htm",
-			"file_size": 592,
-			"file_write_time": 131376223067002276,
-			"settings":
-			{
-				"buffer_size": 588,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -589,26 +563,16 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/c/laragon/www/getply",
-		"/c/laragon/www/getply/plugins",
-		"/c/laragon/www/getply/plugins/relenta",
-		"/c/laragon/www/getply/plugins/relenta/ply",
-		"/c/laragon/www/getply/plugins/relenta/ply/components",
-		"/c/laragon/www/getply/plugins/relenta/ply/components/cards",
-		"/c/laragon/www/getply/themes",
-		"/c/laragon/www/getply/themes/ply",
-		"/c/laragon/www/getply/themes/ply/assets",
-		"/c/laragon/www/getply/themes/ply/assets/js",
-		"/c/laragon/www/getply/themes/ply/assets/js/components",
-		"/c/laragon/www/getply/themes/ply/pages"
-	],
 	"file_history":
 	[
+		"/c/laragon/www/getply/themes/ply/assets/js/components/PlyCard.vue",
+		"/c/laragon/www/getply/themes/ply/assets/js/app.js",
+		"/c/laragon/www/getply/plugins/relenta/ply/http/controllers/Learn.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/routes.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/components/cards/default.htm",
+		"/c/laragon/www/getply/themes/ply/assets/js/components/PlyUnit.vue",
 		"/c/laragon/www/getply/themes/ply/assets/less/theme.less",
 		"/c/laragon/www/getply/themes/ply/webpack.mix.js",
-		"/c/laragon/www/getply/themes/ply/assets/js/components/PlyCard.vue",
 		"/c/laragon/www/getply/.env",
 		"/c/laragon/www/getply/themes/ply/layouts/default.htm",
 		"/c/laragon/www/getply/themes/ply/pages/cards.htm",
@@ -623,8 +587,6 @@
 		"/c/laragon/www/getply/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php",
 		"/c/laragon/www/getply/composer.lock",
 		"/c/laragon/www/getply/themes/ply/dist/js/app.js",
-		"/c/laragon/www/getply/themes/ply/assets/js/app.js",
-		"/c/laragon/www/getply/plugins/relenta/ply/components/cards/default.htm",
 		"/c/laragon/www/getply/themes/ply/assets/js/common.js",
 		"/c/laragon/www/getply/themes/ply/package.json",
 		"/c/laragon/www/getply/themes/ply/dist/css/theme.css",
@@ -645,7 +607,6 @@
 		"/c/laragon/www/getply/composer.json",
 		"/c/laragon/www/getply/plugins/relenta/ply/classes/repositories/CardFlowRepository",
 		"/c/laragon/www/getply/plugins/relenta/ply/classes/factories/CourseFactory.php",
-		"/c/laragon/www/getply/plugins/relenta/ply/routes.php",
 		"/c/laragon/www/getply/plugins/relenta/ply/components/CourseUpdate.php",
 		"/c/laragon/www/getply/plugins/relenta/ply/tests/unit/classes/factories/CourseFactoryTest.php",
 		"/c/laragon/www/getply/plugins/autumn/api/classes/ApiController.php",
@@ -731,9 +692,7 @@
 		"/C/laragon/www/villacarte/vendor/czim/laravel-filter/src/CountableFilter.php",
 		"/C/laragon/www/villacarte/resources/assets/js/frontend/helpers.js",
 		"/C/laragon/www/villacarte/resources/views/frontend/catalog/rent.blade.php",
-		"/C/laragon/www/villacarte/resources/assets/js/components/frontend/VcLocation.vue",
-		"/C/laragon/www/villacarte/package.json",
-		"/C/laragon/www/villacarte/resources/assets/js/frontend/app.js"
+		"/C/laragon/www/villacarte/resources/assets/js/components/frontend/VcLocation.vue"
 	],
 	"find":
 	{
@@ -879,324 +838,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/c/laragon/www/getply/themes/ply/assets/js/components/PlyCard.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 199,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"git_gutter_enabled": true,
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/c/laragon/www/getply/themes/ply/assets/js/components/PlyUnit.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 181,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17,
-								17
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"git_gutter_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/c/laragon/www/getply/plugins/relenta/ply/components/cards/default.htm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 588,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								161,
-								161
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content"
-							],
-							"git_gutter_enabled": true,
-							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

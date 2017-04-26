@@ -8,8 +8,8 @@ use Relenta\Ply\Models\Card;
 
 class Learn extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $id)
     {
-        return Card::with('sides')->get();
+        return Card::where(['unit_id' => $id])->with('sides')->get();
     }
 }
