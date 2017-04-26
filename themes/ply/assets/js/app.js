@@ -46,6 +46,7 @@ jQuery(document).ready(function($){
 });
 
 Vue.component('PlyCard', require('./components/PlyCard.vue'));
+Vue.component('PlyUnit', require('./components/PlyUnit.vue'));
 
 const app = new Vue({
     el: '#app'

@@ -2,12 +2,15 @@
     <h2>
         {{ unit.title }}
     </h2>
-
-    <div class="jumbotron">
-        <ply-card></ply-card>
-    </div>
 {% endif %}
+<hr>
 
+{# Vue.js component #}
+<ply-unit id="{{ unit.id }}"></ply-unit>
+
+
+
+{#
 {% for key, card in cards %}
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -25,3 +28,4 @@
         </div>
     </div>
 {% endfor %}
+#}

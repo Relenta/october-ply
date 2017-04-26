@@ -17,7 +17,4 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () {
 
 });
 
-Route::get('courses/create', function() {
-    $factory = new CourseFactory();
-    return $factory->create(11, 'New Course', dirname(__FIlE__) . '/tests/unit/models/factories/files/valid.zip');
-});
+Route::get('learn', 'Relenta\Ply\Http\Controllers\Learn@index');

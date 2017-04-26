@@ -1,17 +1,17 @@
 <template>
-  <p>{{ title }}2333</p>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well">
+        <h3>{{ card.sides[0].content }}</h3>
+        <hr>
+        <h3>{{ card.sides[1].content }}</h3>
+      </div>
+    </div>
+  </div>  
 </template>
 
 <script>
   export default {
-    data() {
-      return {
-        title: `Hello, I'm example PlyCard22`
-      }
-    }
+    props: ['card']
   }
 </script>
-
-<style>
-  
-</style>

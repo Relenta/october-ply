@@ -1,0 +1,1813 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mani",
+				"manifestDirectory"
+			],
+			[
+				"qu",
+				"quotes"
+			],
+			[
+				"ma",
+				"maxQuotes"
+			],
+			[
+				"quo",
+				"quotes"
+			],
+			[
+				"text",
+				"textarea\tTag"
+			],
+			[
+				"unde",
+				"undefined〔keyword〕"
+			],
+			[
+				"get",
+				"getCountables〔function〕"
+			],
+			[
+				"servi",
+				"service\t(rent.blade.php)"
+			],
+			[
+				"Ren",
+				"RentServiceController\t(RentServiceController.php)"
+			],
+			[
+				"load",
+				"loadFeatured"
+			],
+			[
+				"loca",
+				"localized"
+			],
+			[
+				"buil",
+				"build_year\t(RentServiceData.php)"
+			],
+			[
+				"name_",
+				"name_ru"
+			],
+			[
+				"fe",
+				"featuredPlaces"
+			],
+			[
+				"default",
+				"default-suggestion"
+			],
+			[
+				"q",
+				"query"
+			],
+			[
+				"par",
+				"parameterValue"
+			],
+			[
+				"house",
+				"house_area_sq\t(RentServiceFilter.php)"
+			],
+			[
+				"terr",
+				"terr_area_sq\t(RentServiceFilter.php)"
+			],
+			[
+				"vue",
+				"vue-typeahead"
+			],
+			[
+				"vue-",
+				"vue-typeahead\t(app.js)"
+			],
+			[
+				"J",
+				"JsonAttribute\t(JsonbAttribute.php)"
+			],
+			[
+				"bs3-l",
+				"bs3-list-group\tbs3-list-group"
+			],
+			[
+				"req",
+				"$request〔variable〕"
+			],
+			[
+				"st",
+				"statuses"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"messa",
+				"message-header \tBulma CSS Framework Class"
+			],
+			[
+				"Vue",
+				"VueRouter"
+			],
+			[
+				"exec",
+				"execute\t(ListCommand.php)"
+			],
+			[
+				"Comm",
+				"Composer\\Autoload\\ComposerStaticInite84affac7ba76b443ea1b9c3baa91fca〔class〕"
+			],
+			[
+				"in",
+				"inputArr"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"te",
+				"techorder"
+			],
+			[
+				"mons",
+				"monsterScore"
+			],
+			[
+				"you",
+				"youScore"
+			],
+			[
+				"mon",
+				"monsterAttack"
+			],
+			[
+				"ch",
+				"checkWin"
+			],
+			[
+				"hea",
+				"heal-level"
+			],
+			[
+				"yu",
+				"youScore"
+			],
+			[
+				"pan",
+				"panel-default"
+			],
+			[
+				"is",
+				"isGameStarted"
+			],
+			[
+				"bs3-b",
+				"bs3-button\tbs3-button"
+			],
+			[
+				"scri",
+				"script"
+			],
+			[
+				"tag",
+				"tags"
+			],
+			[
+				"Ma",
+				"Mail\t(Welcome.php)"
+			],
+			[
+				"root",
+				"rootCategory"
+			],
+			[
+				"ca",
+				"category"
+			],
+			[
+				"H",
+				"Http〔namespace〕"
+			],
+			[
+				"cont",
+				"container\t(index.blade.php)"
+			],
+			[
+				"S",
+				"Schema"
+			],
+			[
+				"user",
+				"userES6〔variable〕"
+			],
+			[
+				"User",
+				"UserES6"
+			],
+			[
+				"sum",
+				"sumSpread"
+			],
+			[
+				"bs3-ta",
+				"bs3-table:striped\tbs3-table-striped"
+			],
+			[
+				"bs",
+				"bs3-form\tbs3-form"
+			],
+			[
+				"log",
+				"log_1_argument"
+			],
+			[
+				"log_",
+				"log_no_argument"
+			],
+			[
+				"run",
+				"runSequence"
+			],
+			[
+				"brows",
+				"browser-sync\t(package.json)"
+			],
+			[
+				"v",
+				"vimport\tvimport"
+			],
+			[
+				"gem",
+				"gameStarted〔variable〕"
+			],
+			[
+				"game-",
+				"game-wrapper\t(3-game_tips.html)"
+			],
+			[
+				"tool",
+				"tooltip-help\t(4-game.html)"
+			],
+			[
+				"th",
+				"thumbmailPath"
+			],
+			[
+				"Flye",
+				"Flyer"
+			],
+			[
+				"thum",
+				"thumbnail_path"
+			],
+			[
+				"re",
+				"required\tAttr"
+			],
+			[
+				"bs3-ch",
+				"bs3-input:checkbox\tbs3-input-checkbox"
+			],
+			[
+				"val",
+				"validate"
+			],
+			[
+				"Requ",
+				"Request"
+			],
+			[
+				"App",
+				"App\\Flyer\t(Photo.php)"
+			],
+			[
+				"pho",
+				"photos"
+			],
+			[
+				"base",
+				"baseDir"
+			],
+			[
+				"Fly",
+				"FlyersController"
+			],
+			[
+				"f",
+				"fun\tfunction …"
+			],
+			[
+				"met",
+				"method\t(show.blade.php)"
+			],
+			[
+				"flash_m",
+				"flash_message_overlyay\t(flash.blade.php)"
+			],
+			[
+				"message",
+				"com_message_pump"
+			],
+			[
+				"fore",
+				"foreach\tblade-foreach"
+			],
+			[
+				"can",
+				"can\tblade-can"
+			],
+			[
+				"zip",
+				"zip_close"
+			],
+			[
+				"form-",
+				"form-group"
+			],
+			[
+				"bs3-in",
+				"bs3-input:text\tbs3-input-text"
+			],
+			[
+				"Rou",
+				"Route::resource\tRoute to a RESTful Controller"
+			],
+			[
+				"navbar-fixed",
+				"navbar-fixed-top \tBootstrap 3 Class"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/c/laragon/www/getply/themes/ply/assets/js/components/PlyCard.vue",
+			"settings":
+			{
+				"buffer_size": 199,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<template>\n  div.\n</template>\n\n<script>\n  export default {\n    data() {\n      return {\n        title: `Hello, I'm example PlyCard22`\n      }\n    }\n  }\n</script>\n\n<style>\n  \n</style>",
+			"file": "/c/laragon/www/getply/themes/ply/assets/js/components/PlyUnit.vue",
+			"file_size": 215,
+			"file_write_time": 131376312567781201,
+			"settings":
+			{
+				"buffer_size": 181,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "{% if unit %}\n    <h2>\n        {{ unit.title }}\n    </h2>\n\n    <div class=\"jumbotron\">\n        <ply-unit entity=\"unit.id\"></ply-unit>\n    </div>\n{% endif %}\n\n{##}\n{% for key, card in cards %}\n    <div class=\"panel panel-default\">\n        <div class=\"panel-heading\">\n            <h3 class=\"panel-title\">\n                Card {{ key }}\n            </h3>\n        </div>\n\n        <div class=\"panel-body\">\n            <ul>\n                {% for side in card.sides %}\n                    <li>{{ side }}</li>\n                {% endfor %}\n            </ul>\n        </div>\n    </div>\n{% endfor %}",
+			"file": "/c/laragon/www/getply/plugins/relenta/ply/components/cards/default.htm",
+			"file_size": 592,
+			"file_write_time": 131376223067002276,
+			"settings":
+			{
+				"buffer_size": 588,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 708.0,
+		"last_filter": "twi",
+		"selected_items":
+		[
+			[
+				"twi",
+				"Set Syntax: HTML (Twig)"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"git di",
+				"Git: Diff Current File"
+			],
+			[
+				"phpc",
+				"PHPCompanion:Goto Definition Scope"
+			],
+			[
+				"xde",
+				"Xdebug: Start Debugging (Launch Browser)"
+			],
+			[
+				"doc",
+				"DocBlockr: Decorate line comment"
+			],
+			[
+				"phpcomp",
+				"PHPCompanion:Goto Definition Scope"
+			],
+			[
+				"forma",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"phpfm",
+				"phpfmt: format now"
+			],
+			[
+				"phpcom",
+				"PHPCompanion:Import Namespace"
+			],
+			[
+				"impo",
+				"SublimeCodeIntel: Dump Import Directories"
+			],
+			[
+				"php",
+				"PHPCompanion:Expand Fully Qualified Class Name"
+			],
+			[
+				"packagere",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"artis",
+				"Laravel Artisan 5: Event:Generate"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"use",
+				"PHPCompanion:Find Use"
+			],
+			[
+				"impor",
+				"PHPCompanion:Import Namespace"
+			],
+			[
+				"git log",
+				"Git: Log All"
+			],
+			[
+				"git s",
+				"Git: Status"
+			],
+			[
+				"git st",
+				"Git: Show Tags"
+			],
+			[
+				"list ",
+				"Package Control: List Packages"
+			],
+			[
+				"brows",
+				"File: Open In Browser - Production Server"
+			],
+			[
+				"browser",
+				"File: Open In Browser - Production Server"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"upgr",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"list pa",
+				"Package Control: List Packages"
+			],
+			[
+				"sublimecod",
+				"SublimeCodeIntel: Reset"
+			],
+			[
+				"colorsu",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"colors",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"brow",
+				"Colorsublime: Browse Themes"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"wrap",
+				"Emmet: Wrap With Abbreviation"
+			],
+			[
+				"color",
+				"Colorsublime: Browse Themes"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git a",
+				"Git: Add All"
+			],
+			[
+				"mater",
+				"Material Theme: Activate theme"
+			],
+			[
+				"Snippet: ",
+				"Snippet: textfield"
+			],
+			[
+				"Snippet: text",
+				"Snippet: textfield"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git ad",
+				"Git: Add All"
+			],
+			[
+				"packages",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 1020.0
+	},
+	"console":
+	{
+		"height": 430.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/c/laragon/www/getply",
+		"/c/laragon/www/getply/plugins",
+		"/c/laragon/www/getply/plugins/relenta",
+		"/c/laragon/www/getply/plugins/relenta/ply",
+		"/c/laragon/www/getply/plugins/relenta/ply/components",
+		"/c/laragon/www/getply/plugins/relenta/ply/components/cards",
+		"/c/laragon/www/getply/themes",
+		"/c/laragon/www/getply/themes/ply",
+		"/c/laragon/www/getply/themes/ply/assets",
+		"/c/laragon/www/getply/themes/ply/assets/js",
+		"/c/laragon/www/getply/themes/ply/assets/js/components",
+		"/c/laragon/www/getply/themes/ply/pages"
+	],
+	"file_history":
+	[
+		"/c/laragon/www/getply/themes/ply/assets/less/theme.less",
+		"/c/laragon/www/getply/themes/ply/webpack.mix.js",
+		"/c/laragon/www/getply/themes/ply/assets/js/components/PlyCard.vue",
+		"/c/laragon/www/getply/.env",
+		"/c/laragon/www/getply/themes/ply/layouts/default.htm",
+		"/c/laragon/www/getply/themes/ply/pages/cards.htm",
+		"/c/laragon/www/getply/themes/ply/assets/less/vendor.less",
+		"/c/laragon/www/getply/plugins/relenta/ply/Plugin.php",
+		"/c/laragon/www/getply/themes/ply/webpack.config.js",
+		"/c/laragon/www/getply/plugins/relenta/ply/classes/helpers.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/composer.json",
+		"/c/laragon/www/getply/themes/ply/dist/mix-manifest.json",
+		"/c/laragon/www/getply/modules/cms/twig/Extension.php",
+		"/c/laragon/www/getply/modules/system/classes/PluginBase.php",
+		"/c/laragon/www/getply/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php",
+		"/c/laragon/www/getply/composer.lock",
+		"/c/laragon/www/getply/themes/ply/dist/js/app.js",
+		"/c/laragon/www/getply/themes/ply/assets/js/app.js",
+		"/c/laragon/www/getply/plugins/relenta/ply/components/cards/default.htm",
+		"/c/laragon/www/getply/themes/ply/assets/js/common.js",
+		"/c/laragon/www/getply/themes/ply/package.json",
+		"/c/laragon/www/getply/themes/ply/dist/css/theme.css",
+		"/c/laragon/www/getply/themes/ply/assets/vendor/font-awesome/less/variables.less",
+		"/c/laragon/www/getply/themes/ply/assets/less/theme/variables.less",
+		"/c/laragon/www/getply/themes/ply/assets/less/elements/navbar.less",
+		"/c/laragon/www/getply/themes/ply/dist/css/styles.css",
+		"/c/laragon/www/getply/themes/ply/assets/css/theme.css",
+		"/c/laragon/www/getply/themes/ply/assets/less/styles.less",
+		"/c/laragon/www/getply/themes/ply/assets/less/theme/fonts.less",
+		"//",
+		"/c/laragon/www/getply/themes/ply/pages/home.htm",
+		"/c/laragon/www/getply/plugins/relenta/ply/classes/SessionCardFlow.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/classes/CardFlow.php",
+		"/c/laragon/www/getply/themes/ply/dist/css/vendor.css",
+		"/c/laragon/www/getply/themes/ply/.gitignore",
+		"/c/laragon/www/getply/.gitignore",
+		"/c/laragon/www/getply/composer.json",
+		"/c/laragon/www/getply/plugins/relenta/ply/classes/repositories/CardFlowRepository",
+		"/c/laragon/www/getply/plugins/relenta/ply/classes/factories/CourseFactory.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/routes.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/components/CourseUpdate.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/tests/unit/classes/factories/CourseFactoryTest.php",
+		"/c/laragon/www/getply/plugins/autumn/api/classes/ApiController.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/models/Category.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/models/Unit.php",
+		"/C/Users/wolf6969/Desktop/export.json",
+		"/c/laragon/www/getply/plugins/relenta/ply/models/Course.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/updates/create_relenta_ply_course.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/updates/create_relenta_ply_unit.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/updates/create_relenta_ply_category.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/updates/seed_relenta_ply_course.php",
+		"/c/laragon/www/getply/tests/fixtures/plugins/database/tester/updates/create_categories_table.php",
+		"/c/laragon/www/getply/vendor/october/rain/src/Database/Traits/Sluggable.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/models/factories/CourseFactory.php",
+		"/c/laragon/www/getply/vendor/october/rain/src/Filesystem/Zip.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/models/CardSide.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/updates/seed_relenta_ply_card_side.php",
+		"/c/laragon/www/getply/modules/backend/routes.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/updates/create_relenta_ply_card_side.php",
+		"/c/laragon/www/getply/plugins/relenta/ply/tests/unit/models/CardSideTest.php",
+		"/C/Users/wolf6969/AppData/Local/Temp/fz3temp-2/export.php",
+		"/C/Users/wolf6969/Desktop/vuejs-complete/project3/src/components/QuoteGrid.vue",
+		"/C/Users/wolf6969/Desktop/vuejs-complete/project3/src/components/Header.vue",
+		"/C/Users/wolf6969/Desktop/vuejs-complete/project3/webpack.config.js",
+		"/C/Users/wolf6969/Desktop/vuejs-complete/project3/src/App.vue",
+		"/C/Users/wolf6969/Desktop/vuejs-complete/project3/src/components/NewQuote.vue",
+		"/C/Users/wolf6969/Desktop/vuejs-complete/project3/src/components/Quote.vue",
+		"/C/Users/wolf6969/Desktop/vuejs-complete/project2/src/App.vue",
+		"/C/Users/wolf6969/Desktop/vuejs-complete/project3/index.html",
+		"/C/Users/wolf6969/Desktop/fwsd39en/FWSD39/README.txt",
+		"/C/Users/wolf6969/Desktop/CHANGELOG.mkdn",
+		"/C/laragon/www/getply/themes/ply/layouts/default.htm",
+		"/C/laragon/www/getply/composer.lock",
+		"/C/laragon/tmp/php_errors.log",
+		"/C/laragon/www/getply/composer.json",
+		"/C/laragon/www/getply/config/dev/database.php",
+		"/C/laragon/www/getply/modules/system/classes/PluginManager.php",
+		"/C/laragon/www/getply/vendor/october/rain/src/Foundation/Application.php",
+		"/C/laragon/www/getply/vendor/laravel/framework/src/Illuminate/Console/Application.php",
+		"/C/laragon/www/getply/vendor/symfony/http-kernel/Kernel.php",
+		"/C/laragon/www/getply/plugins/autumn/api/providers/ServiceProvider.php",
+		"/C/laragon/www/getply/config/cms.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/Plugin.php",
+		"/C/laragon/www/getply/index.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/models/Course.php",
+		"/C/Users/wolf6969/Desktop/catalog/index.html",
+		"/C/Users/wolf6969/Desktop/catalog/css/sass/style.sass",
+		"/C/laragon/www/villacarte/app/Filters/RentServiceFilter.php",
+		"/C/laragon/www/villacarte/resources/assets/js/components/frontend/VcCheckbox.vue",
+		"/C/laragon/www/villacarte/resources/assets/js/components/frontend/VcRentCatalog.vue",
+		"/C/laragon/www/villacarte/app/Filters/RentServiceData.php",
+		"/C/laragon/www/villacarte/resources/assets/js/components/frontend/VcSelect.vue",
+		"/C/laragon/www/villacarte/webpack.mix.js",
+		"/C/laragon/www/villacarte/villacarte.sublime-project",
+		"/C/laragon/www/villacarte/app/Http/Controllers/Frontend/Catalog/RentServiceController.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/phpunit.xml",
+		"/C/laragon/www/getply/plugins/relenta/ply/updates/version.yaml",
+		"/C/laragon/www/getply/plugins/relenta/ply/.travis.yml",
+		"/C/laragon/www/getply/plugins/relenta/ply/.gitignore",
+		"/C/laragon/www/getply/plugins/relenta/ply/tests/unit/models/CategoryTest.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/tests/unit/models/CardsideTest.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/traits/database/DisableForeignKeys.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/tests/functional/phpunit.xml",
+		"/C/laragon/www/getply/vendor/october/rain/src/Support/Facades/Config.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/vendor/phpunit/phpunit/src/Framework/Assert.php",
+		"/C/Users/wolf6969/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/bh_core.sublime-settings",
+		"/C/laragon/www/getply/tests/PluginTestCase.php",
+		"/C/laragon/www/getply/_ide_helper.php",
+		"/C/laragon/www/getply/tests/bootstrap.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/models/Unit.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/models/Category.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/composer.json",
+		"/C/laragon/www/getply/plugins/relenta/ply/tests/unit/models/CourseTest.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/models/Cardside.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/tests/unit/models/UnitTest.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/updates/seed_relenta_ply_card_side.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/updates/seed_relenta_ply_unit.php",
+		"/C/laragon/www/getply/plugins/relenta/ply/models/Card.php",
+		"/C/laragon/www/villacarte/resources/assets/js/components/frontend/VcPaginator.vue",
+		"/C/Users/wolf6969/AppData/Local/Temp/error.1491487476.log",
+		"/C/laragon/www/villacarte/vendor/czim/laravel-filter/src/ParameterCounters/SimpleBelongsTo.php",
+		"/C/laragon/www/villacarte/database/seeds/Common/PropertyTableSeeder.php",
+		"/C/laragon/www/villacarte/vendor/czim/laravel-filter/src/CountableFilter.php",
+		"/C/laragon/www/villacarte/resources/assets/js/frontend/helpers.js",
+		"/C/laragon/www/villacarte/resources/views/frontend/catalog/rent.blade.php",
+		"/C/laragon/www/villacarte/resources/assets/js/components/frontend/VcLocation.vue",
+		"/C/laragon/www/villacarte/package.json",
+		"/C/laragon/www/villacarte/resources/assets/js/frontend/app.js"
+	],
+	"find":
+	{
+		"height": 132.0
+	},
+	"find_in_files":
+	{
+		"height": 300.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"server",
+			"local",
+			"twig",
+			"theme",
+			"helpers.p",
+			"Vue",
+			"34",
+			"jqu",
+			"hi-there-smiley.png",
+			"../fonts",
+			"guzz",
+			"slug')",
+			"isCs",
+			"open(",
+			"open",
+			"components",
+			"illum",
+			"loadDep",
+			"php",
+			"URL",
+			"DB",
+			"Url",
+			"DB",
+			"unit_",
+			"course_",
+			"key",
+			"\",\n",
+			"offse",
+			"routema",
+			"ParameterFilters\\SimpleInteger",
+			"&",
+			"}) ",
+			"integer|min:1|max:12",
+			"saleService",
+			"land_service",
+			"sale_service",
+			"saleService",
+			"rent_service",
+			"\"",
+			"$property",
+			"$properties",
+			"=> 1",
+			"=> 2",
+			"=> 0",
+			"2017_03_27",
+			"attributes_t",
+			"house_pool_jacuzzi",
+			"get",
+			"land_catalog",
+			"sale_catalog",
+			"rent_catalog",
+			"pool",
+			"twitter",
+			"== 3",
+			"getROuteKeyN",
+			"volume",
+			"display: n",
+			".vjs-tim",
+			"flag",
+			"sku",
+			"superU",
+			"user_price",
+			"war_p",
+			"13",
+			"drop",
+			"print_r",
+			"drop_ca",
+			"dropca",
+			"file_",
+			"error_lo",
+			"file_with_errors",
+			"()->",
+			"max",
+			"'",
+			"$body.css",
+			"$body",
+			"$body.css",
+			"17",
+			"{{ Auth::user()->is_email_confirmed ? route('game.winners') : route('game.mail') }}",
+			"'middleware' => 'auth'",
+			", 'middleware' => 'auth'",
+			"parseD",
+			"data",
+			"processD",
+			"floatV",
+			"null",
+			"finis",
+			"play",
+			"results-frame",
+			"toggleH",
+			"setup",
+			"toggl",
+			"game-",
+			"start",
+			"isBusy",
+			"freeL",
+			"isbu",
+			"reeline",
+			"setupA",
+			"tips-wr",
+			"game-wr",
+			"tips-wrapper",
+			"start",
+			"store",
+			"--}}\n",
+			"\n\t\t\t\t",
+			"expr",
+			"\n\t",
+			"streetAdderss",
+			"street"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/c/laragon/www/getply/themes/ply/assets/js/components/PlyCard.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 199,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"git_gutter_enabled": true,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/c/laragon/www/getply/themes/ply/assets/js/components/PlyUnit.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 181,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17,
+								17
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"git_gutter_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/c/laragon/www/getply/plugins/relenta/ply/components/cards/default.htm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								161,
+								161
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"git_gutter_enabled": true,
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 56.0
+	},
+	"input":
+	{
+		"height": 125.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 108.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 304.0
+	},
+	"output.xdebug":
+	{
+		"height": 340.0
+	},
+	"pinned_build_system": "",
+	"project": "getply.sublime-project",
+	"replace":
+	{
+		"height": 108.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"theme.le",
+				"themes\\ply\\assets\\less\\theme.less"
+			],
+			[
+				"theme",
+				"themes\\ply\\assets\\less\\theme.less"
+			],
+			[
+				"webpa",
+				"themes\\ply\\webpack.mix.js"
+			],
+			[
+				"card.v",
+				"themes\\ply\\assets\\js\\components\\PlyCard.vue"
+			],
+			[
+				"theme.l",
+				"themes\\ply\\assets\\less\\theme.less"
+			],
+			[
+				"plyc",
+				"themes\\ply\\assets\\js\\components\\PlyCard.vue"
+			],
+			[
+				"modules/cms/twig/extension.php",
+				"modules\\cms\\twig\\Extension.php"
+			],
+			[
+				"helper",
+				"plugins\\relenta\\ply\\classes\\helpers.php"
+			],
+			[
+				"app.",
+				"themes\\ply\\dist\\js\\app.js"
+			],
+			[
+				"app.j",
+				"themes\\ply\\dist\\js\\app.js"
+			],
+			[
+				"web",
+				"themes\\ply\\webpack.mix.js"
+			],
+			[
+				"card",
+				"plugins\\relenta\\ply\\models\\Card.php"
+			],
+			[
+				"create_re",
+				"plugins\\relenta\\ply\\updates\\create_relenta_ply_unit.php"
+			],
+			[
+				"course",
+				"plugins\\relenta\\ply\\models\\Course.php"
+			],
+			[
+				"seed_",
+				"plugins\\relenta\\ply\\updates\\seed_relenta_ply_course.php"
+			],
+			[
+				"c_rele",
+				"plugins\\relenta\\ply\\updates\\create_relenta_ply_course.php"
+			],
+			[
+				"create_",
+				"plugins\\relenta\\ply\\updates\\create_relenta_ply_unit.php"
+			],
+			[
+				"unit",
+				"plugins\\relenta\\ply\\models\\Unit.php"
+			],
+			[
+				"create_ca",
+				"tests\\fixtures\\plugins\\database\\tester\\updates\\create_categories_table.php"
+			],
+			[
+				"category",
+				"plugins\\relenta\\ply\\models\\Category.php"
+			],
+			[
+				"modelfac",
+				"plugins\\relenta\\ply\\models\\factories\\CourseFactory.php"
+			],
+			[
+				"seed",
+				"plugins\\relenta\\ply\\updates\\seed_relenta_ply_card_side.php"
+			],
+			[
+				"seed_ca",
+				"plugins\\relenta\\ply\\updates\\seed_relenta_ply_card_side.php"
+			],
+			[
+				"rout",
+				"plugins\\relenta\\ply\\routes.php"
+			],
+			[
+				"route",
+				"modules\\backend\\routes.php"
+			],
+			[
+				"cardsidet",
+				"plugins\\relenta\\ply\\tests\\unit\\models\\CardSideTest.php"
+			],
+			[
+				"card_s",
+				"plugins\\relenta\\ply\\updates\\create_relenta_ply_card_side.php"
+			],
+			[
+				"cards",
+				"plugins\\relenta\\ply\\models\\CardSide.php"
+			],
+			[
+				"coursef",
+				"plugins\\relenta\\ply\\models\\factories\\CourseFactory.php"
+			],
+			[
+				"catego",
+				"plugins\\relenta\\ply\\models\\Category.php"
+			],
+			[
+				"cours",
+				"plugins\\relenta\\ply\\models\\Course.php"
+			],
+			[
+				"unit.",
+				"plugins\\relenta\\ply\\models\\Unit.php"
+			],
+			[
+				"pluginmn",
+				"modules\\system\\classes\\PluginManager.php"
+			],
+			[
+				"application",
+				"vendor\\october\\rain\\src\\Foundation\\Application.php"
+			],
+			[
+				"kerne",
+				"vendor\\symfony\\http-kernel\\Kernel.php"
+			],
+			[
+				"october/rain/support/facades/config",
+				"vendor\\october\\rain\\src\\Support\\Facades\\Config.php"
+			],
+			[
+				"vcrentc",
+				"resources\\assets\\js\\components\\frontend\\VcRentCatalog.vue"
+			],
+			[
+				"rentserfi",
+				"app\\Filters\\RentServiceFilter.php"
+			],
+			[
+				"rentse",
+				"app\\Filters\\RentServiceData.php"
+			],
+			[
+				"rents",
+				"app\\Filters\\RentServiceFilter.php"
+			],
+			[
+				"rentsco",
+				"app\\Http\\Controllers\\Frontend\\Catalog\\RentServiceController.php"
+			],
+			[
+				"frontend/l/app",
+				"resources\\views\\frontend\\layouts\\app.blade.php"
+			],
+			[
+				"rent.b",
+				"resources\\views\\frontend\\catalog\\rent.blade.php"
+			],
+			[
+				"rentsec",
+				"app\\Http\\Controllers\\Frontend\\Catalog\\RentServiceController.php"
+			],
+			[
+				".mix",
+				"webpack.mix.js"
+			],
+			[
+				"rent.",
+				"resources\\views\\frontend\\catalog\\rent.blade.php"
+			],
+			[
+				"rentser",
+				"app\\Filters\\RentServiceFilter.php"
+			],
+			[
+				"modelf",
+				"database\\factories\\ModelFactory.php"
+			],
+			[
+				"propertys",
+				"database\\seeds\\Common\\PropertyTableSeeder.php"
+			],
+			[
+				"prop",
+				"database\\seeds\\Common\\PropertyTableSeeder.php"
+			],
+			[
+				"rentsda",
+				"app\\Filters\\RentServiceData.php"
+			],
+			[
+				"rendserviceda",
+				"vendor\\symfony\\routing\\Loader\\DependencyInjection\\ServiceRouterLoader.php"
+			],
+			[
+				"saleseda",
+				"app\\Filters\\SaleServiceData.php"
+			],
+			[
+				"landse",
+				"app\\Filters\\LandServiceFilter.php"
+			],
+			[
+				"salese",
+				"app\\Filters\\SaleServiceFilter.php"
+			],
+			[
+				"rent_s",
+				"database\\migrations\\2017_03_22_080132_create_rent_services_table.php"
+			],
+			[
+				"rentsef",
+				"app\\Filters\\RentServiceFilter.php"
+			],
+			[
+				"rent.bl",
+				"resources\\views\\frontend\\catalog\\rent.blade.php"
+			],
+			[
+				"api.",
+				"routes\\api.php"
+			],
+			[
+				"routese",
+				"app\\Providers\\RouteServiceProvider.php"
+			],
+			[
+				"locationtr",
+				"app\\Models\\Common\\LocationTranslation.php"
+			],
+			[
+				"locattab",
+				"database\\seeds\\Common\\LocationTableSeeder.php"
+			],
+			[
+				"locats",
+				"app\\Filters\\ParameterFilters\\LocationSearch.php"
+			],
+			[
+				"api.p",
+				"routes\\api.php"
+			],
+			[
+				"rentsfi",
+				"app\\Filters\\RentServiceFilter.php"
+			],
+			[
+				"rent",
+				"app\\Models\\Common\\RentService.php"
+			],
+			[
+				"rentscon",
+				"app\\Http\\Controllers\\Frontend\\Catalog\\RentServiceController.php"
+			],
+			[
+				"prope",
+				"database\\seeds\\Common\\PropertyTableSeeder.php"
+			],
+			[
+				"sale.",
+				"resources\\views\\frontend\\catalog\\sale.blade.php"
+			],
+			[
+				"sale.b",
+				"resources\\views\\frontend\\catalog\\sale.blade.php"
+			],
+			[
+				"renscon",
+				"app\\Http\\Controllers\\Frontend\\Catalog\\RentServiceController.php"
+			],
+			[
+				"renserf",
+				"app\\Filters\\RentServiceFilter.php"
+			],
+			[
+				"locations",
+				"app\\Filters\\ParameterFilters\\LocationSearch.php"
+			],
+			[
+				"loca",
+				"app\\Models\\Common\\Location.php"
+			],
+			[
+				"proper",
+				"database\\seeds\\Common\\PropertyTableSeeder.php"
+			],
+			[
+				"database",
+				"database\\seeds\\DatabaseSeeder.php"
+			],
+			[
+				"create_r",
+				"database\\migrations\\2017_03_22_080132_create_rent_services_table.php"
+			],
+			[
+				"create_s",
+				"database\\migrations\\2017_03_29_120852_create_sale_services_table.php"
+			],
+			[
+				"cre_sal",
+				"database\\migrations\\2017_03_29_120852_create_sale_services_table.php"
+			],
+			[
+				"c_r_s",
+				"database\\migrations\\2017_03_22_080132_create_rent_services_table.php"
+			],
+			[
+				"create_land_",
+				"database\\migrations\\2017_03_29_120857_create_land_services_table.php"
+			],
+			[
+				"ladsco",
+				"app\\Http\\Controllers\\Frontend\\Catalog\\LandServiceController.php"
+			],
+			[
+				"salesc",
+				"app\\Http\\Controllers\\Frontend\\Catalog\\SaleServiceController.php"
+			],
+			[
+				"rentserc",
+				"app\\Http\\Controllers\\Frontend\\Catalog\\RentServiceController.php"
+			],
+			[
+				"lst",
+				"app\\Models\\Common\\LandServiceTranslation.php"
+			],
+			[
+				"saleservicet",
+				"app\\Models\\Common\\SaleServiceTranslation.php"
+			],
+			[
+				"modelfa",
+				"database\\factories\\ModelFactory.php"
+			],
+			[
+				"r_s_t_",
+				"database\\migrations\\2017_03_31_115746_create_rent_service_translations_table.php"
+			],
+			[
+				"propertyt",
+				"database\\seeds\\Common\\PropertyTableSeeder.php"
+			],
+			[
+				"data",
+				"database\\seeds\\DatabaseSeeder.php"
+			],
+			[
+				"rentsefil",
+				"app\\Filters\\RentServiceFilter.php"
+			],
+			[
+				"locationt",
+				"database\\seeds\\Common\\LocationTableSeeder.php"
+			],
+			[
+				"w.m.j",
+				"webpack.mix.js"
+			],
+			[
+				"vuejs-autocomplete/",
+				"node_modules\\vuejs-autocomplete\\.npmignore"
+			],
+			[
+				"rentserfil",
+				"app\\Filters\\RentServiceFilter.php"
+			],
+			[
+				"propertyc",
+				"app\\Http\\Controllers\\Frontend\\Catalog\\PropertyController.php"
+			],
+			[
+				"catalogc",
+				"app\\Http\\Controllers\\Frontend\\Catalog\\CatalogController.php"
+			],
+			[
+				"propertyco",
+				"app\\Http\\Controllers\\Frontend\\Catalog\\PropertyController.php"
+			],
+			[
+				"f/c/land",
+				"resources\\views\\frontend\\catalog\\land.blade.php"
+			],
+			[
+				"frontend/ca/sal",
+				"resources\\views\\frontend\\catalog\\sale.blade.php"
+			],
+			[
+				"front/cat/re",
+				"resources\\views\\frontend\\catalog\\rent.blade.php"
+			],
+			[
+				"lands",
+				"app\\Models\\Common\\LandService.php"
+			],
+			[
+				"sales",
+				"app\\Models\\Common\\SaleService.php"
+			],
+			[
+				"create_prop",
+				"database\\migrations\\2017_03_21_092715_create_properties_table.php"
+			],
+			[
+				"attibtase",
+				"database\\seeds\\Common\\AttributesTableSeeder.php"
+			],
+			[
+				"attrib_ta",
+				"database\\migrations\\2017_03_29_132253_create_attributes_table.php"
+			],
+			[
+				"da",
+				"database\\seeds\\DatabaseSeeder.php"
+			],
+			[
+				"locationta",
+				"database\\seeds\\Common\\LocationTableSeeder.php"
+			],
+			[
+				"databa",
+				"database\\seeds\\DatabaseSeeder.php"
+			],
+			[
+				"create_rent",
+				"database\\migrations\\2017_03_22_080132_create_rent_services_table.php"
+			],
+			[
+				"attributes_",
+				"database\\migrations\\2017_03_29_132253_create_attributes_table.php"
+			],
+			[
+				"rens_",
+				"database\\migrations\\2017_03_22_080132_create_rent_services_table.php"
+			],
+			[
+				"rens_s",
+				"vendor\\phpunit\\phpunit-mock-objects\\tests\\MockObject\\Generator\\return_type_declarations_self.phpt"
+			],
+			[
+				"land_",
+				"database\\migrations\\2017_03_29_120857_create_land_services_table.php"
+			],
+			[
+				"sale_",
+				"database\\migrations\\2017_03_29_120852_create_sale_services_table.php"
+			],
+			[
+				"proper_t",
+				"database\\migrations\\2017_03_21_092715_create_properties_table.php"
+			],
+			[
+				"at_cat",
+				"database\\migrations\\2017_03_29_121534_create_attribute_categories_table.php"
+			],
+			[
+				"attrib_t",
+				"database\\migrations\\2017_03_29_121534_create_attribute_categories_table.php"
+			],
+			[
+				"at_ta",
+				"node_modules\\faye-websocket\\lib\\faye\\websocket\\api\\event_target.js"
+			],
+			[
+				"attri_ca",
+				"database\\migrations\\2017_03_29_121534_create_attribute_categories_table.php"
+			],
+			[
+				"land_se",
+				"database\\migrations\\2017_03_29_120857_create_land_services_table.php"
+			],
+			[
+				"sale_se",
+				"database\\migrations\\2017_03_29_120852_create_sale_services_table.php"
+			],
+			[
+				"attrib_",
+				"database\\migrations\\2017_03_29_121534_create_attribute_categories_table.php"
+			],
+			[
+				"land_s",
+				"database\\migrations\\2017_03_29_120857_create_land_services_table.php"
+			],
+			[
+				"create_sa",
+				"database\\migrations\\2017_03_29_120852_create_sale_services_table.php"
+			],
+			[
+				"create_p",
+				"database\\migrations\\2017_03_21_092715_create_properties_table.php"
+			],
+			[
+				"property",
+				"database\\seeds\\Common\\PropertyTableSeeder.php"
+			],
+			[
+				"servi",
+				"database\\seeds\\Common\\ServiceTableSeeder.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 1000.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 760.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 493.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
