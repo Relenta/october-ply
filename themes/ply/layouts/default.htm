@@ -15,8 +15,6 @@ security = "all"
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="Relenta">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="generator" content="OctoberCMS">
-        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
         <link href="{{ mix('/css/vendor.css', 'themes/ply/dist') }}" rel="stylesheet">
         <link href="{{ mix('/css/theme.css', 'themes/ply/dist') }}" rel="stylesheet">
 
@@ -39,8 +37,6 @@ security = "all"
                     </div>
                 </div>
             </div>
-
-            {{ 'Test'|_ }}
             
             <!-- Header -->
             <header id="layout-header">
@@ -49,7 +45,20 @@ security = "all"
 
             <!-- Content -->
             <section id="layout-content">
-                {% page %}
+                {% if placeholder('sidemenu') %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                {% placeholder sidemenu %}
+                            </div>
+                            <div class="col-md-9">
+                                {% page %}
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    {% page %}
+                {% endif %}
             </section>
 
             <!-- Footer -->
