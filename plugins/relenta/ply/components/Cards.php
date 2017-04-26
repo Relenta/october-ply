@@ -65,18 +65,17 @@ class Cards extends ComponentBase
 
             $this->cards = $this->page['cards'] = $this->getCardsByUnit();
         }
-        else if ($this->courseSlug() != '')
+        if ($this->courseSlug() != '')
         {
             $this->course = $this->page['course'] = $this->getCourse();
 
             if (!$this->course)
                 $this->callNotFoundPage();
-
-            $this->cards = $this->page['cards'] = $this->getCardsByCourse();
         }
-        else {
-            throw new SystemException('Relenta/Ply/Components/Cards: Wrong params definition.');
-        }
+        #$this->cards = $this->page['cards'] = $this->getCardsByCourse();
+        #else {
+        #    throw new SystemException('Relenta/Ply/Components/Cards: Wrong params definition.');
+        #}
     }
 
     /**
