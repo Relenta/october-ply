@@ -306,16 +306,13 @@ module.exports.devtool = Mix.options.sourcemaps;
  | for the Node server. You very likely won't want to edit this.
  |
  */
-let wpDevPath = '';
-if(process.env.WP_DEV_HOST && process.env.WP_DEV_PORT) {
-    wpDevPath = "http://" + process.env.WP_DEV_HOST + ':' + process.env.WP_DEV_PORT + '/';
-}
+
 module.exports.devServer = {
     historyApiFallback: true,
     noInfo: true,
     compress: true,
     quiet: true,
-    publicPath: wpDevPath || 'http://localhost:8080/',
+    publicPath: '/',
     headers: { "Access-Control-Allow-Origin": "*"},
 };
 
