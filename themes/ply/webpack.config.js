@@ -16,7 +16,7 @@ let dotenv = require('dotenv')
  */
 
 dotenv.config({
-    path: Mix.Paths.root('.env')
+    path: '../../.env'
 });
 
 
@@ -306,11 +306,13 @@ module.exports.devtool = Mix.options.sourcemaps;
  | for the Node server. You very likely won't want to edit this.
  |
  */
+
 module.exports.devServer = {
     historyApiFallback: true,
     noInfo: true,
     compress: true,
     quiet: true,
+    publicPath: '/',
     headers: { "Access-Control-Allow-Origin": "*"},
 };
 

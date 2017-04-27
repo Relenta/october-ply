@@ -47,7 +47,9 @@ class Plugin extends PluginBase
                     }
 
                     if (file_exists(public_path($manifestDirectory . '/hot'))) {
-                        return new HtmlString("http://localhost:8080{$path}");
+                        $host = env('WP_DEV_HOST', 'localhost');
+                        $port = env('WP_DEV_PORT', '8080');
+                        return new HtmlString("http://{$host}:{$port}{$path}");
                     }
 
                     if (!$manifest) {

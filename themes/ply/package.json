@@ -11,6 +11,7 @@
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "hotv": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --host 127.0.0.4 --port 8082",
     "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
