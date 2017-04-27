@@ -24,7 +24,6 @@ mix
 
 
 let dotenv = require('dotenv').config({path: '../../.env'});
-console.log(dotenv);
 
 mix.browserSync({
     proxy: process.env.APP_URL,
