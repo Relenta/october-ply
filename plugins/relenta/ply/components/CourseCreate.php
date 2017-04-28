@@ -7,7 +7,7 @@ use Relenta\Ply\Models\Category;
 use Relenta\Ply\Classes\Factories\CourseFactory;
 use Illuminate\Support\Facades\Input;
 
-class CourseUpdate extends ComponentBase
+class CourseCreate extends ComponentBase
 {
     /**
      * A course to update
