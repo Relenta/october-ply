@@ -11,9 +11,12 @@
 /plugins/*
 !/plugins/relenta
 
+/themes/ply/fonts/*
+
 !/themes
 /themes/*
 !/themes/ply
+
 
 *.sublime-project
 *.sublime-workspace
