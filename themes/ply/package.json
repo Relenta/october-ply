@@ -5,13 +5,14 @@
     "axios": "^0.15.3",
     "vue-loader": "^11.3.4",
     "vue-template-compiler": "^2.2.6",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+	"env-cmd": "*"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
-    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
-    "hotv": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --host 127.0.0.4 --port 8082",
+    "hot": "WEBPACK_DEV_HOST=localhost WEBPACK_DEV_PORT=8081 env-cmd ./../../.env npm run hotdev",
+    "hotdev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --host $WEBPACK_DEV_HOST --port $WEBPACK_DEV_PORT",
     "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {

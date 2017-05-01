@@ -20,6 +20,7 @@
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="BROWSER_NAME" value="firefox"/>
-		<env name="APP_TEST_URL" value="http://localhost:8080"/>
+        <env name="APP_TEST_URL" value="http://localhost:8080"/>
+        <env name="SELENIUM_SERVER_URL" value="http://localhost:4444/wd/hub"/>
     </php>
 </phpunit>

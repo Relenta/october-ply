@@ -20,10 +20,6 @@ class RegisterTest extends TestCase {
 
     protected function tearDown()
     {
-        \Db::table('users')
-            ->where('email', $this->TEST_USER_EMAIL)
-            ->delete();
-
         parent::tearDown();
     }
 
@@ -49,7 +45,12 @@ class RegisterTest extends TestCase {
         /** Wait and check if we logged*/
         $driver = $this->driver;
         $url = $this->testBaseUrl;
-        
+        $this->driver->wait()->until(
+            \WebDriverExpectedCondition::urlIs('test')
+            //\WebDriverExpectedCondition::urlIs('http://getply.dev/')
+        );
+	return;
+ 
         $this->driver->wait(10, 500)->until(
             $this->driver->wait(10, 500)->until(
                 function () use ($url, $driver) {

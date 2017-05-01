@@ -1,5 +1,8 @@
 <?php namespace Relenta\Ply\Tests\Functional;
 
+use Facebook\WebDriver\Remote\DesiredCapabilities;
+use Facebook\WebDriver\Remote\RemoteWebDriver;
+
 class TestCase extends \PHPUnit_Framework_TestCase {
 
     protected $url = 'http://localhost:8080';
@@ -8,13 +11,13 @@ class TestCase extends \PHPUnit_Framework_TestCase {
     /** @var bool Indicate whether WebDriver should be created on setUp */
     protected $createWebDriver = true;
     /** @var string */
-    protected $serverUrl = 'http://localhost:4444/wd/hub';
-	protected $testBaseUrl  = 'http://localhost:8080';
+    protected $serverUrl = 'http://136.169.60.130:4444/wd/hub';
+    protected $testBaseUrl  = 'http://localhost:8080';
     /** @var DesiredCapabilities */
     protected $desiredCapabilities;
     protected function setUp()
     {
-        $this->desiredCapabilities = new \DesiredCapabilities();
+        $this->desiredCapabilities = new DesiredCapabilities();
         if ($this->isSauceLabsBuild()) {
             $this->setUpSauceLabs();
         } else {
@@ -22,25 +25,27 @@ class TestCase extends \PHPUnit_Framework_TestCase {
                 $browserName = getenv('BROWSER_NAME');
             } 
 			else {
-                $browserName = \WebDriverBrowserType::HTMLUNIT;
+                $browserName = WebDriverBrowserType::HTMLUNIT;
             }
             $this->desiredCapabilities->setBrowserName($browserName);
         }
-		if (getenv('APP_TEST_URL')) {
+        if (getenv('APP_TEST_URL')) {
             $this->testBaseUrl = getenv('APP_TEST_URL');
         } 
-		
+        if (getenv('SELENIUM_SERVER_URL')) {
+            $this->serverUrl = getenv('SELENIUM_SERVER_URL');
+        }
         if ($this->createWebDriver) {
-            $this->driver = \RemoteWebDriver::create($this->serverUrl, $this->desiredCapabilities);
+            $this->driver = RemoteWebDriver::create($this->serverUrl, $this->desiredCapabilities);
         }
     }
 	
 	protected function tearDown()
     {
-		if ($this->driver instanceof \RemoteWebDriver && $this->driver->getCommandExecutor()) {
+		if ($this->driver instanceof RemoteWebDriver && $this->driver->getCommandExecutor()) {
             try {
                 $this->driver->quit();
-            } catch (\NoSuchWindowException $e) {
+            } catch (NoSuchWindowException $e) {
                 // browser may have died or is already closed
             }
         }
@@ -93,7 +98,7 @@ class TestCase extends \PHPUnit_Framework_TestCase {
     }
 	
     /**
-     * @var \RemoteWebDriver
+     * @var RemoteWebDriver
      */
     protected function assertElementNotFound($by)
     {
