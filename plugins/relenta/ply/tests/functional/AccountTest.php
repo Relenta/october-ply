@@ -35,7 +35,7 @@ class AccountTest extends TestCase {
 
     private function register()
     {
-        $this->driver->get($this->testBaseUrl.'/account');
+        $this->driver->get($this->getTestPageUrl('/account'));
         $this->fillRegisterForm();
         $this->waitUntilRedirect();
         $this->logout();
@@ -43,7 +43,7 @@ class AccountTest extends TestCase {
 
     private function handleRegisteredUserError()
     {
-        $this->driver->get($this->testBaseUrl.'/account');
+        $this->driver->get($this->getTestPageUrl('/account'));
         $this->fillRegisterForm();
 
         $this->driver
@@ -55,7 +55,7 @@ class AccountTest extends TestCase {
 
     private function signIn()
     {
-        $this->driver->get($this->testBaseUrl.'/account');
+        $this->driver->get($this->getTestPageUrl('/account'));
 
         $this->driver->findElement(\WebDriverBy::id("userSigninEmail"))
             ->sendKeys($this->TEST_USER_EMAIL);
@@ -84,7 +84,7 @@ class AccountTest extends TestCase {
     private function waitUntilRedirect()
     {
         $driver = $this->driver;
-        $url    = $this->testBaseUrl;
+        $url    = $this->getTestPageUrl();
 
         $this->driver->wait(10, 1000)->until(
             function () use ($driver, $url) {
