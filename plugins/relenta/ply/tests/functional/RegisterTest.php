@@ -1,5 +1,8 @@
 <?php namespace Relenta\Ply\Tests\Functional;
 
+use Facebook\WebDriver\WebDriverBy;
+use Facebook\WebDriver\WebDriverKeys;
+use Facebook\WebDriver\WebDriverExpectedCondition;
 
 class RegisterTest extends TestCase {
 
@@ -31,21 +34,20 @@ class RegisterTest extends TestCase {
         $this->driver->get($this->testBaseUrl.'/account');
 
         /** Input user email */
-        $this->driver->findElement(\WebDriverBy::id("registerEmail"))
+        $this->driver->findElement(WebDriverBy::id("registerEmail"))
             ->sendKeys($this->TEST_USER_EMAIL);
 
 
         /** Input user password and submit form */
-        $this->driver->findElement(\WebDriverBy::id("registerPassword"))
+        $this->driver->findElement(WebDriverBy::id("registerPassword"))
             ->sendKeys($this->TEST_USER_PASSWORD)
-            ->sendKeys(\WebDriverKeys::ENTER);
+            ->sendKeys(WebDriverKeys::ENTER);
 
         /** Wait and check if we logged*/
         $driver = $this->driver;
         $url = $this->testBaseUrl;
         $this->driver->wait()->until(
-            \WebDriverExpectedCondition::urlIs('test')
-            //\WebDriverExpectedCondition::urlIs('http://getply.dev/')
+            WebDriverExpectedCondition::urlIs('test')
         );
 	return;
  
@@ -57,6 +59,6 @@ class RegisterTest extends TestCase {
             )
         );
 
-        $this->driver->findElement(\WebDriverBy::id("logout"))->click();
+        $this->driver->findElement(WebDriverBy::id("logout"))->click();
     }
 }
