@@ -2,6 +2,7 @@
 
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
+use Facebook\WebDriver\Remote\WebDriverBrowserType;
 
 class TestCase extends \PHPUnit_Framework_TestCase {
 
@@ -17,6 +18,7 @@ class TestCase extends \PHPUnit_Framework_TestCase {
     protected $desiredCapabilities;
     protected function setUp()
     {
+	$browserName = WebDriverBrowserType::HTMLUNIT;
         $this->desiredCapabilities = new DesiredCapabilities();
         if ($this->isSauceLabsBuild()) {
             $this->setUpSauceLabs();

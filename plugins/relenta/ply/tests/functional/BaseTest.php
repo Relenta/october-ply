@@ -1,5 +1,6 @@
 <?php namespace Relenta\Ply\Tests\Functional;
-use Facebook\WebDriver\Remote\WebDriverCapabilityType;
+
+use Facebook\WebDriver\WebDriverBy;
 
 class BaseTest extends TestCase {
 
@@ -8,7 +9,7 @@ class BaseTest extends TestCase {
     {
         $this->driver->get($this->getTestPageUrl());
 		try {
-			$meta = $this->getElement(\WebDriverBy::cssSelector('meta[name="author"]'));
+			$meta = $this->getElement(WebDriverBy::cssSelector('meta[name="author"]'));
 			if(!is_null($meta)) {
 				$this->assertContains('relenta', $meta->getAttribute('content'), null, true);
 			}

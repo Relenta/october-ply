@@ -1,6 +1,9 @@
 <?php namespace Relenta\Ply\Tests\Functional;
 
-use Relenta\Ply\Tests\Functional\TestCase;
+use Facebook\WebDriver\WebDriverBy;
+use Facebook\WebDriver\WebDriverKeys;
+use Facebook\WebDriver\WebDriverExpectedCondition;
+use Facebook\WebDriver\Exception\StaleElementReferenceException;
 
 class AccountTest extends TestCase {
 
@@ -48,7 +51,7 @@ class AccountTest extends TestCase {
 
         $this->driver
             ->wait(10, 1000)
-            ->until(\WebDriverExpectedCondition::alertIsPresent());
+            ->until(WebDriverExpectedCondition::alertIsPresent());
 
         $this->driver->switchTo()->alert()->accept();
     }
@@ -57,12 +60,12 @@ class AccountTest extends TestCase {
     {
         $this->driver->get($this->getTestPageUrl('/account'));
 
-        $this->driver->findElement(\WebDriverBy::id("userSigninEmail"))
+        $this->driver->findElement(WebDriverBy::id("userSigninEmail"))
             ->sendKeys($this->TEST_USER_EMAIL);
 
-        $this->driver->findElement(\WebDriverBy::id("userSigninPassword"))
+        $this->driver->findElement(WebDriverBy::id("userSigninPassword"))
             ->sendKeys($this->TEST_USER_PASSWORD)
-            ->sendKeys(\WebDriverKeys::ENTER);
+            ->sendKeys(WebDriverKeys::ENTER);
 
         $this->waitUntilRedirect();
         $this->logout();
@@ -73,12 +76,12 @@ class AccountTest extends TestCase {
 
     private function fillRegisterForm()
     {
-        $this->driver->findElement(\WebDriverBy::id("registerEmail"))
+        $this->driver->findElement(WebDriverBy::id("registerEmail"))
             ->sendKeys($this->TEST_USER_EMAIL);
 
-        $this->driver->findElement(\WebDriverBy::id("registerPassword"))
+        $this->driver->findElement(WebDriverBy::id("registerPassword"))
             ->sendKeys($this->TEST_USER_PASSWORD)
-            ->sendKeys(\WebDriverKeys::ENTER);
+            ->sendKeys(WebDriverKeys::ENTER);
     }
 
     private function waitUntilRedirect()
@@ -88,7 +91,7 @@ class AccountTest extends TestCase {
 
         $this->driver->wait(10, 1000)->until(
             function () use ($driver, $url) {
-                return $url.'/' === $driver->getCurrentURL();
+				return $url.'/' === $driver->getCurrentURL();
             }, 'Reloading not finished, or something went wrong'
         );
     }
@@ -111,20 +114,20 @@ class AccountTest extends TestCase {
             try
             {
                 $this->driver
-                    ->findElement(\WebDriverBy::cssSelector($account_dropdown))
+                    ->findElement(WebDriverBy::cssSelector($account_dropdown))
                     ->click();
 
                 break;
             }
-            catch(\StaleElementReferenceException $ex) {}
+            catch(StaleElementReferenceException $ex) {}
         }
 
         $this->driver->wait(10, 1000)->until(
-            \WebDriverExpectedCondition::visibilityOfElementLocated(\WebDriverBy::id($logout_id))
+            WebDriverExpectedCondition::visibilityOfElementLocated(WebDriverBy::id($logout_id))
         );
 
         $this->driver
-            ->findElement(\WebDriverBy::id($logout_id))
+            ->findElement(WebDriverBy::id($logout_id))
             ->click();
     }
 }

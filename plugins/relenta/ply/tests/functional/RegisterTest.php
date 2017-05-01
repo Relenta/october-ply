@@ -1,7 +1,5 @@
 <?php namespace Relenta\Ply\Tests\Functional;
 
-//use RainLab\User\Plugin;
-//use RainLab\User\Models\User;
 
 class RegisterTest extends TestCase {
 
