@@ -1,0 +1,10 @@
+//
+// Boot file
+//
+// Includes non-output SCSS files such as mixins and variables
+//
+
+@import "../../vendor/bootstrap/scss/_variables";
+@import "../../vendor/bootstrap/scss/_mixins";
+@import "mixins.scss";
+@import "variables.scss";
