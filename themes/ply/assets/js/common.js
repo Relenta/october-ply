@@ -1,9 +1,3 @@
-//load october jQuery
-global.$ = global.jQuery = require('../vendor/jquery');
-
-//load common bootstrap js
-require('../vendor/bootstrap.js');
-
 //load Vue.js library
 window.Vue = require('vue');
 

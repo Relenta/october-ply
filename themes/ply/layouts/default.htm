@@ -15,16 +15,13 @@ security = "all"
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="Relenta">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" rel="stylesheet">
         <link href="{{ mix('/css/vendor.css', 'themes/ply/dist') }}" rel="stylesheet">
         <link href="{{ mix('/css/theme.css', 'themes/ply/dist') }}" rel="stylesheet">
-
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script type="text/javascript" src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script type="text/javascript" src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
         {% styles %}
     </head>
 
@@ -32,26 +29,26 @@ security = "all"
         <div id="app">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col s2">
                         {% component 'localePicker' %}
                     </div>
                 </div>
             </div>
             
             <!-- Header -->
-            <header id="layout-header">
+            <header>
                 {% partial 'site/header' %}
             </header>
 
             <!-- Content -->
-            <section id="layout-content">
+            <main>
                 {% if placeholder('sidemenu') %}
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col s3">
                                 {% placeholder sidemenu %}
                             </div>
-                            <div class="col-md-9">
+                            <div class="col s9">
                                 {% page %}
                             </div>
                         </div>
@@ -59,16 +56,18 @@ security = "all"
                 {% else %}
                     {% page %}
                 {% endif %}
-            </section>
+            </main>
 
             <!-- Footer -->
-            <footer id="layout-footer">
+            <footer>
                 {% partial 'site/footer' %}
             </footer>
         </div>
             <!-- Scripts -->
-            <script src="{{ mix('/js/app.js', 'themes/ply/dist') }}"></script>
-            {% framework extras %}
-            {% scripts %}
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.js"></script>
+        <script src="{{ mix('/js/app.js', 'themes/ply/dist') }}"></script>
+        {% framework extras %}
+        {% scripts %}
     </body>
 </html>
