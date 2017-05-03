@@ -5,7 +5,7 @@ use Facebook\WebDriver\WebDriverKeys;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 use Facebook\WebDriver\Exception\StaleElementReferenceException;
 
-class AccountTest extends TestCase {
+class AlreadyRegisteredUserTest extends TestCase {
 
     /*
      * Variables for user creation
@@ -91,7 +91,7 @@ class AccountTest extends TestCase {
 
         $this->driver->wait(10, 1000)->until(
             function () use ($driver, $url) {
-				return $url.'/' === $driver->getCurrentURL();
+                return $url.'/' === $driver->getCurrentURL();
             }, 'Reloading not finished, or something went wrong'
         );
     }
@@ -130,4 +130,7 @@ class AccountTest extends TestCase {
             ->findElement(WebDriverBy::id($logout_id))
             ->click();
     }
+    
+    
+    
 }
