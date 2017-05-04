@@ -1,12 +1,12 @@
 {% if not user %}
-    <div class="row">
+    <div class="mdl-grid">
 
-        <div class="col-md-6">
+        <div class="mdl-cell mdl-cell--6-col">
             <h3>Sign in</h3>
             {% partial __SELF__ ~ '::signin' %}
         </div>
 
-        <div class="col-md-6">
+        <div class="mdl-cell mdl-cell--6-col">
             <h3>Register</h3>
             {% partial __SELF__ ~ '::register' %}
         </div>

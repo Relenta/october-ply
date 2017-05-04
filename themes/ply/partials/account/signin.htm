@@ -1,34 +1,50 @@
+<form data-request="onSignin">
 
-<div class="row">
-    <div class="col-md-12">
-        <form data-request="onSignin">
-            <div class="form-group">
-                <label for="userSigninEmail">{{ emailAttributeLabel }}</label>
-                <input name="email"
-                       type="email"
-                       class="form-control"
-                       id="userSigninEmail"
-                       placeholder="Enter your email">
-            </div>
+    <div class="form-row">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
-            <div class="form-group">
-                <label for="userSigninPassword">Password</label>
-                <input name="password"
-                       type="password"
-                       class="form-control"
-                       id="userSigninPassword"
-                       placeholder="Enter your password">
-            </div>
+            <input name="email"
+                   type="email"
+                   class="form-control mdl-textfield__input"
+                   id="userSigninEmail"
+                   placeholder="Enter your email">
 
-            <p class="text-right">
-                or sign in with SOCIAL BUTTONS
-                {# for name, link in social_login_links %}
-                    <a href="{{ link }}?s={{ 'home'|page }}&f={{ 'account'|page }}">{{ name }}</a>
-                {% endfor #}
-            </p>
-
-            <button type="submit" class="btn btn-default">Sign in</button>
-        </form>
+            <label class="mdl-textfield__label"
+                   for="userSigninEmail">
+                Enter email
+            </label>
+        </div>
     </div>
-</div>
+    <div class="form-row">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+            <input name="password"
+                   type="password"
+                   class="form-control mdl-textfield__input"
+                   id="userSigninPassword"
+                   placeholder="Enter your password">
+
+            <label class="mdl-textfield__label"
+                   for="userSigninPassword">
+                Enter password
+            </label>
+        </div>
+    </div>
+    <div class="form-row">
+        <p class="text-right">
+            or sign in with SOCIAL BUTTONS
+            {# for name, link in social_login_links %}
+            <a href="{{ link }}?s={{ 'home'|page }}&f={{ 'account'|page }}">{{ name }}</a>
+            {% endfor #}
+        </p>
+    </div>
+    <div class="form-row">
+        <button type="submit"
+                class="mdl-button mdl-js-button"
+                id="submitSignin">
+            Sign in
+        </button>
+    </div>
+</form>
+
 

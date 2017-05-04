@@ -1,32 +1,20 @@
-<ul id="slide-out" class="side-nav">
-    <li>
-        <a href="{{ 'home'|page }}">Home</a>
-    </li>
-    <li>
-        <a href="{{ 'categories'|page }}">Categories</a>
-    </li>
+<header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">GetPly</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="{{ 'home'|page }}">Home</a>
+            <a class="mdl-navigation__link" href="{{ 'categories'|page }}">Categories</a>
 
-
-    {% if user %}
-        <li class="no-padding">
-            <ul class="collapsible collapsible-accordion">
-                <li>
-                    <a class="collapsible-header">
-                        {{ user.email }}<i class="material-icons">arrow_drop_down</i>
-                    </a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li><a href="{{ 'account/account'|page }}">Account</a></li>
-                            <li><a href="#!" id="logout" data-request="onLogout">Logout</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </li>
-    {% else %}
-        <li><a href="{{ 'account/account'|page }}">Sign up</a></li>
-    {% endif %}
-
-
-</ul>
-<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            {% if user %}
+                <a class="mdl-navigation__link" href="{{ 'account/account'|page }}">Account</a>
+                <a class="mdl-navigation__link" href="#!" id="logout" data-request="onLogout">Logout</a>
+            {% else %}
+                <a class="mdl-navigation__link" href="{{ 'account/account'|page }}">Sign up</a>
+            {% endif %}
+        </nav>
+    </div>
+</header>

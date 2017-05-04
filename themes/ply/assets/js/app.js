@@ -4,10 +4,6 @@ require('./common.js');
  * Auto hide navbar
  */
 jQuery(document).ready(function($){
-    $(".button-collapse").sideNav({
-        edge: 'right',
-        draggable: true
-    });
 });
 
 Vue.component('PlyCard', require('./components/PlyCard.vue'));
