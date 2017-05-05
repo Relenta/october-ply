@@ -1,3 +1,4 @@
+==
 <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
         <!-- Title -->
@@ -8,7 +9,6 @@
         <nav class="mdl-navigation mdl-layout--large-screen-only">
             <a class="mdl-navigation__link" href="{{ 'home'|page }}">Home</a>
             <a class="mdl-navigation__link" href="{{ 'categories'|page }}">Categories</a>
-
             {% if user %}
                 <a class="mdl-navigation__link" href="{{ 'account/account'|page }}">Account</a>
                 <a class="mdl-navigation__link" href="#!" id="logout" data-request="onLogout">Logout</a>
