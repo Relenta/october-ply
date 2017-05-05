@@ -1,45 +1,71 @@
 {{ form_open({ files: 'true', request: __SELF__ ~ '::onSubmit', id:'course-create'}) }}
-    <div class="form-group">
-        <label class="control-label" for="course-name">
-            Course name
-        </label>
 
-        <input type="text"
-               class="form-control"
-               id="course-name"
-               name="course-name"
-               required>
+    <div class="form-row">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+            <input type="text"
+                   class="form-control mdl-textfield__input"
+                   id="course-name"
+                   name="course-name"
+                   required>
+            <label class="control-label mdl-textfield__label"
+                   for="course-name">
+                Course name
+            </label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="mdl-textfield
+                mdl-js-textfield
+                mdl-textfield--floating-label
+                getmdl-select
+                getmdl-select__fullwidth">
+
+            <input class="mdl-textfield__input"
+                   type="text"
+                   id="category"
+                   value="Belarus"
+                   readonly
+                   tabIndex="-1">
+            <label for="category" class="mdl-textfield__label">Category</label>
+            <ul for="category" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+
+                {% for category in categories %}
+                <li class="mdl-menu__item">{{ category.title }}</li>
+
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+
+            <input type="file"
+                   id="file-input"
+                   class=""
+                   name="file-input"
+                   required>
+            <p class="help-block">Only zip-file supports.</p>
+        </div>
+
+    </div>
+    <div class="form-row">
+        <button type="submit"
+                class="mdl-button mdl-js-button"
+                id="submitCreateCourse">
+            Register
+        </button>
     </div>
 
 
-    <div class="form-group">
-        <label class="control-label" for="category">
-            Category
-        </label>
-
-        <select class="form-control"
-                id="category"
-                name="category"
-                required>
-            {% for category in categories %}
-                <option value="{{ category.id }}">
-                    {{ category.title }}
-                </option>
-            {% endfor %}
-        </select>
-    </div>
 
 
-    <div class="form-group">
-        <label class="control-label" for="file-input">
-            File input
-        </label>
 
-        <input type="file" id="file-input" name="file-input" required>
-        <p class="help-block">Only zip-file supports.</p>
-    </div>
 
-    <button type="submit" class="btn btn-default">Submit</button>
+
+
+
 {{ form_close() }}
 
 {# This block shows errors, if form was submitted incorrectly #}
