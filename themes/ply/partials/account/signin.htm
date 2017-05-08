@@ -1,16 +1,15 @@
-<form data-request="onSignin">
+<form data-request="onSignin" class="signin-form signin-form_account-page">
 
     <div class="form-row">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
             <input name="email"
                    type="email"
-                   class="form-control mdl-textfield__input"
-                   id="userSigninEmail"
+                   class="mdl-textfield__input signin-form__email"
                    placeholder="Enter your email">
 
             <label class="mdl-textfield__label"
-                   for="userSigninEmail">
+                   for="signin-form__email">
                 Enter email
             </label>
         </div>
@@ -20,28 +19,26 @@
 
             <input name="password"
                    type="password"
-                   class="form-control mdl-textfield__input"
-                   id="userSigninPassword"
+                   class="mdl-textfield__input signin-form__password"
                    placeholder="Enter your password">
 
             <label class="mdl-textfield__label"
-                   for="userSigninPassword">
+                   for="signin-form__password">
                 Enter password
             </label>
         </div>
     </div>
     <div class="form-row">
         <p class="text-right">
-            or sign in with SOCIAL BUTTONS
-            {# for name, link in social_login_links %}
-            <a href="{{ link }}?s={{ 'home'|page }}&f={{ 'account'|page }}">{{ name }}</a>
-            {% endfor #}
+            or sign in with
+            {% for name, link in social_login_links %}
+            <a href="{{ link }}">{{name}}</a>
+            {% endfor %}
         </p>
     </div>
     <div class="form-row">
         <button type="submit"
-                class="mdl-button mdl-js-button"
-                id="submitSignin">
+                class="mdl-button mdl-js-button signin-form__submit">
             Sign in
         </button>
     </div>

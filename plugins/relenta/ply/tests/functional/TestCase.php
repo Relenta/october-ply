@@ -6,6 +6,7 @@ use Facebook\WebDriver\Remote\WebDriverBrowserType;
 use Facebook\WebDriver\Exception\StaleElementReferenceException;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 use Facebook\WebDriver\WebDriverBy;
+use Facebook\WebDriver\WebDriverKeys;
 
 class TestCase extends \PHPUnit_Framework_TestCase {
 
@@ -155,40 +156,53 @@ class TestCase extends \PHPUnit_Framework_TestCase {
      */
     protected function logoutUser()
     {
-        $account_dropdown   = 'nav .account-nav-dropdown';
-        $logout_id          = 'logout';
-
-        while(true)
-        {
-            try
-            {
-                $this->driver
-                    ->findElement(WebDriverBy::cssSelector($account_dropdown))
-                    ->click();
-
-                break;
-            }
-            catch(StaleElementReferenceException $ex) {}
-        }
-
-        $this->driver->wait(10, 1000)->until(
-            WebDriverExpectedCondition::visibilityOfElementLocated(WebDriverBy::id($logout_id))
-        );
+        $logout_selector   = '.mdl-layout__header .mdl-navigation .mdl-navigation__logout-button';
 
         $this->driver
-            ->findElement(WebDriverBy::id($logout_id))
+            ->findElement(WebDriverBy::cssSelector($logout_selector))
             ->click();
     }
 
 
     protected function waitUntilRedirectToIndex()
     {
-        $driver = $this->driver;
-        $url    = $this->getTestPageUrl();
-
         $this->driver->wait(10, 1000)->until(
-            WebDriverExpectedCondition::urlIs('/')
+            WebDriverExpectedCondition::urlIs($this->getTestPageUrl('/'))
         );
+    }
+
+    /**
+     * @param string $mdl_mix BEM-mix selector string, to identify which form to use
+     */
+    protected function registerUser($mdl_mix = '.register-form_account-page')
+    {
+        $this
+            ->driver
+            ->findElement(
+                WebDriverBy::cssSelector($mdl_mix.".register-form .register-form__email"))
+            ->sendKeys($this->user_email);
+
+        $this
+            ->driver
+            ->findElement(
+                WebDriverBy::cssSelector($mdl_mix.".register-form .register-form__password"))
+            ->sendKeys($this->user_password)
+            ->sendKeys(WebDriverKeys::ENTER);
+    }
+
+    /**
+     * @param string $mdl_mix BEM-mix selector string, to identify which form to use
+     */
+    protected function signInUser($mdl_mix = '.signin-form_account-page')
+    {
+        $this->driver->findElement(
+            WebDriverBy::cssSelector($mdl_mix.".signin-form .signin-form__email"))
+            ->sendKeys($this->user_email);
+
+        $this->driver->findElement(
+            WebDriverBy::cssSelector($mdl_mix.".signin-form .signin-form__password"))
+            ->sendKeys($this->user_password)
+            ->sendKeys(WebDriverKeys::ENTER);
     }
 
 }

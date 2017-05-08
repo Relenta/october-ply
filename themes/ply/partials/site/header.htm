@@ -11,7 +11,9 @@
 
             {% if user %}
                 <a class="mdl-navigation__link" href="{{ 'account/account'|page }}">Account</a>
-                <a class="mdl-navigation__link" href="#!" id="logout" data-request="onLogout">Logout</a>
+                <a class="mdl-navigation__link mdl-navigation__logout-button"
+                   href="#!" id="logout"
+                   data-request="onLogout">Logout</a>
             {% else %}
                 <a class="mdl-navigation__link" href="{{ 'account/account'|page }}">Sign up</a>
             {% endif %}
