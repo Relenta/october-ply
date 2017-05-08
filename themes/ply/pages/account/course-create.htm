@@ -4,10 +4,14 @@ layout = "default"
 is_hidden = 0
 
 [course_create]
+redirectUnauthorised = 1
+
+[session]
+security = "user"
+redirect = "account/account"
 ==
 {% put sidemenu %}
     {% partial 'account/navigation' %}
 {% endput %}
 
 {% component "course_create" %}
-
