@@ -36,11 +36,6 @@ class CourseCreate extends ComponentBase
         ];
     }
 
-    public function defineProperties()
-    {
-        return [];
-    }
-
     public function onRun()
     {
         $this->categories = $this->page['categories'] = $this->getCategories();
@@ -63,6 +58,9 @@ class CourseCreate extends ComponentBase
 
             $data = post();
             $data['file-input'] = Input::file('file-input');
+
+            $this->page['submitted_category']       = $data['category'];
+            $this->page['submitted_course_name']    = $data['course-name'];
 
             $rules = [
                 'course-name' => [

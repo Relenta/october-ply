@@ -1,72 +1,65 @@
-{{ form_open({ files: 'true', request: __SELF__ ~ '::onSubmit', id:'course-create'}) }}
-
+{{ form_open({ files: 'true', request: __SELF__ ~ '::onSubmit', class:'course-create-form'}) }}
     <div class="form-row">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
             <input type="text"
-                   class="form-control mdl-textfield__input"
-                   id="course-name"
+                   class="mdl-textfield__input course-create-form__course-name"
                    name="course-name"
+                   value="{{submitted_course_name}}"
                    required>
+
             <label class="control-label mdl-textfield__label"
-                   for="course-name">
+                   for="course-create-form__course-name">
                 Course name
             </label>
         </div>
     </div>
-    <div class="form-row">
-        <div class="mdl-textfield
-                mdl-js-textfield
-                mdl-textfield--floating-label
-                getmdl-select
-                getmdl-select__fullwidth">
 
-            <input class="mdl-textfield__input"
-                   type="text"
-                   id="category"
-                   value="Belarus"
-                   readonly
-                   tabIndex="-1">
-            <label for="category" class="mdl-textfield__label">Category</label>
-            <ul for="category" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+
+    <div class="form-row">
+        <div class="mdl-textfield mdl-js-textfield">
+
+            <select class="mdl-textfield__select course-create-form__select"
+                    name="category"
+                    required>
 
                 {% for category in categories %}
-                <li class="mdl-menu__item">{{ category.title }}</li>
-
+                    <option value="{{ category.id }}"
+                            {% if submitted_category %}
+                                {% if submitted_category == category.id %}selected{% endif %}
+                            {% endif %}>
+                        {{ category.title }}
+                    </option>
                 {% endfor %}
-            </ul>
+            </select>
         </div>
     </div>
+
+
     <div class="form-row">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
-
             <input type="file"
+                   class="course-create-form__file-input"
                    id="file-input"
-                   class=""
                    name="file-input"
                    required>
             <p class="help-block">Only zip-file supports.</p>
         </div>
-
     </div>
+
+
     <div class="form-row">
         <button type="submit"
-                class="mdl-button mdl-js-button"
-                id="submitCreateCourse">
-            Register
+                class="mdl-button mdl-js-button course-create-form__submit">
+            Create course
         </button>
     </div>
-
-
-
-
-
-
-
-
-
 {{ form_close() }}
+
+
+
+
 
 {# This block shows errors, if form was submitted incorrectly #}
 {% if error %}
