@@ -20,9 +20,9 @@
             'name' => 'GetPly Карточки',
             'description' => 'Выводит список карточек.'
         ],
-        'course_update' => [
-            'name' => 'GetPly Обновление курса',
-            'description' => 'Отображает форму обновления курса.',
+        'course_create' => [
+            'name' => 'GetPly Создание курса',
+            'description' => 'Отображает форму создания курса.',
         ]
     ],
     'properties' => [

@@ -20,9 +20,9 @@
             'name' => 'GetPly Cards',
             'description' => 'Displays a collection of cards.'
         ],
-        'course_update' => [
-            'name' => 'GetPly Course Update',
-            'description' => 'Displays a form with course.',
+        'course_create' => [
+            'name' => 'GetPly Course Create',
+            'description' => 'Displays a form for course creation.',
         ]
     ],
     'properties' => [

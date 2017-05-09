@@ -1,8 +1,8 @@
 <?php namespace Relenta\Ply\Components;
 
 use Cms\Classes\ComponentBase;
-use Validator;
-use ValidationException;
+use Illuminate\Support\Facades\Validator;
+use October\Rain\Exception\ValidationException;
 use Relenta\Ply\Models\Category;
 use Relenta\Ply\Classes\Factories\CourseFactory;
 use Illuminate\Support\Facades\Input;
@@ -31,8 +31,8 @@ class CourseCreate extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'          => 'relenta.ply::lang.components.course_update.name',
-            'description'   => 'relenta.ply::lang.components.course_update.description'
+            'name'          => 'relenta.ply::lang.components.course_create.name',
+            'description'   => 'relenta.ply::lang.components.course_create.description'
         ];
     }
 
