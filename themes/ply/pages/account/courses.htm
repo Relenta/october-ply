@@ -1,5 +1,5 @@
-title = "Course create"
-url = "/account/courses/create"
+title = "Courses list"
+url = "/account/courses"
 layout = "default"
 is_hidden = 0
 
@@ -7,10 +7,10 @@ is_hidden = 0
 security = "user"
 redirect = "account/account"
 
-[course_create]
+[user_courses]
 ==
 {% put sidemenu %}
     {% partial 'account/navigation' %}
 {% endput %}
 
-{% component "course_create" %}
+{% component 'user_courses' %}

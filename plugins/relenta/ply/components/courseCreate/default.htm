@@ -1,83 +1,22 @@
-{{ form_open({ files: 'true', request: __SELF__ ~ '::onSubmit', class:'course-create-form'}) }}
+// Not working, only html
+<form action="">
     <div class="form-row">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-
-            <input type="text"
-                   class="mdl-textfield__input course-create-form__course-name"
-                   name="course-name"
-                   value="{{submitted_course_name}}"
-                   required>
-
-            <label class="control-label mdl-textfield__label"
-                   for="course-create-form__course-name">
-                Course name
-            </label>
+            <input class="mdl-textfield__input" type="text" id="course-name">
+            <label class="mdl-textfield__label" for="course-name">Course name</label>
         </div>
     </div>
-
-
+    <div class="form-row">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="course-category">
+            <label class="mdl-textfield__label" for="course-category">Category</label>
+        </div>
+    </div>
     <div class="form-row">
         <div class="mdl-textfield mdl-js-textfield">
-
-            <select class="mdl-textfield__select course-create-form__select"
-                    name="category"
-                    required>
-
-                {% for category in categories %}
-                    <option value="{{ category.id }}"
-                            {% if submitted_category %}
-                                {% if submitted_category == category.id %}selected{% endif %}
-                            {% endif %}>
-                        {{ category.title }}
-                    </option>
-                {% endfor %}
-            </select>
+            <button class="mdl-button mdl-js-button">
+                Button
+            </button>
         </div>
     </div>
-
-
-    <div class="form-row">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-
-            <input type="file"
-                   class="course-create-form__file-input"
-                   id="file-input"
-                   name="file-input"
-                   required>
-            <p class="help-block">Only zip-file supports.</p>
-        </div>
-    </div>
-
-
-    <div class="form-row">
-        <button type="submit"
-                class="mdl-button mdl-js-button course-create-form__submit">
-            Create course
-        </button>
-    </div>
-{{ form_close() }}
-
-
-
-
-
-{# This block shows errors, if form was submitted incorrectly #}
-{% if error %}
-    <div class="alert alert-danger" role="alert">
-        <ul>
-            {% for field in error.errors.messages %}
-                {% for field_error in field %}
-                    <li>{{ field_error }}</li>
-                {% endfor %}
-            {% endfor %}
-        </ul>
-    </div>
-{% endif %}
-
-{# This block shows created course, if form submitted correctly #}
-{% if course %}
-    <div class="alert alert-success" role="alert">
-        <b>{{ course.title }}</b> has created.
-        Course category: <b>{{ course.category.title }}</b>
-    </div>
-{% endif %}
+</form>

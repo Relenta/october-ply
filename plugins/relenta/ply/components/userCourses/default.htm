@@ -1,0 +1,26 @@
+<ul class="mdl-list user-courses-list">
+    {% for course in courses %}
+        <li class="mdl-list__item mdl-list__item--three-line">
+
+            <span class="mdl-list__item-primary-content">
+                <span>
+                    {{ course.title }}
+                </span>
+                <span class="mdl-list__item-text-body">
+                    {{ course.data }}
+                </span>
+            </span>
+            <span class="mdl-list__item-secondary-content">
+                <a class="mdl-list__item-secondary-action" href="#">
+                    Edit
+                </a>
+                <a class="mdl-list__item-secondary-action" href="#">
+                    Publish
+                </a>
+                <a class="mdl-list__item-secondary-action" href="#">
+                    Statistics
+                </a>
+            </span>
+        </li>
+    {% endfor %}
+</ul>

@@ -10,6 +10,8 @@ class Plugin extends PluginBase
     {
         return [
             '\Relenta\Ply\Components\CourseCreate' => 'course_create',
+            '\Relenta\Ply\Components\CourseUpload' => 'course_upload',
+            '\Relenta\Ply\Components\UserCourses'  => 'user_courses',
             '\Relenta\Ply\Components\Categories'   => 'categories',
             '\Relenta\Ply\Components\Courses'      => 'courses',
             '\Relenta\Ply\Components\Units'        => 'units',

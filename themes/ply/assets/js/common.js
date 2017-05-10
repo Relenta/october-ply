@@ -1,3 +1,6 @@
+//load jquery
+window.$ = window.jQuery = require('jquery');
+
 //load Vue.js library
 window.Vue = require('vue');
 

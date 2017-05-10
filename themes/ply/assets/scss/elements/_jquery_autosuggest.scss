@@ -1,0 +1,18 @@
+.autocomplete-suggestions {
+  @extend .mdl-menu;
+  clip: auto;
+  opacity: 1;
+  background: white;
+  overflow: auto;
+  @include shadow-2dp();
+}
+
+.autocomplete-suggestion {
+  @extend .mdl-menu__item;
+  opacity: 1;
+}
+
+.autocomplete-suggestions strong {
+  font-weight: normal;
+  color: #3399FF;
+}
