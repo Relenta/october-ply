@@ -3,6 +3,7 @@ namespace Relenta\Ply\Classes\Factories;
 
 use Illuminate\Support\Facades\File;
 use October\Rain\Filesystem\Zip;
+use RainLab\User\Facades\Auth;
 use Relenta\Ply\Models\Card;
 use Relenta\Ply\Models\Category;
 use Relenta\Ply\Models\Course;
@@ -55,9 +56,13 @@ class CourseFactory
                 return null;
             }
 
-            $newCourse = Category::findOrFail($categoryId)->courses()->create([
-                'title' => $name,
+            $newCourse = new Course([
+                'title' => $name
             ]);
+            $newCourse->author_id = Auth::getUser()->id;
+
+            Category::findOrFail($categoryId)->courses()->save($newCourse);
+
             $this->createCourseData($newCourse);
 
             return $newCourse;
@@ -96,9 +101,9 @@ class CourseFactory
             for ($i = 1; $i < count($rowArr); $i++) {
                 $mediaFilePath = $this->folderPath . '/' . $i . '/' . $cardIndex . '.mp3';
                 $card->sides()->create([
-                    'content'   => $rowArr[$i],
-                    'media'  => $mediaFilePath,
-                    'number' => $i,
+                    'content' => $rowArr[$i],
+                    'media'   => $mediaFilePath,
+                    'number'  => $i,
                 ]);
             }
         }

@@ -41,7 +41,7 @@ class CategoryTest extends PluginTestCase
 
         $course = Course::create([
             "id"    => 2,
-            "title" => "Test course",
+            "title" => "Test course"
         ]);
 
         $this->enableForeignKeys();
@@ -70,8 +70,10 @@ class CategoryTest extends PluginTestCase
 
         $course = Course::make([
             "id"    => 2,
-            "title" => "Test course",
+            "title" => "Test course"
         ]);
+
+        $course->author_id = 1;
 
         $this->enableForeignKeys();
 

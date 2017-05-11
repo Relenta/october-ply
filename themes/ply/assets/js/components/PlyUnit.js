@@ -7,7 +7,7 @@ export default {
         }
     },
     created() {
-        console.log(this);
+        // console.log(this);
         axios.get(`/learn/${this.course_id}/${this.unit_id}`).then(({data}) => {
             this.cards = data;
         });

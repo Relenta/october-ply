@@ -1,15 +1,17 @@
 <?php namespace Relenta\Ply\Tests\Unit\Classes\Factories;
 
 use PluginTestCase;
+use RainLab\User\Classes\AuthManager;
+use RainLab\User\Models\User;
+use Relenta\Ply\Classes\Factories\CourseFactory;
 use Relenta\Ply\Models\Card;
 use Relenta\Ply\Models\CardSide;
 use Relenta\Ply\Models\Category;
 use Relenta\Ply\Models\Course;
-use Relenta\Ply\Classes\Factories\CourseFactory;
 use Relenta\Ply\Models\Unit;
 
 class CourseFactoryTest extends PluginTestCase
-{
+{  
     private $category;
     private $courseFactory;
     private $testFilesDir;
@@ -17,6 +19,7 @@ class CourseFactoryTest extends PluginTestCase
     public function setUp()
     {
         parent::setUp();
+        
         Category::truncate();
         Course::truncate();
         Unit::truncate();
@@ -43,8 +46,15 @@ class CourseFactoryTest extends PluginTestCase
     public function testCourseCreated()
     {
         $testZipPath = $this->testFilesDir . 'valid.zip';
+
+        $author = User::where('email', 'admin@admin.com')->first();
+
+        // TODO: Fix class not found!
+        Auth::login($user);
+
         $newCourse   = $this->courseFactory->create($this->category->id, 'Test course from valid zip', $testZipPath);
         $this->assertInstanceOf(Course::class, $newCourse);
+        $this->assertEquals(Course::author()->id, $author->id);
         $this->assertEquals($newCourse->cards()->count(), 20);
         $this->assertEquals(CardSide::all()->count(), 40);
     }

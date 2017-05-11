@@ -30,9 +30,6 @@ class Course extends Model
      */
     protected $guarded = ['author_id'];
 
-    /**
-     * @var array Relations
-     */
     public $hasMany = [
         'units' => ['Relenta\Ply\Models\Unit'],
         'cards' => ['Relenta\Ply\Models\Card'],
@@ -40,13 +37,6 @@ class Course extends Model
 
     public $belongsTo = [
         'category' => ['Relenta\Ply\Models\Category'],
+        'author' => ['RainLab\User\Models\User']
     ];
-
-    /**
-     * @var array Relations
-     */
-    //public $hasOne = [
-    //    'author' => ['Relenta\Ply\Models\User']
-    //];
-
 }
