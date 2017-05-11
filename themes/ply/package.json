@@ -16,7 +16,6 @@
     "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "dotenv": "^4.0.0"
     "dotenv": "^4.0.0",
     "jquery": "^2.1.1"
   }
