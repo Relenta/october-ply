@@ -18,6 +18,9 @@
                 this.playCardMedia();
             }
         },
+        mounted() {
+            this.playCardMedia();
+        },
         methods: {
             playCardMedia() {
                 if(!this.side_1.media) return;

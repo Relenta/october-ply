@@ -30,7 +30,7 @@ class CardSide extends Model
     }
 
     public $attachOne = [
-        'media' => ['System\Models\File', 'public' => false]
+        'media' => ['System\Models\File']
     ];
 
 }
