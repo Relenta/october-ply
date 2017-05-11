@@ -14,7 +14,7 @@ class Course extends Model
      * @var array Generate slugs for these attributes.
      */
     protected $slugs = ['slug' => 'title'];
-    
+
     /**
      * @var string The database table used by the model.
      */
@@ -37,6 +37,6 @@ class Course extends Model
 
     public $belongsTo = [
         'category' => ['Relenta\Ply\Models\Category'],
-        'author' => ['RainLab\User\Models\User']
+        'author'   => ['RainLab\User\Models\User'],
     ];
 }

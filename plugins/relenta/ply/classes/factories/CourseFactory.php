@@ -42,11 +42,12 @@ class CourseFactory
     }
 
     /**
+     * @param $author new course author
      * @param $name new course name
      * @param File $zipFile archive with course data
      * @return Course instance of a newly created course or null if failed
      */
-    public function create($categoryId, $name, $zipFile = '')
+    public function create($author, $categoryId, $name, $zipFile = '')
     {
         try {
             File::makeDirectory($this->folderPath);
@@ -56,10 +57,11 @@ class CourseFactory
                 return null;
             }
 
-            $newCourse = new Course([
+            $newCourse = Course::make([
                 'title' => $name
             ]);
-            $newCourse->author_id = Auth::getUser()->id;
+
+            $newCourse->author()->add($author);
 
             Category::findOrFail($categoryId)->courses()->save($newCourse);
 

@@ -13,6 +13,7 @@ use Relenta\Ply\Models\Unit;
 class CourseFactoryTest extends PluginTestCase
 {  
     private $category;
+    private $author;
     private $courseFactory;
     private $testFilesDir;
 
@@ -35,6 +36,8 @@ class CourseFactoryTest extends PluginTestCase
         $this->courseFactory = new CourseFactory();
 
         $this->testFilesDir = dirname(__FILE__) . '/files/';
+
+        $this->author = User::where('email', 'admin@admin.com')->first();
     }
 
     public function tearDown()
@@ -47,14 +50,9 @@ class CourseFactoryTest extends PluginTestCase
     {
         $testZipPath = $this->testFilesDir . 'valid.zip';
 
-        $author = User::where('email', 'admin@admin.com')->first();
-
-        // TODO: Fix class not found!
-        Auth::login($user);
-
-        $newCourse   = $this->courseFactory->create($this->category->id, 'Test course from valid zip', $testZipPath);
+        $newCourse   = $this->courseFactory->create($this->author, $this->category->id, 'Test course from valid zip', $testZipPath);
         $this->assertInstanceOf(Course::class, $newCourse);
-        $this->assertEquals(Course::author()->id, $author->id);
+        $this->assertEquals($newCourse->author->id, $this->author->id);
         $this->assertEquals($newCourse->cards()->count(), 20);
         $this->assertEquals(CardSide::all()->count(), 40);
     }
@@ -65,7 +63,7 @@ class CourseFactoryTest extends PluginTestCase
     public function testInvalidZip($testZipFile)
     {
         $testZipPath = $this->testFilesDir . $testZipFile;
-        $newCourse   = $this->courseFactory->create($this->category->id, 'Test course from invalid zip', $testZipPath);
+        $newCourse   = $this->courseFactory->create($this->author, $this->category->id, 'Test course from invalid zip', $testZipPath);
         $this->assertEmpty(Course::all());
         $this->assertEmpty(Unit::all());
         $this->assertEmpty(Card::all());
