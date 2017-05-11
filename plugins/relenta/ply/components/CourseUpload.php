@@ -1,11 +1,12 @@
 <?php namespace Relenta\Ply\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use October\Rain\Exception\ValidationException;
-use Relenta\Ply\Models\Category;
+use RainLab\User\Facades\Auth;
 use Relenta\Ply\Classes\Factories\CourseFactory;
-use Illuminate\Support\Facades\Input;
+use Relenta\Ply\Models\Category;
 
 class CourseUpload extends ComponentBase
 {
@@ -72,6 +73,7 @@ class CourseUpload extends ComponentBase
             $courseFactory = new CourseFactory();
 
             $this->course = $this->page['course'] = $courseFactory->create(
+                Auth::getUser(),
                 $data['category'],
                 $data['course-name'],
                 $data['file-input']->getRealPath()

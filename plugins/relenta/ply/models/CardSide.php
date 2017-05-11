@@ -18,10 +18,16 @@ class CardSide extends Model
      */
     protected $guarded = [];
 
+    protected $with = ['media'];
+
     /**
      * @var bool Indicates if the model should be timestamped.
      */
     public $timestamps = false;
+
+    public function getPathAttribute() {
+        return $this->media()->getPath();
+    }
 
     public $attachOne = [
         'media' => ['System\Models\File', 'public' => false]
