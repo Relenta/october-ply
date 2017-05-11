@@ -19,6 +19,7 @@ class SeedUsers extends Seeder
             'password'              => '1234',
             'password_confirmation' => '1234',
             'email'                 => 'admin@admin.com',
+            'is_activated'          => true,
         ]);
 
         $user->save();
