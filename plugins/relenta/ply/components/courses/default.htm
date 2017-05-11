@@ -2,10 +2,28 @@
    {{ category.title }}
 </h2>
 
-<ul>
+<div class="mdl-grid courses-card-list cards-container">
     {% for course in courses %}
-        <li>
-            <a href="{{ 'course'|page({ slug: course.slug }) }}">{{ course.title }}</a>
-        </li>
+
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp courses-card-list__card">
+            <div class="mdl-card__title">
+                <h3 class="mdl-card__title-text">
+                    {{ course.title }}
+                </h3>
+            </div>
+            <div class="mdl-card__supporting-text mdl-card--expand">
+                {% if course.data %}
+                    {{ course.data }}
+                {% else %}
+                    There is no course data
+                {% endif %}
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                   href="{{ 'course'|page({ slug: course.slug }) }}">
+                    Open course
+                </a>
+            </div>
+        </div>
     {% endfor %}
-</ul>
+</div>
