@@ -6,6 +6,7 @@
                    class="mdl-textfield__input course-create-form__course-name"
                    name="course-name"
                    value="{{submitted_course_name}}"
+                   id="course-create-form__course-name"
                    required>
 
             <label class="control-label mdl-textfield__label"
@@ -14,24 +15,21 @@
             </label>
         </div>
     </div>
-
-
     <div class="form-row">
-        <div class="mdl-textfield mdl-js-textfield">
 
-            <select class="mdl-textfield__select course-create-form__select"
-                    name="category"
-                    required>
-
-                {% for category in categories %}
-                    <option value="{{ category.id }}"
-                            {% if submitted_category %}
-                                {% if submitted_category == category.id %}selected{% endif %}
-                            {% endif %}>
-                        {{ category.title }}
-                    </option>
-                {% endfor %}
-            </select>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input"
+                   value="{{submitted_category.title}}"
+                   type="text"
+                   id="course-category"
+                   required>
+            <input class="mdl-textfield__input"
+                   value="{{submitted_category.id}}"
+                   type="hidden"
+                   id="course-category-id"
+                   name="category"
+                   required>
+            <label class="mdl-textfield__label" for="course-category">Category</label>
         </div>
     </div>
 
@@ -56,9 +54,6 @@
         </button>
     </div>
 {{ form_close() }}
-
-
-
 
 
 {# This block shows errors, if form was submitted incorrectly #}
