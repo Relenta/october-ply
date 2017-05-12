@@ -23,12 +23,25 @@ jQuery(document).ready(function($) {
             $(category_select).autocomplete({
                 lookup: categories,
                 onSelect: function (suggestion) {
-                    console.log("Selected " + suggestion.value + " " + suggestion.data);
                     $(category_input).val(suggestion.data);
                 }
             });
         });
     }
+});
+
+/*
+ * MDL file input
+ */
+
+jQuery(document).ready(function($) {
+    "use strict";
+    var file_input = $('.course-create-form .course-create-form__file-input');
+    var file_input_title = $('.course-create-form .course-create-form__file-input-title');
+
+    $(file_input).change(function () {
+        $(file_input_title).val(this.files[0].name);
+    });
 });
 
 Vue.component('PlyCard', require('./components/PlyCard.vue'));

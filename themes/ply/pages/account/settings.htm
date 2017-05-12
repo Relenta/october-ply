@@ -5,7 +5,13 @@ is_hidden = 0
 
 [session]
 security = "all"
+
+[account]
+paramCode = "code"
+forceSecure = 0
 ==
 {% put sidemenu %}
     {% partial 'account/navigation' %}
 {% endput %}
+
+{% component 'account' %}

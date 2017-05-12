@@ -1,0 +1,68 @@
+{{ form_ajax('onUpdate', { model: user, class: 'update-user-form'}) }}
+
+<div class="form-row">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input name="name"
+               type="text"
+               class="mdl-textfield__input update-user-form__account-name"
+               id="accountName"
+               value="{{ form_value('name') }}">
+
+        <label class="mdl-textfield__label"
+               for="accountName">
+            Full name
+        </label>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input name="email"
+               type="email"
+               class="mdl-textfield__input update-user-form__account-email"
+               id="accountEmail"
+               value="{{ form_value('email') }}">
+
+        <label class="mdl-textfield__label"
+               for="accountEmail">
+            Email
+        </label>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input name="password"
+               type="password"
+               class="mdl-textfield__input update-user-form__account-password"
+               id="accountPassword">
+
+        <label class="mdl-textfield__label"
+               for="accountPassword">
+            New Password
+        </label>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input name="password_confirmation"
+               type="password"
+               class="mdl-textfield__input update-user-form__account-password"
+               id="accountPasswordConfirm">
+
+        <label class="mdl-textfield__label"
+               for="accountPasswordConfirm">
+            Confirm New Password
+        </label>
+    </div>
+</div>
+
+<div class="form-row">
+    <button type="submit"
+            class="mdl-button mdl-js-button signin-form__submit">
+        Save changes
+    </button>
+</div>
+
+{{ form_close() }}

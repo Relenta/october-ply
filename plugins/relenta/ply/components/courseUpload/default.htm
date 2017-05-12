@@ -35,15 +35,23 @@
 
 
     <div class="form-row">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-
-            <input type="file"
-                   class="course-create-form__file-input"
-                   id="file-input"
-                   name="file-input"
-                   required>
-            <p class="help-block">Only zip-file supports.</p>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+            <input class="mdl-textfield__input course-create-form__file-input-title"
+                   type="text"
+                   id="file-input-title"
+                   name="file-input-title"
+                   readonly/>
+            <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                <i class="material-icons">attach_file</i>
+                <input type="file"
+                       class="course-create-form__file-input"
+                       name="file-input"
+                       id="file-input"
+                       accept=".zip"
+                       required>
+            </div>
         </div>
+        <span>Only .zip files required.</span>
     </div>
 
 
