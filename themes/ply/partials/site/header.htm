@@ -1,22 +1,29 @@
 ==
-<header class="mdl-layout__header">
+<header class="mdl-layout__header mdl-layout__header--scroll">
     <div class="mdl-layout__header-row">
         <!-- Title -->
-        <span class="mdl-layout-title">GetPly</span>
+        <span class="mdl-layout-title"><span class="text">GetPly</span></span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation. We hide it in small screens. -->
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" href="{{ 'home'|page }}">Home</a>
-            <a class="mdl-navigation__link" href="{{ 'categories'|page }}">Categories</a>
+            <button class="mdl-button mdl-text-button mdl-button--icon">
+              <i class="material-icons">search</i>
+            </button>
+            <a class="mdl-navigation__link" href="{{ 'categories'|page }}">Courses</a>
+            <button id="ply-main-menu" class="mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="ply-main-menu">
             {% if user %}
-                <a class="mdl-navigation__link" href="{{ 'account/account'|page }}">Account</a>
-                <a class="mdl-navigation__link mdl-navigation__logout-button"
-                   href="#!" id="logout"
-                   data-request="onLogout">Logout</a>
+                <li class="mdl-menu__item" onclick="location.href='{{ 'account/account'|page }}';">Account</li>
             {% else %}
-                <a class="mdl-navigation__link" href="{{ 'account/account'|page }}">Sign up</a>
+                <li class="mdl-menu__item" onclick="location.href='{{ 'account/account'|page }}';">Sign up</li>
             {% endif %}
+            </ul>
+<!--                 <a class="mdl-navigation__link mdl-navigation__logout-button"
+                   href="#!" id="logout"
+                   data-request="onLogout">Logout</a> -->
         </nav>
     </div>
 </header>

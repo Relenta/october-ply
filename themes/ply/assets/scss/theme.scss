@@ -8,7 +8,7 @@
 // Fonts
 //
 
-@import "theme/fonts";
+// @import "theme/fonts";
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
 //
@@ -29,6 +29,8 @@
 @import "elements/utilities";
 @import "elements/navbar";
 
+@import "../vendor/mdl/color-definitions";
+
 //
 // Layouts
 //
@@ -45,3 +47,78 @@
 
 @import "pages/ajax";
 @import "pages/plugins";
+
+// MDL Overwrites
+.mdl-layout {
+	font-size: 16px;
+	background-color: #ddd;
+	.mdl-layout__header {
+		margin-top: 70px;
+		.mdl-layout__header-row {
+			height: 75px;
+			.mdl-layout-title {
+				// background: url('/themes/ply/assets/images/logo/white-horizontal.png');
+				background: url('http://getply.dev/themes/ply/assets/images/logo/white-horizontal.png');
+				background-size: 166px 45px;
+				background-repeat: no-repeat;
+				cursor: pointer;
+				display: inline-block;
+				height: 45px;
+				position: relative;
+				width: 166px;
+				.text {
+					opacity: 0;
+				}
+			}
+			.mdl-navigation {
+				.mdl-navigation__link {
+					font-size: 1.25em;
+					opacity: 1;
+				}
+				.mdl-navigation__link:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	.mdl-layout__content {
+		.mdl-card {
+			width: 100%;
+			a {
+				color: unquote("rgb(#{$palette-cyan-500})") !important;
+			}
+		}
+		.mdl-mini-footer {
+			background-color: unquote("rgb(#{$palette-green-500})");
+			a {
+				color: #fff;
+				opacity: .8;
+			}
+			a:hover {
+				opacity: 1;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+// Racccoon on header
+.has-scrolling-header {
+	.mdl-layout__header {
+		.mdl-layout__header-row {
+			.mdl-layout-title:before { // 250x155
+				// background: url('/themes/ply/assets/images/logo/raccoon-header.png');
+				background: url('http://getply.dev/themes/ply/assets/images/logo/raccoon-header.png');
+				background-size: 140px 87px;
+				background-repeat: no-repeat;
+				content: " ";
+				display: block;
+				height: 87px;
+				left: 20px;
+				position: absolute;
+				top: -73px;
+				width: 140px;
+				z-index: 100;
+			}
+		}
+	}
+}
