@@ -1,14 +1,43 @@
 <template>
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="well">
-                <h3>{{ card.sides[0].content }}</h3>
-                <hr>
-                <h3>{{ card.sides[1].content }}</h3>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col">
+            <div class="ply-simple-card mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Side 1</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <h2>{{ card.sides[0].content }}</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Replay
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col">
+            <div class="ply-simple-card mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Side 2</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <h2>{{ card.sides[1].content }}</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Replay
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </template>
+
+<style>
+    .ply-simple-card {
+        width: 100%;
+    }
+</style>
 
 <script>
     export default {

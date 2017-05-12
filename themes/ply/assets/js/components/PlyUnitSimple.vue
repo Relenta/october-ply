@@ -3,10 +3,8 @@
         <ply-card v-if="currentCard" :card="currentCard"></ply-card>
 
         <center>
-            <ul class="pager">
-                <li><a href="#" @click.prevent="current -= 1" v-if="current > 0">Previous</a></li>
-                <li><a href="#" @click.prevent="current += 1" v-if="current < cards.length - 1">Next</a></li>
-            </ul>
+            <button @click.prevent="current -= 1" v-if="current > 0" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Previous card</button>
+            <button @click.prevent="current += 1" v-if="current < cards.length - 1" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Next card</button>
         </center>
     </div>
 </template>
