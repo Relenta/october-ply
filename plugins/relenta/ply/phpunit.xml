@@ -11,8 +11,14 @@
          syntaxCheck="false"
 >
     <testsuites>
-        <testsuite name="Plugin Unit Test Suite">
-            <directory>./tests</directory>
+        <testsuite name="unit">
+            <directory>./tests/unit</directory>
+        </testsuite>
+        <testsuite name="functional">
+            <directory>./tests/functional</directory>
+        </testsuite>
+        <testsuite name="api">
+            <directory>./tests/api</directory>
         </testsuite>
     </testsuites>
     <php>

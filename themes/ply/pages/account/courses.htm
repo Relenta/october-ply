@@ -1,0 +1,16 @@
+title = "Courses list"
+url = "/account/courses"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "account/account"
+
+[user_courses]
+==
+{% put sidemenu %}
+    {% partial 'account/navigation' %}
+{% endput %}
+
+{% component 'user_courses' %}

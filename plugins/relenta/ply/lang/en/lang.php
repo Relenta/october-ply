@@ -20,10 +20,18 @@
             'name' => 'GetPly Cards',
             'description' => 'Displays a collection of cards.'
         ],
-        'course_update' => [
-            'name' => 'GetPly Course Update',
-            'description' => 'Displays a form with course.',
-        ]
+        'course_create' => [
+            'name' => 'GetPly Course Create',
+            'description' => 'Displays a form for course creation.',
+        ],
+        'course_upload' => [
+            'name' => 'GetPly Course Upload',
+            'description' => 'Displays a form for course uploading.',
+        ],
+        'user_courses' => [
+            'name' => 'GetPly User Courses',
+            'description' => 'Displays a collection of user courses.',
+        ],
     ],
     'properties' => [
         'category_slug_title' => 'Category Slug Parameter',
@@ -34,5 +42,7 @@
         'course_slug_validation_message' => 'Course Slug parameter is required.',
         'unit_slug_title' => 'Unit Slug Parameter',
         'unit_slug_description' => 'Name of variable, which contains unit slug.',
+        'user_id_title' => 'User ID Parameter',
+        'user_id_description' => 'Name of variable, which contains user id.',
     ]
 ];

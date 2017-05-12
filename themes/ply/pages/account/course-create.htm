@@ -3,6 +3,10 @@ url = "/account/courses/create"
 layout = "default"
 is_hidden = 0
 
+[session]
+security = "user"
+redirect = "account/account"
+
 [course_create]
 ==
 {% put sidemenu %}
@@ -10,4 +14,3 @@ is_hidden = 0
 {% endput %}
 
 {% component "course_create" %}
-

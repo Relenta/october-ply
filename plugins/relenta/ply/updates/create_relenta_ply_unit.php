@@ -10,7 +10,7 @@ class CreateRelentaPlyUnit extends Migration
         Schema::create('relenta_ply_unit', function($table)
         {
             $table->increments('id')->unsigned();
-            $table->integer('parent_id')->unsigned()->index('unit_parent')->default(0);
+            $table->integer('parent_id')->nullable()->unsigned()->index('unit_parent');
             $table->foreign('parent_id', 'unit_parent_ref')->references('id')->on('relenta_ply_unit')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('course_id')->unsigned()->index('unit_course')->default(0);
             $table->foreign('course_id', 'unit_course_ref')->references('id')->on('relenta_ply_course')->onUpdate('cascade')->onDelete('cascade');

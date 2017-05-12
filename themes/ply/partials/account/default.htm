@@ -12,9 +12,5 @@
         </div>
     </div>
 {% else %}
-    {% put sidemenu %}
-        {% partial 'account/navigation' %}
-    {% endput %}
-
     {% partial __SELF__ ~ '::update' %}
 {% endif %}

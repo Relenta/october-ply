@@ -11,11 +11,12 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
-    "hot": "WEBPACK_DEV_HOST=localhost WEBPACK_DEV_PORT=8081 env-cmd ./../../.env npm run hotdev",
+    "hot": "cross-env WEBPACK_DEV_HOST=localhost WEBPACK_DEV_PORT=8081 env-cmd ./../../.env npm run hotdev",
     "hotdev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --host $WEBPACK_DEV_HOST --port $WEBPACK_DEV_PORT",
     "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "dotenv": "^4.0.0"
+    "dotenv": "^4.0.0",
+    "jquery": "^2.1.1"
   }
 }

@@ -1,0 +1,12 @@
+title = "Profile"
+url = "/account/profile/:user_id"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "account/account"
+==
+{% put sidemenu %}
+    {% partial 'account/navigation' %}
+{% endput %}

@@ -1,22 +1,26 @@
 <?php namespace Relenta\Ply\Tests\Unit\Classes\Factories;
 
 use PluginTestCase;
+use RainLab\User\Classes\AuthManager;
+use RainLab\User\Models\User;
+use Relenta\Ply\Classes\Factories\CourseFactory;
 use Relenta\Ply\Models\Card;
 use Relenta\Ply\Models\CardSide;
 use Relenta\Ply\Models\Category;
 use Relenta\Ply\Models\Course;
-use Relenta\Ply\Classes\Factories\CourseFactory;
 use Relenta\Ply\Models\Unit;
 
 class CourseFactoryTest extends PluginTestCase
-{
+{  
     private $category;
+    private $author;
     private $courseFactory;
     private $testFilesDir;
 
     public function setUp()
     {
         parent::setUp();
+        
         Category::truncate();
         Course::truncate();
         Unit::truncate();
@@ -32,6 +36,8 @@ class CourseFactoryTest extends PluginTestCase
         $this->courseFactory = new CourseFactory();
 
         $this->testFilesDir = dirname(__FILE__) . '/files/';
+
+        $this->author = User::where('email', 'admin@admin.com')->first();
     }
 
     public function tearDown()
@@ -43,8 +49,10 @@ class CourseFactoryTest extends PluginTestCase
     public function testCourseCreated()
     {
         $testZipPath = $this->testFilesDir . 'valid.zip';
-        $newCourse   = $this->courseFactory->create($this->category->id, 'Test course from valid zip', $testZipPath);
+
+        $newCourse   = $this->courseFactory->create($this->author, $this->category->id, 'Test course from valid zip', $testZipPath);
         $this->assertInstanceOf(Course::class, $newCourse);
+        $this->assertEquals($newCourse->author->id, $this->author->id);
         $this->assertEquals($newCourse->cards()->count(), 20);
         $this->assertEquals(CardSide::all()->count(), 40);
     }
@@ -55,7 +63,7 @@ class CourseFactoryTest extends PluginTestCase
     public function testInvalidZip($testZipFile)
     {
         $testZipPath = $this->testFilesDir . $testZipFile;
-        $newCourse   = $this->courseFactory->create($this->category->id, 'Test course from invalid zip', $testZipPath);
+        $newCourse   = $this->courseFactory->create($this->author, $this->category->id, 'Test course from invalid zip', $testZipPath);
         $this->assertEmpty(Course::all());
         $this->assertEmpty(Unit::all());
         $this->assertEmpty(Card::all());

@@ -1,90 +1,22 @@
-{{ form_open({ files: 'true', request: __SELF__ ~ '::onSubmit', id:'course-create'}) }}
-
+// Not working, only html
+<form action="">
     <div class="form-row">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-
-            <input type="text"
-                   class="form-control mdl-textfield__input"
-                   id="course-name"
-                   name="course-name"
-                   required>
-            <label class="control-label mdl-textfield__label"
-                   for="course-name">
-                Course name
-            </label>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="mdl-textfield
-                mdl-js-textfield
-                mdl-textfield--floating-label
-                getmdl-select
-                getmdl-select__fullwidth">
-
-            <input class="mdl-textfield__input"
-                   type="text"
-                   id="category"
-                   value="Belarus"
-                   readonly
-                   tabIndex="-1">
-            <label for="category" class="mdl-textfield__label">Category</label>
-            <ul for="category" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-
-                {% for category in categories %}
-                <li class="mdl-menu__item">{{ category.title }}</li>
-
-                {% endfor %}
-            </ul>
+            <input class="mdl-textfield__input" type="text" id="course-name">
+            <label class="mdl-textfield__label" for="course-name">Course name</label>
         </div>
     </div>
     <div class="form-row">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-
-
-            <input type="file"
-                   id="file-input"
-                   class=""
-                   name="file-input"
-                   required>
-            <p class="help-block">Only zip-file supports.</p>
+            <input class="mdl-textfield__input" type="text" id="course-category">
+            <label class="mdl-textfield__label" for="course-category">Category</label>
         </div>
-
     </div>
     <div class="form-row">
-        <button type="submit"
-                class="mdl-button mdl-js-button"
-                id="submitCreateCourse">
-            Register
-        </button>
+        <div class="mdl-textfield mdl-js-textfield">
+            <button class="mdl-button mdl-js-button">
+                Button
+            </button>
+        </div>
     </div>
-
-
-
-
-
-
-
-
-
-{{ form_close() }}
-
-{# This block shows errors, if form was submitted incorrectly #}
-{% if error %}
-    <div class="alert alert-danger" role="alert">
-        <ul>
-            {% for field in error.errors.messages %}
-                {% for field_error in field %}
-                    <li>{{ field_error }}</li>
-                {% endfor %}
-            {% endfor %}
-        </ul>
-    </div>
-{% endif %}
-
-{# This block shows created course, if form submitted correctly #}
-{% if course %}
-    <div class="alert alert-success" role="alert">
-        <b>{{ course.title }}</b> has created.
-        Course category: <b>{{ course.category.title }}</b>
-    </div>
-{% endif %}
+</form>

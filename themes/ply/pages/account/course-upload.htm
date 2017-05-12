@@ -1,0 +1,16 @@
+title = "Course upload"
+url = "/account/courses/upload"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "account/account"
+
+[course_upload]
+==
+{% put sidemenu %}
+    {% partial 'account/navigation' %}
+{% endput %}
+
+{% component "course_upload" %}

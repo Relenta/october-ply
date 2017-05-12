@@ -3,9 +3,11 @@ namespace Relenta\Ply\Classes\Factories;
 
 use Illuminate\Support\Facades\File;
 use October\Rain\Filesystem\Zip;
+use RainLab\User\Facades\Auth;
 use Relenta\Ply\Models\Card;
 use Relenta\Ply\Models\Category;
 use Relenta\Ply\Models\Course;
+use Relenta\Ply\Models\Unit;
 
 /**
  * Class CourseFactory
@@ -14,6 +16,12 @@ use Relenta\Ply\Models\Course;
  */
 class CourseFactory
 {
+    /**
+     * Count of cards per unit
+     * @var integer
+     */
+    protected $unitCardsCount = 10;
+
     /**
      * File name to search in a zip archive, which contains CardSide related phrases
      * @var string
@@ -41,11 +49,12 @@ class CourseFactory
     }
 
     /**
+     * @param $author new course author
      * @param $name new course name
      * @param File $zipFile archive with course data
      * @return Course instance of a newly created course or null if failed
      */
-    public function create($categoryId, $name, $zipFile = '')
+    public function create($author, $categoryId, $name, $zipFile = '')
     {
         try {
             File::makeDirectory($this->folderPath);
@@ -55,9 +64,14 @@ class CourseFactory
                 return null;
             }
 
-            $newCourse = Category::findOrFail($categoryId)->courses()->create([
-                'title' => $name,
+            $newCourse = Course::make([
+                'title' => $name
             ]);
+
+            $newCourse->author()->add($author);
+
+            Category::findOrFail($categoryId)->courses()->save($newCourse);
+
             $this->createCourseData($newCourse);
 
             return $newCourse;
@@ -71,6 +85,21 @@ class CourseFactory
     }
 
     /**
+     * Crete unit within course
+     * @param  [type] $course parent Course instance
+     * @param  [type] $id     descriptive unit identifier
+     * @return [type]         created Unit instance
+     */
+    private function createCourseUnit($course, $id) {
+        $courseUnit = $course->units()->create([
+            "title" => "Unit #{$id}",
+            "data"  => "Unit #{$id} data"
+        ]);
+
+        return $courseUnit;
+    }
+
+    /**
      * Create Course with it's relations based on given valid data from zip file
      * @param  Course $newCourse course instance to bind
      * @return bool returns true on successful completion
@@ -80,25 +109,40 @@ class CourseFactory
         $csvFilePath = $this->getCsvFilePath($this->folderPath);
 
         $csvArr = file($csvFilePath);
+
+        $unitCounter = 1;
+
+        if(count($csvArr) <= $this->unitCardsCount) {
+            $cardHolder = $newCourse;
+        } else {
+            $cardHolder = $this->createCourseUnit($newCourse, $unitCounter);
+        }
+
         foreach ($csvArr as $rowIndex => $line) {
             $cardIndex = $rowIndex + 1;
             $rowArr    = str_getcsv($line);
 
+            $sizeLimiter = floor($cardIndex / $this->unitCardsCount);
+            if($sizeLimiter >= $unitCounter) {
+                $unitCounter++;
+                $cardHolder = $this->createCourseUnit($newCourse, $unitCounter);
+            }
+
             $card = Card::make([
                 'title'   => 'Card ' . $cardIndex,
                 'data'    => 'DATA',
-                'unit_id' => null,
+                'course_id' => $newCourse->id,
                 'sort'    => $cardIndex,
             ]);
 
-            $newCourse->cards()->save($card);
+            $cardHolder->cards()->save($card);
 
             for ($i = 1; $i < count($rowArr); $i++) {
                 $mediaFilePath = $this->folderPath . '/' . $i . '/' . $cardIndex . '.mp3';
                 $card->sides()->create([
-                    'content'   => $rowArr[$i],
-                    'media'  => $mediaFilePath,
-                    'number' => $i,
+                    'content' => $rowArr[$i],
+                    'media'   => $mediaFilePath,
+                    'number'  => $i,
                 ]);
             }
         }

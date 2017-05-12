@@ -1,0 +1,18 @@
+title = "Settings"
+url = "/account/settings"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "account/account"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+==
+{% put sidemenu %}
+    {% partial 'account/navigation' %}
+{% endput %}
+
+{% component 'account' %}
