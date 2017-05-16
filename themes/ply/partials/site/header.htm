@@ -17,13 +17,13 @@
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="ply-main-menu">
             {% if user %}
                 <li class="mdl-menu__item" onclick="location.href='{{ 'account/account'|page }}';">Account</li>
+                <li>
+                    <a class="mdl-menu__item ply-navigation__logout-button" data-request="onLogout">Logout</a>
+                </li>
             {% else %}
                 <li class="mdl-menu__item" onclick="location.href='{{ 'account/account'|page }}';">Sign up</li>
             {% endif %}
             </ul>
-<!--                 <a class="mdl-navigation__link mdl-navigation__logout-button"
-                   href="#!" id="logout"
-                   data-request="onLogout">Logout</a> -->
         </nav>
     </div>
 </header>

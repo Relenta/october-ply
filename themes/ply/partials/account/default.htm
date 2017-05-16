@@ -2,13 +2,25 @@
     <div class="mdl-grid">
 
         <div class="mdl-cell mdl-cell--6-col">
-            <h3>Sign in</h3>
-            {% partial __SELF__ ~ '::signin' %}
+            <div class="mdl-card  mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                    Sign in
+                </div>
+                <div class="mdl-card__supporting-text">
+                    {% partial __SELF__ ~ '::signin' %}
+                </div>
+            </div>
         </div>
 
         <div class="mdl-cell mdl-cell--6-col">
-            <h3>Register</h3>
-            {% partial __SELF__ ~ '::register' %}
+            <div class="mdl-card  mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                    Register
+                </div>
+                <div class="mdl-card__supporting-text">
+                    {% partial __SELF__ ~ '::register' %}
+                </div>
+            </div>
         </div>
     </div>
 {% else %}
