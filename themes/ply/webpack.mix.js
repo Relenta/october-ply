@@ -11,13 +11,9 @@ let mix = require('laravel-mix');
  |
  */
 
-mix
-    .options({
-        processCssUrls: false
-    })
-    .setPublicPath('./dist')
+mix.setPublicPath('./dist')
     // .copyDirectory('assets/fonts', 'fonts')
-    .copyDirectory('assets/images', 'dist/images')
+    // .copyDirectory('assets/images', 'dist/images')
     .js('assets/js/app.js', 'js/')
     .sass('assets/scss/theme.scss', 'css')
     .sass('assets/scss/vendor.scss', 'css');
@@ -31,6 +27,7 @@ mix.browserSync({
     notify: false,
     files: [
         './dist/js/**/*.js',
+        './dist/images/**/*.png',
         './dist/js/**/*.vue',
         './dist/css/*.css',
         './**/*.less',
