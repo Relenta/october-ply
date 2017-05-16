@@ -17,12 +17,10 @@ mix
     })
     .setPublicPath('./dist')
     // .copyDirectory('assets/fonts', 'fonts')
-    // .copyDirectory('assets/images', 'images')
-    .js('assets/js/app.js', 'js')
+    .copyDirectory('assets/images', 'dist/images')
+    .js('assets/js/app.js', 'js/')
     .sass('assets/scss/theme.scss', 'css')
     .sass('assets/scss/vendor.scss', 'css');
-    //.less('assets/less/theme.less', 'css')
-    //.less('assets/less/vendor.less', 'css');
 
 
 let dotenv = require('dotenv').config({path: '../../.env'});
