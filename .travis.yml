@@ -55,9 +55,9 @@ before_script:
   - rm -f .env
   - cp plugins/relenta/ply/tests/.env ./
   - "> storage/database.sqlite"
-  - php artisan october:up --no-interaction
   - php artisan plugin:install rainlab.user
   - php artisan plugin:install rainlab.translate
+  - php artisan october:up --no-interaction
   - php artisan theme:use ply --no-interaction --force
   - cd themes/ply
   - npm install
