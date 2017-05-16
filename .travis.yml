@@ -49,7 +49,7 @@ before_script:
   - git clone https://github.com/gpasztor87/oc-api-plugin.git plugins/autumn/api
 #
   - composer self-update
-  - sh plugins/relenta/ply/tests/build.sh
+#  - sh plugins/relenta/ply/tests/build.sh
   - travis_retry composer install --no-interaction --prefer-source
   - php artisan october:env
   - rm -f .env
