@@ -1,5 +1,7 @@
 <?php namespace Relenta\Ply\Tests\Functional;
 
+require __DIR__.'/../../vendor/autoload.php';
+
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\WebDriverBrowserType;

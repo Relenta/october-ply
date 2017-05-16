@@ -71,7 +71,7 @@ before_script:
 #
 ##  GetPly Platform plugin
   - cd plugins/relenta/ply
-##  - composer install --no-interaction --prefer-dist
+  - composer install --no-interaction --prefer-dist
   - cd tests/travis
   - bash install-nginx.sh 
   - cd ../../../../../
