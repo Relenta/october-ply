@@ -56,7 +56,13 @@ before_script:
   - cp plugins/relenta/ply/tests/.env ./
   - "> storage/database.sqlite"
   - php artisan october:up --no-interaction
+  - php artisan plugin:install rainlab.user
+  - php artisan plugin:install rainlab.translate
   - php artisan theme:use ply --no-interaction --force
+  - cd themes/ply
+  - npm install
+  - npm run dev
+  - cd ../../
 #
 ##  GetPly Platform plugin
   - cd plugins/relenta/ply
