@@ -53,7 +53,7 @@ class Plugin extends PluginBase
                     if (file_exists(public_path($manifestDirectory . '/hot'))) {
                         $host = env('WEBPACK_DEV_HOST', 'localhost');
                         $port = env('WEBPACK_DEV_PORT', '8080');
-                        return new HtmlString("http://{$host}:{$port}{$path}");
+                        return new HtmlString("http://{$host}:{$port}/{$path}");
                     }
 
                     if (!$manifest) {

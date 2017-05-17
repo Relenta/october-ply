@@ -59,7 +59,7 @@
 			height: 75px;
 			.mdl-layout-title {
 				// background: url('/themes/ply/assets/images/logo/white-horizontal.png');
-				background: url('http://getply.dev/themes/ply/assets/images/logo/white-horizontal.png');
+				background: url('../images/logo/white-horizontal.png');
 				background-size: 166px 45px;
 				background-repeat: no-repeat;
 				cursor: pointer;
@@ -108,7 +108,7 @@
 		.mdl-layout__header-row {
 			.mdl-layout-title:before { // 250x155
 				// background: url('/themes/ply/assets/images/logo/raccoon-header.png');
-				background: url('http://getply.dev/themes/ply/assets/images/logo/raccoon-header.png');
+				background: url('../images/logo/raccoon-header.png');
 				background-size: 140px 87px;
 				background-repeat: no-repeat;
 				content: " ";
