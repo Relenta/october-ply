@@ -6,7 +6,7 @@
     "vue-loader": "^11.3.4",
     "vue-template-compiler": "^2.2.6",
     "moment": "^2.18.1",
-	"env-cmd": "*"
+    "env-cmd": "*"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
@@ -16,6 +16,7 @@
     "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "dialog-polyfill": "^0.4.7",
     "dotenv": "^4.0.0",
     "jquery": "^2.1.1"
   }
