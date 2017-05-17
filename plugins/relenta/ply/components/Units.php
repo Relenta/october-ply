@@ -39,14 +39,6 @@ class Units extends ComponentBase
         ];
     }
 
-    public function init()
-    {
-        /* Load Relenta\Ply\Components\Cards component */
-        $this->addComponent('Relenta\Ply\Components\Cards', 'cards', [
-            'courseSlug' => $this->property('courseSlug')
-        ]);
-    }
-
     public function onRun()
     {
         $this->course = $this->page['course'] = $this->getCourse();
@@ -58,6 +50,12 @@ class Units extends ComponentBase
         }
 
         $this->units = $this->page['units'] = $this->getUnits();
+        
+        if (!$this->units)
+        {
+            $this->setStatusCode(404);
+            return $this->controller->run('404');
+        }
     }
 
     /**

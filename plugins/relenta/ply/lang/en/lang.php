@@ -16,9 +16,9 @@
             'name' => 'GetPly Units',
             'description' => 'Displays a collection of units (if no units - loads cards component).'
         ],
-        'cards' => [
-            'name' => 'GetPly Cards',
-            'description' => 'Displays a collection of cards.'
+        'learn' => [
+            'name' => 'GetPly Learning',
+            'description' => 'Displays vue component with cards'
         ],
         'course_create' => [
             'name' => 'GetPly Course Create',

@@ -17,7 +17,7 @@ class Plugin extends PluginBase
             '\Relenta\Ply\Components\Categories'   => 'categories',
             '\Relenta\Ply\Components\Courses'      => 'courses',
             '\Relenta\Ply\Components\Units'        => 'units',
-            '\Relenta\Ply\Components\Cards'        => 'cards',
+            '\Relenta\Ply\Components\Learn'        => 'learn',
         ];
     }
 
