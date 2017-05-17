@@ -46,13 +46,6 @@ class Category extends Model
     ];
 
     /**
-     * @var array Relations
-     */
-    public $hasOne = [
-        'parent' => ['Relenta\Ply\Models\Category'],
-    ];
-
-    /**
      * @var array Attributes that support translation, if available.
      */
     public $translatable = ['title'];

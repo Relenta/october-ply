@@ -4,6 +4,8 @@ use Relenta\Ply\Classes\Factories\CourseFactory;
 
 
 Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () {
+    
+    Route::get('learn', 'Relenta\Ply\Http\Controllers\Learn@index');
     //
     Route::resource('categories', 'Relenta\Ply\Http\Controllers\Categories');
 
@@ -17,4 +19,4 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function () {
 
 });
 
-Route::get('learn/{course_id}/{unit_id?}', 'Relenta\Ply\Http\Controllers\Learn@index');
+
