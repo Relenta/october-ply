@@ -54,6 +54,34 @@ jQuery(document).ready(function($) {
         }
     })
 */
+
+/* 
+ * Learning dialog linking
+ */
+    var dialog = document.querySelector('.ply-learning-dialog');
+    var showDialogButtons = document.querySelectorAll('.ply-button-show.ply-button-show_dialog_learning');
+
+    if (dialog) {
+        if (! dialog.showModal) {
+            dialogPolyfill.registerDialog(dialog);
+        }
+        showDialogButtons.forEach((btn)=>{
+            btn.addEventListener('click', function() {
+                var id = btn.getAttribute('data-learn-id');
+                var type = btn.getAttribute('data-learn-type');
+
+                document.getElementById('learn-id').value = id;
+                document.getElementById('learn-type').value = type;
+
+                dialog.showModal();
+            });
+        });
+
+        dialog.querySelector('.close').addEventListener('click', function() {
+            dialog.close();
+        });
+    }
+
 });
 
 

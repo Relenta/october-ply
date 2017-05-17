@@ -1,67 +1,72 @@
-{{ form_open({ files: 'true', request: __SELF__ ~ '::onSubmit', class:'course-create-form'}) }}
-    <div class="form-row">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+<div class="mdl-card">
+    <div class="mdl-card__supporting-text">
+        {{ form_open({ files: 'true', request: __SELF__ ~ '::onSubmit', class:'course-create-form'}) }}
+        <div class="form-row">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
-            <input type="text"
-                   class="mdl-textfield__input course-create-form__course-name"
-                   name="course-name"
-                   value="{{submitted_course_name}}"
-                   id="course-create-form__course-name"
-                   required>
-
-            <label class="control-label mdl-textfield__label"
-                   for="course-create-form__course-name">
-                Course name
-            </label>
-        </div>
-    </div>
-    <div class="form-row">
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input"
-                   value="{{submitted_category.title}}"
-                   type="text"
-                   id="course-category"
-                   required>
-            <input class="mdl-textfield__input"
-                   value="{{submitted_category.id}}"
-                   type="hidden"
-                   id="course-category-id"
-                   name="category"
-                   required>
-            <label class="mdl-textfield__label" for="course-category">Category</label>
-        </div>
-    </div>
-
-
-    <div class="form-row">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
-            <input class="mdl-textfield__input course-create-form__file-input-title"
-                   type="text"
-                   id="file-input-title"
-                   name="file-input-title"
-                   readonly/>
-            <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
-                <i class="material-icons">attach_file</i>
-                <input type="file"
-                       class="course-create-form__file-input"
-                       name="file-input"
-                       id="file-input"
-                       accept=".zip"
+                <input type="text"
+                       class="mdl-textfield__input course-create-form__course-name"
+                       name="course-name"
+                       value="{{submitted_course_name}}"
+                       id="course-create-form__course-name"
                        required>
+
+                <label class="control-label mdl-textfield__label"
+                       for="course-create-form__course-name">
+                    Course name
+                </label>
             </div>
         </div>
-        <span>Only .zip files required.</span>
-    </div>
+        <div class="form-row">
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input"
+                       value="{{submitted_category.title}}"
+                       type="text"
+                       id="course-category"
+                       required>
+                <input class="mdl-textfield__input"
+                       value="{{submitted_category.id}}"
+                       type="hidden"
+                       id="course-category-id"
+                       name="category"
+                       required>
+                <label class="mdl-textfield__label" for="course-category">Category</label>
+            </div>
+        </div>
 
 
-    <div class="form-row">
-        <button type="submit"
-                class="mdl-button mdl-js-button course-create-form__submit">
-            Create course
-        </button>
+        <div class="form-row">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                <input class="mdl-textfield__input course-create-form__file-input-title"
+                       type="text"
+                       id="file-input-title"
+                       name="file-input-title"
+                       readonly/>
+                <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                    <i class="material-icons">attach_file</i>
+                    <input type="file"
+                           class="course-create-form__file-input"
+                           name="file-input"
+                           id="file-input"
+                           accept=".zip"
+                           required>
+                </div>
+            </div>
+            <span>Only .zip files required.</span>
+        </div>
+
+
+        <div class="form-row">
+            <button type="submit"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored course-create-form__submit">
+                Create course
+            </button>
+        </div>
+        {{ form_close() }}
     </div>
-{{ form_close() }}
+</div>
+
 
 
 {# This block shows errors, if form was submitted incorrectly #}

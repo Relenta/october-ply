@@ -1,0 +1,34 @@
+<ul class="mdl-list">
+    {% for category in categories %}
+        <li class="mdl-list__item">
+            <a href="{{ 'courses'|page({ slug: category.slug }) }}">
+                {{ category.title }}
+            </a>
+
+        </li>
+    {% endfor %}
+
+</ul>
+
+
+{#<div class="mdl-card">
+    <div class="mdl-card__title">
+        <h3 class="mdl-card__title-text">
+
+        </h3>
+    </div>
+    <div class="mdl-card__supporting-text">
+        {{ category.data }}
+
+        {% partial "@categories-sublist" categories=category.children %}
+
+    </div>
+    <div class="mdl-card__actions">
+        {% if category.courses.count > 0 %}
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+           href="">
+            Open courses
+        </a>
+        {% endif %}
+    </div>
+</div>#}

@@ -5,25 +5,79 @@
 <div class="mdl-grid courses-card-list cards-container">
     {% for course in courses %}
 
-        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp courses-card-list__card">
-            <div class="mdl-card__title">
-                <h3 class="mdl-card__title-text">
-                    {{ course.title }}
-                </h3>
-            </div>
-            <div class="mdl-card__supporting-text mdl-card--expand">
-                {% if course.data %}
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-card mdl-shadow--4dp courses-card-list__card">
+                <div class="mdl-card__title">
+                    <h3 class="mdl-card__title-text">
+                        {{ course.title }}
+                    </h3>
+                </div>
+                <div class="mdl-card__supporting-text mdl-card--expand">
+                    {% if course.data %}
                     {{ course.data }}
-                {% else %}
+                    {% else %}
                     There is no course data
-                {% endif %}
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                   href="{{ 'course'|page({ slug: course.slug }) }}">
-                    Open course
-                </a>
+                    {% endif %}
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    {% if course.units.count > 0 %}
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                           href="{{ 'course'|page({ slug: course.slug }) }}">
+                            Open course
+                        </a>
+                    {% endif %}
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect ply-button-show ply-button-show_dialog_learning"
+                       data-learn-id="{{ course.id }}" data-learn-type="course">
+                        Start learning
+                    </a>
+                </div>
             </div>
         </div>
     {% endfor %}
 </div>
+<form action="/learn" type="GET">
+    <dialog class="mdl-dialog ply-learning-dialog">
+
+        <h4 class="mdl-dialog__title">How do you want to learn this course?</h4>
+
+        <div class="mdl-dialog__content">
+            <div class="form-row">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-1">
+                    <input type="radio"
+                           id="learning-type-1"
+                           class="mdl-radio__button"
+                           name="mode"
+                           value="1"
+                           checked>
+                    <span class="mdl-radio__label">Listen</span>
+                </label>
+            </div>
+            <div class="form-row">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-2">
+                    <input type="radio"
+                           id="learning-type-2"
+                           class="mdl-radio__button"
+                           name="mode"
+                           value="2">
+                    <span class="mdl-radio__label">Flash cards</span>
+                </label>
+            </div>
+            <div class="form-row">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-3">
+                    <input type="radio"
+                           id="learning-type-3"
+                           class="mdl-radio__button"
+                           name="mode"
+                           value="3">
+                    <span class="mdl-radio__label">Typed input</span>
+                </label>
+            </div>
+        </div>
+        <div class="mdl-dialog__actions">
+                <button type="submit" class="mdl-button">Submit</button>
+                <button type="button" class="mdl-button close">Disagree</button>
+        </div>
+        <input type="hidden" id="learn-id" name="learn-id">
+        <input type="hidden" id="learn-type" name="learn-type">
+    </dialog>
+</form>
