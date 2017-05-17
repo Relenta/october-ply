@@ -35,49 +35,51 @@
         </div>
     {% endfor %}
 </div>
-<form action="/learn" type="GET">
+{% put dialogs %}
     <dialog class="mdl-dialog ply-learning-dialog">
+        <form action="/learn" type="GET">
+            <h4 class="mdl-dialog__title">How do you want to learn this course?</h4>
 
-        <h4 class="mdl-dialog__title">How do you want to learn this course?</h4>
-
-        <div class="mdl-dialog__content">
-            <div class="form-row">
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-1">
-                    <input type="radio"
-                           id="learning-type-1"
-                           class="mdl-radio__button"
-                           name="mode"
-                           value="1"
-                           checked>
-                    <span class="mdl-radio__label">Listen</span>
-                </label>
+            <div class="mdl-dialog__content">
+                <div class="form-row">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-1">
+                        <input type="radio"
+                               id="learning-type-1"
+                               class="mdl-radio__button"
+                               name="mode"
+                               value="1"
+                               checked>
+                        <span class="mdl-radio__label">Listen</span>
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-2">
+                        <input type="radio"
+                               id="learning-type-2"
+                               class="mdl-radio__button"
+                               name="mode"
+                               value="2">
+                        <span class="mdl-radio__label">Flash cards</span>
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-3">
+                        <input type="radio"
+                               id="learning-type-3"
+                               class="mdl-radio__button"
+                               name="mode"
+                               value="3">
+                        <span class="mdl-radio__label">Typed input</span>
+                    </label>
+                </div>
             </div>
-            <div class="form-row">
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-2">
-                    <input type="radio"
-                           id="learning-type-2"
-                           class="mdl-radio__button"
-                           name="mode"
-                           value="2">
-                    <span class="mdl-radio__label">Flash cards</span>
-                </label>
-            </div>
-            <div class="form-row">
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-3">
-                    <input type="radio"
-                           id="learning-type-3"
-                           class="mdl-radio__button"
-                           name="mode"
-                           value="3">
-                    <span class="mdl-radio__label">Typed input</span>
-                </label>
-            </div>
-        </div>
-        <div class="mdl-dialog__actions">
+            <div class="mdl-dialog__actions">
                 <button type="submit" class="mdl-button">Submit</button>
                 <button type="button" class="mdl-button close">Disagree</button>
-        </div>
-        <input type="hidden" id="learn-id" name="learn-id">
-        <input type="hidden" id="learn-type" name="learn-type">
+            </div>
+            <input type="hidden" id="learn-id" name="learn-id">
+            <input type="hidden" id="learn-type" name="learn-type">
+        </form>
     </dialog>
-</form>
+
+{% endput %}
