@@ -1,23 +1,22 @@
 <template>
     <div>
-        <ply-card v-if="currentCard" :card="currentCard"></ply-card>
+        <ply-card-flash 
+            v-if="currentCard" 
+            :card="currentCard" 
+            @endCard="nextCard">
+        </ply-card-flash>
     </div>
 </template>
 
 <script>
-    import PlyUnit from './PlyUnit.js';
+    import PlyLearnBase from './PlyLearn.js';
+
     export default {
-        props: ['timeout'],
-        extends: PlyUnit,
+        extends: PlyLearnBase,
         computed: {
             currentCard() {
                 return this.cards[this.current] || null;
             }
-        },
-        mounted() {
-            window.setInterval(() => {
-                this.nextCard();
-            }, this.timeout);
         },
         methods: {
             nextCard() {
@@ -26,7 +25,7 @@
                 } else {
                     this.current = 0;
                 }
-            }
+            },
         }
     }
 </script>

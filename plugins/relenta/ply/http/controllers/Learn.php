@@ -42,7 +42,7 @@ class Learn extends Controller
             } elseif ($request->get('learn-type') == 'course') {
                 $this->validateLearnRequest($courseValidator);
 
-                $cards = Card::where('course_id', $request->get('learn-id'))->get();
+                $cards = Card::where('course_id', $request->get('learn-id'));
             }
         } catch (Exception $e) {
             return response()->json([
