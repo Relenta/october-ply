@@ -1,11 +1,10 @@
 title = "Course"
-url = "/course/:slug"
+url = "/course/:slug/:child_slug?"
 layout = "default"
 is_hidden = 0
 
 [units]
 courseSlug = "slug"
+parentUnitSlug = "child_slug"
 ==
-<div class="container">
-    {% component "units" %}
-</div>
+{% component "units" %}

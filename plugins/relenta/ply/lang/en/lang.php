@@ -14,7 +14,7 @@
         ],
         'units' => [
             'name' => 'GetPly Units',
-            'description' => 'Displays a collection of units (if no units - loads cards component).'
+            'description' => 'Displays a collection of units.'
         ],
         'learn' => [
             'name' => 'GetPly Learning',
