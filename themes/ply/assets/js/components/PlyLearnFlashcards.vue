@@ -3,15 +3,17 @@
         <ply-card-flash 
             v-if="currentCard" 
             :card="currentCard" 
-            @endCard="nextCard">
+            @endCard="nextCard"
+            :sideTimeout="sideTimeout">
         </ply-card-flash>
     </div>
 </template>
 
 <script>
-    import PlyLearnBase from './PlyLearn.js';
-
+    import PlyLearnBase from './PlyLearnBase.js';
+    import PlyCardFlash from './PlyCardFlash';
     export default {
+        props: ['cardTimeout', 'sideTimeout'],
         extends: PlyLearnBase,
         computed: {
             currentCard() {
@@ -20,12 +22,17 @@
         },
         methods: {
             nextCard() {
-                if(this.current < this.cards.length - 1) {
-                    this.current += 1;
-                } else {
-                    this.current = 0;
-                }
+                setTimeout(() => {
+                    if(this.current < this.cards.length - 1) {
+                        this.current += 1;
+                    } else {
+                        this.current = 0;
+                    }
+                }, this.cardTimeout);
             },
+        },
+        components: {
+            PlyCardFlash
         }
     }
 </script>

@@ -85,6 +85,7 @@ jQuery(document).ready(function($) {
 });
 
 Vue.component('PlyLearnListen', require('./components/PlyLearnListen.vue'));
+Vue.component('PlyLearnFlashcards', require('./components/PlyLearnFlashcards.vue'));
 
 const app = new Vue({
     el: '#app'

@@ -27,7 +27,6 @@
             return {
                 currentSide: 0
             }
-            
         }, 
         watch: {
             card() {
