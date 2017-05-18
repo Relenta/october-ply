@@ -1,2 +1,9 @@
 {# Vue.js component #}
-<ply-learn-listen card-timeout="3000" side-timeout="1500"></ply-learn-listen>
+{% if mode == 1 %}
+    <ply-learn-listen card-timeout="3000" side-timeout="1500"></ply-learn-listen>
+{% endif %}
+
+{% if mode == 2 %}
+    <ply-learn-flashcards card-timeout="1000" side-timeout="1000"></ply-learn-flashcards>
+{% endif %}
+

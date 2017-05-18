@@ -9,6 +9,9 @@ use Relenta\Ply\Models\Unit;
 
 class Learn extends ComponentBase
 {
+    public function onRun() {
+        $this->page['mode'] = request()->get('mode', 1);
+    }
 
     public function componentDetails()
     {
