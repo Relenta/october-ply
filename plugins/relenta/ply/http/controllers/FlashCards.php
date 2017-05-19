@@ -39,6 +39,8 @@ class FlashCards extends Controller
             $userCard->difficulty
         );
 
+        // dd($difficultyWeight);
+
         $userCard->days_between_reviews = SpacedRepetition::calcDaysBetweenReviews(
             $userCard->days_between_reviews,
             $percentOverdue, 
@@ -46,8 +48,9 @@ class FlashCards extends Controller
             $performanceRating
         );
 
+        $userCard->last_time = time();
+
         $userCard->save();
-        dd($userCard);
     }
 
     protected function getPerformanceRating($answer) {
