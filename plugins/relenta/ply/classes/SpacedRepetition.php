@@ -1,6 +1,5 @@
 <?php namespace Relenta\Ply\Classes;
 
-use DateTime;
 
 /** Implementation of SM2 */
 class SpacedRepetition {
@@ -16,14 +15,13 @@ class SpacedRepetition {
      * */
     public static function calcPercentOverdue ($dateLastReviewed, $daysBetweenReviews, $performanceRating) {
         if (static::isCorrect($performanceRating)) {
-            $now = new DateTime();
+            $now = time();
 
             if (!$dateLastReviewed) {
                 $diffDays = 0;
             }
             else {
-                $dateLastReviewed   = new DateTime($dateLastReviewed);
-                $diffDays           = $now->diff($dateLastReviewed)->days;
+                $diffDays = ($now - $dateLastReviewed) / (24 * 3600);
             }
 
             return min(2, $diffDays / $daysBetweenReviews);
@@ -61,7 +59,7 @@ class SpacedRepetition {
 
     /** */
     private static function isCorrect($performanceRating) {
-        if ($performanceRating > 0.6) {
+        if ($performanceRating >= 0.6) {
             return true;
         }
         return false;
