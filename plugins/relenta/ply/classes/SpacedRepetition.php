@@ -16,11 +16,17 @@ class SpacedRepetition {
      * */
     public static function calcPercentOverdue ($dateLastReviewed, $daysBetweenReviews, $performanceRating) {
         if (static::isCorrect($performanceRating)) {
-            $now                = new DateTime();
-            $dateLastReviewed   = new DateTime($dateLastReviewed);
-            $diff               = $now->diff($dateLastReviewed);
+            $now = new DateTime();
 
-            return min(2, $diff->days / $daysBetweenReviews);
+            if (!$dateLastReviewed) {
+                $diffDays = 0;
+            }
+            else {
+                $dateLastReviewed   = new DateTime($dateLastReviewed);
+                $diffDays           = $now->diff($dateLastReviewed)->days;
+            }
+
+            return min(2, $diffDays / $daysBetweenReviews);
         }
 
         return 1;
