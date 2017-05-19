@@ -15,4 +15,4 @@
     - seed_relenta_ply_card_side.php
 1.0.3:
     - 'Add SM2 algorithm'
-    - create_relenta_ply_user_card.php
+    - create_relenta_ply_user_flashcard.php

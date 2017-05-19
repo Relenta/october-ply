@@ -3,11 +3,11 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class CreateRelentaPlyUserCard extends Migration
+class CreateRelentaPlyUserFlashCard extends Migration
 {
     public function up()
     {
-        Schema::create('relenta_ply_user_card', function($table)
+        Schema::create('relenta_ply_user_flashcard', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
@@ -34,6 +34,6 @@ class CreateRelentaPlyUserCard extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('relenta_ply_user_card');
+        Schema::dropIfExists('relenta_ply_user_flashcard');
     }
 }
