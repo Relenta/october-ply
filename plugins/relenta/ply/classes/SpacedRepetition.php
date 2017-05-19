@@ -8,7 +8,7 @@ class SpacedRepetition {
     /**
      * Calculates variable, which uses to sort cards descending by this.
      *
-     * @param string    $dateLastReviewed   Date, card was reviewed last time.
+     * @param DateTime  $dateLastReviewed   Date, card was reviewed last time.
      * @param float     $daysBetweenReviews How many days should occur between review attempts for this item.
      * @param float     $performanceRating  Indicator of the correct answer.
      *
@@ -16,9 +16,8 @@ class SpacedRepetition {
      * */
     public static function calcPercentOverdue ($dateLastReviewed, $daysBetweenReviews, $performanceRating) {
         if (static::isCorrect($performanceRating)) {
-            $now                = new DateTime();
-            $dateLastReviewed   = new DateTime($dateLastReviewed);
-            $diff               = $now->diff($dateLastReviewed);
+            $now  = new DateTime();
+            $diff = $now->diff($dateLastReviewed);
 
             return min(2, $diff->days / $daysBetweenReviews);
         }
