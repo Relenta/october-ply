@@ -13,9 +13,9 @@ class CreateRelentaPlyUserFlashCard extends Migration
             $table->increments('id')->unsigned();
             $table->integer('user_id')->unsigned()->index('card_user')->default(0);
             $table->integer('card_id')->nullable()->index('card')->unsigned()->default(0);
-            $table->integer('number_of_repeats')->unsigned()->default(0);
-            $table->integer('factor')->unsigned()->default(0);
-            $table->integer('nextTime')->unsigned()->default(0);
+            $table->float('days_between_reviews')->unsigned()->default(0);
+            $table->float('difficulty')->unsigned()->default(0);
+            $table->date('last_time')->nullable();
 
 
             $table->foreign('user_id', 'card_user_ref')
