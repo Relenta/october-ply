@@ -11,11 +11,11 @@ class CreateRelentaPlyUserFlashCard extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
-            $table->integer('user_id')->unsigned()->index('card_user')->default(0);
-            $table->integer('card_id')->nullable()->index('card')->unsigned()->default(0);
+            $table->integer('user_id')->unsigned()->index('card_user');
+            $table->integer('card_id')->unsigned()->index('card');
             $table->float('days_between_reviews')->unsigned()->default(1);
             $table->float('difficulty')->unsigned()->default(0);
-            $table->timestamp('last_time')->nullable();
+            $table->integer('last_time')->unsigned()->nullable();
 
 
             $table->foreign('user_id', 'card_user_ref')
