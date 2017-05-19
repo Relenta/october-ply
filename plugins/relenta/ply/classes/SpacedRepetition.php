@@ -50,11 +50,7 @@ class SpacedRepetition {
             return $oldDaysBetweenReviews * (1 + ($difficultyWeight - 1) * $percentOverdue);
         }
 
-        if ($oldDaysBetweenReviews == 0) {
-            return 0;
-        }
-
-        return $oldDaysBetweenReviews * (1 / pow($difficultyWeight, 2));
+        return min(1, $oldDaysBetweenReviews * (1 / pow($difficultyWeight, 2)));
     }
 
     /** */
