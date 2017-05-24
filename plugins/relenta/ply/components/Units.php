@@ -102,6 +102,9 @@ class Units extends ComponentBase
         if ($this->parentUnit) {
             $query->where('parent_id', $this->parentUnit->id);
         }
+        else {
+            $query->whereNull('parent_id');
+        }
         return $query->get();
     }
 
