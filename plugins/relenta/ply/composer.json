@@ -15,8 +15,9 @@
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "facebook/webdriver": "^1.4",
-        "guzzlehttp/guzzle": ">=6.2"
+        "facebook/webdriver": "*",
+        "guzzlehttp/guzzle": ">=6.2",
+        "fzaninotto/faker": "^1.6"
     },
     "files": [
         "classes/helpers.php"

@@ -2,6 +2,7 @@
 
 use Relenta\Ply\Models\Card;
 use Relenta\Ply\Traits\Database\DisableForeignKeys;
+use Faker;
 use Seeder;
 
 class SeedRelentaPlyCardside extends Seeder
@@ -13,14 +14,15 @@ class SeedRelentaPlyCardside extends Seeder
     public function run()
     {
         $this->disableForeignKeys();
+        $faker = Faker\Factory::create();
 
         $cards = Card::all();
 
         foreach ($cards as $card) {
             for ($i = 1; $i <= $this->sidesPerCard; $i++) {
                 $card->sides()->create([
-                    'number' => $i,
-                    'content'  => $card->title . ' side #' . $i . ' CONTENT',
+                    'number'    => $i,
+                    'content'   => $faker->sentence($nbWords = rand(1, 4), $bool = true),
                 ]);
             }
         }
