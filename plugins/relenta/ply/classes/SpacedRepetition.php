@@ -1,72 +1,77 @@
 <?php namespace Relenta\Ply\Classes;
 
+/**
+ * Implementation of SM2+ algorithm
+ */
+class SpacedRepetition
+{
 
-/** Implementation of SM2 */
-class SpacedRepetition {
-
-    /**
-     * Calculates variable, which uses to sort cards descending by this.
-     *
-     * @param string    $dateLastReviewed   Date, card was reviewed last time.
-     * @param float     $daysBetweenReviews How many days should occur between review attempts for this item.
-     * @param float     $performanceRating  Indicator of the correct answer.
-     *
-     * @return float
-     * */
-    public static function calcPercentOverdue ($dateLastReviewed, $daysBetweenReviews, $performanceRating) {
-        if (static::isCorrect($performanceRating)) {
-            $now = time();
-
-            if (!$dateLastReviewed) {
-                $diffDays = 0;
-            }
-            else {
-                $diffDays = ($now - $dateLastReviewed) / (24 * 3600);
-            }
-
-            return min(2, $diffDays / $daysBetweenReviews);
-        }
-
-        return 1;
-    }
+    const WORST  = 0;
+    const NORMAL = 0.6;
+    const BEST   = 1;
 
     /**
-     * @param float $oldDifficulty      Indicator, how difficult card is.
-     * @param float $percentOverdue     Variable, which uses to sort cards descending by this.
-     * @param float $performanceRating  Indicator of the correct answer.
-     *
-     * @return float
+     * Repeat the card and update statistics
+     * 
+     * @param  UserFlashcard $userCard          card instance
+     * @param  float $performanceRating         performance rating
+     * @param  int $today                       days from Unix epoch
+     * @return boolean                          update status
      */
-    public static function calcDifficulty ($oldDifficulty, $percentOverdue, $performanceRating) {
-        $difficulty = $oldDifficulty + $percentOverdue * 1/17 * (8 - 9 * $performanceRating);
+    public static function repeat($userCard, $performanceRating, $today)
+    {
+        $percentOverdue = static::calcPercentOverdue($userCard, $today);
 
-        return static::clamp($difficulty);
-    }
+        $difficulty = static::clamp( 
+            $userCard->difficulty + (8 - 9 * $performanceRating) * $percentOverdue / 17,
+            0, 1
+        );
 
-    /** */
-    public static function calcDifficultyWeight ($difficulty) {
-        return 3 - 1.7 * $difficulty;
-    }
+        $difficultyWeight = 3 - 1.7 * $difficulty;
 
-    /** */
-    public static function calcDaysBetweenReviews ($oldDaysBetweenReviews, $percentOverdue, $difficultyWeight, $performanceRating) {
-        if (static::isCorrect($performanceRating)) {
-            return $oldDaysBetweenReviews * (1 + ($difficultyWeight - 1) * $percentOverdue);
+        if ($performanceRating === static::WORST) {
+            $tempInterval = round(1 / $difficultyWeight / $difficultyWeight);
+
+            $interval = ($tempInterval > 0) ? $tempInterval : 1;
+        } else {
+            $interval = 1 + round(($difficultyWeight - 1) * $percentOverdue);
         }
 
-        return min(1, $oldDaysBetweenReviews * (1 / pow($difficultyWeight, 2)));
+        $userCard->update([
+            'interval' => $interval,
+            'difficulty'           => $difficulty,
+            'last_time'            => $today,
+            'next_time'            => $today + $interval,
+        ]);
+
+        return $userCard;
     }
 
-    /** */
-    private static function isCorrect($performanceRating) {
-        if ($performanceRating >= 0.6) {
-            return true;
-        }
-        return false;
+    /**
+     * Calculate percent overdue
+     * 
+     * @param  UserFlashcard $userCard   instance to repeat
+     * @param  int $today                days since Unix epoch
+     * @return float                     overdue percent
+     */
+    public static function calcPercentOverdue($userCard, $today)
+    {
+        // dd($userCard->toArray());
+        $calculated = ($today - $userCard->last_time) / $userCard->interval;
+
+        return ($calculated > 2) ? 2 : $calculated;
     }
 
-    /** */
-    private static function clamp($value, $minValue = 0, $maxValue = 1) {
+    /**
+     * Clamp value to interval
+     * 
+     * @param  float  $value      number to clump
+     * @param  integer $minValue  lower border
+     * @param  integer $maxValue  upper border
+     * @return float              number from given interval
+     */
+    private static function clamp($value, $minValue = 0, $maxValue = 1)
+    {
         return max($minValue, min($maxValue, $value));
     }
 }

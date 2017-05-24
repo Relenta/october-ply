@@ -1,15 +1,18 @@
 <template>
     <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col" v-if="!answered">
+        <div class="mdl-cell mdl-cell--12-col">
             <div class="ply-simple-card mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Side 1</h2>
-                </div>
                 <div class="mdl-card__supporting-text">
                     <h2>{{ card.sides[0].content }}</h2>
                 </div>
+                <div v-if="answered">
+                    <hr>
+                    <div class="mdl-card__supporting-text">
+                        <h2>{{ card.sides[1].content }}</h2>
+                    </div>
+                </div>
             </div>
-            <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-card__actions mdl-card--border" v-if="!answered">
                 <button 
                     @click="playSide(0)"
                     class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -24,16 +27,6 @@
                     class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     Submit
                 </button>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--12-col" v-if="answered">
-            <div class="ply-simple-card mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Side 2</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <h2>{{ card.sides[1].content }}</h2>
-                </div>
             </div>
         </div>
     </div>
@@ -55,7 +48,8 @@
         data() {
             return {
                 answered: false,
-                answer: ''
+                answer: '',
+                answerStatus: ''
             }
         },
         created() {
@@ -64,6 +58,7 @@
         watch: {
             card() {
                 this.answered = false;
+                this.answerStatus = '';
                 this.playSide(0);
             }
         },
@@ -71,9 +66,9 @@
             submitAnswer() {
                 if( stringSimilarity
                         .compareTwoStrings(this.answer, this.card.sides[1].content) > 0.85) {
-                    alert('Correct!!!');
+                    this.answerStatus = 'Correct';
                 } else {
-                    alert('Incorrect!!!');
+                    this.answerStatus = 'Inorrect';
                 }
                 this.answer = '';
                 this.showNextSide();
