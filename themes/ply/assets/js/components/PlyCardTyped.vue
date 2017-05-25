@@ -8,12 +8,12 @@
                 <div v-if="answered">
                     <hr>
                     <div class="mdl-card__supporting-text">
-                        <h2>{{ card.sides[1].content }}</h2>
+                        <h2>{{ answerStatus }}: {{ card.sides[1].content }}</h2>
                     </div>
                 </div>
             </div>
             <div class="mdl-card__actions mdl-card--border" v-if="!answered">
-                <button 
+                <button
                     @click="playSide(0)"
                     class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     Play
@@ -23,7 +23,7 @@
                     <label class="mdl-textfield__label" for="sample3">Answer...</label>
                 </div>
                 <button
-                    @click="submitAnswer" 
+                    @click="submitAnswer"
                     class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     Submit
                 </button>

@@ -16,14 +16,15 @@ mix
     .options({
         processCssUrls: false
     })
-    
+
     // .copyDirectory('assets/fonts', 'fonts')
 
-    // do not remove next 2 lines 
+    // do not remove next 2 lines
     // this line is for `npm run dev`
     .copyDirectory('assets/images', 'dist/images')
     //this line is necessary for `npm run hot`
     .copyDirectory('assets/images', 'images')
+    .copyDirectory('assets/sounds', 'dist/sounds')
     .js('assets/js/app.js', 'js/')
     .sass('assets/scss/theme.scss', 'css')
     .sass('assets/scss/vendor.scss', 'css');

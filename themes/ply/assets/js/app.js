@@ -1,4 +1,5 @@
 require('./common.js');
+
 require('../vendor/jquery_autocomplete/src/jquery.autocomplete.js');
 jQuery(document).ready(function($) {
     $(".mdl-layout-title").on("click", function() {
@@ -55,7 +56,7 @@ jQuery(document).ready(function($) {
     })
 */
 
-/* 
+/*
  * Learning dialog linking
  */
     var dialog = document.querySelector('.ply-learning-dialog');

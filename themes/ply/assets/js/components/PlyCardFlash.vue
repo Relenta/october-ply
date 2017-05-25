@@ -11,23 +11,23 @@
                 </div>
             </div>
             <div class="mdl-card__actions mdl-card--border">
-                <button 
-                    @click="playCard"
+                <button
+                    @click="playCardMedia"
                     class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     Play
                 </button>
-                <button 
+                <button
                     @click="answer('yes')"
                     class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     Yes
                 </button>
                 <button
-                    @click="answer('no')" 
+                    @click="answer('no')"
                     class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     No
                 </button>
                 <button
-                    @click="answer('maybe')" 
+                    @click="answer('maybe')"
                     class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     Maybe
                 </button>
@@ -69,7 +69,7 @@
                     card_id: this.card.id,
                     answer: answerType
                 }).then(this.endCard);
-                
+
             },
             endCard() {
                 this.$emit('endCard');

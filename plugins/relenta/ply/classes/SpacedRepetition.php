@@ -12,7 +12,7 @@ class SpacedRepetition
 
     /**
      * Repeat the card and update statistics
-     * 
+     *
      * @param  UserFlashcard $userCard          card instance
      * @param  float $performanceRating         performance rating
      * @param  int $today                       days from Unix epoch
@@ -22,7 +22,7 @@ class SpacedRepetition
     {
         $percentOverdue = static::calcPercentOverdue($userCard, $today);
 
-        $difficulty = static::clamp( 
+        $difficulty = static::clamp(
             $userCard->difficulty + (8 - 9 * $performanceRating) * $percentOverdue / 17,
             0, 1
         );
@@ -49,7 +49,7 @@ class SpacedRepetition
 
     /**
      * Calculate percent overdue
-     * 
+     *
      * @param  UserFlashcard $userCard   instance to repeat
      * @param  int $today                days since Unix epoch
      * @return float                     overdue percent
@@ -64,7 +64,7 @@ class SpacedRepetition
 
     /**
      * Clamp value to interval
-     * 
+     *
      * @param  float  $value      number to clump
      * @param  integer $minValue  lower border
      * @param  integer $maxValue  upper border

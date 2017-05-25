@@ -13,3 +13,4 @@ window.axios = require('axios');
 require('../vendor/jquery_autocomplete/src/jquery.autocomplete.js');
 
 require('dialog-polyfill');
+
