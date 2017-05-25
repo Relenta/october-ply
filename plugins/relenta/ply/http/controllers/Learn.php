@@ -78,7 +78,7 @@ class Learn extends Controller {
         if (! $user->course_subscriptions()->find($course_id)) {
             $user->course_subscriptions()->attach($course_id, [
                 "subscribed_at"           => time(),
-                "subscription_expires_at" => "",
+                "subscription_expires_at" => 0,
             ]);
         }
     }

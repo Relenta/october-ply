@@ -21,14 +21,14 @@
 </style>
 
 <script>
-    import { playAudio, forEachPromise } from '../helpers.js'
+    import {playAudio, forEachPromise} from '../helpers.js'
     export default {
         props: ['card', 'sideTimeout'],
         data() {
             return {
                 currentSide: 0
             }
-        }, 
+        },
         watch: {
             card() {
                 this.playCardMedia();
@@ -43,7 +43,13 @@
             },
             learnSide(side, index) {
                 this.currentSide = index;
-                return playAudio(side.media.path, this.sideTimeout);
+                if (side.hasOwnProperty['media']) {
+                    return playAudio(side.media.path, this.sideTimeout);
+                } else {
+                    return new Promise((resolve) => {
+                        setTimeout(resolve, this.sideTimeout + 1000);
+                    });
+                }
             },
             endCard() {
                 this.$emit('endCard');

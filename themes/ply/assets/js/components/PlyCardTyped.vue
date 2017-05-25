@@ -40,7 +40,7 @@
 </style>
 
 <script>
-    import { playAudio } from '../helpers.js';
+    import {playAudio} from '../helpers.js';
     import * as stringSimilarity from 'string-similarity';
 
     export default {
@@ -64,7 +64,7 @@
         },
         methods: {
             submitAnswer() {
-                if( stringSimilarity
+                if (stringSimilarity
                         .compareTwoStrings(this.answer, this.card.sides[1].content) > 0.85) {
                     this.answerStatus = 'Correct';
                 } else {
@@ -83,7 +83,12 @@
                 this.$emit('endCard');
             },
             playSide(index) {
-                return playAudio(this.card.sides[index].media.path, this.sideTimeout);
+                if (this.card.sides[index].hasOwnProperty['media']) {
+                    return playAudio(this.card.sides[index].media.path, this.sideTimeout);
+                }
+                return new Promise((resolve) => {
+                    setTimeout(resolve, this.sideTimeout);
+                });
             }
         }
     }

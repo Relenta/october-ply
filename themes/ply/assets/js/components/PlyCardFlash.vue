@@ -44,7 +44,7 @@
 </style>
 
 <script>
-    import { playAudio } from '../helpers.js';
+    import {playAudio} from '../helpers.js';
 
     export default {
         props: ['card', 'sideTimeout'],
@@ -75,7 +75,12 @@
                 this.$emit('endCard');
             },
             playSide(index) {
-                return playAudio(this.card.sides[index].media.path, this.sideTimeout);
+                if (this.card.sides[index].hasOwnProperty['media']) {
+                    return playAudio(this.card.sides[index].media.path, this.sideTimeout);
+                }
+                return new Promise((resolve) => {
+                    setTimeout(resolve, this.sideTimeout);
+                });
             },
             playCardMedia() {
                 this.playSide(0).then(() => {
