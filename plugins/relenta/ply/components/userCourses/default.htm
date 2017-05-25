@@ -1,26 +1,19 @@
-<ul class="mdl-list user-courses-list">
-    {% for course in courses %}
-        <li class="mdl-list__item mdl-list__item--three-line">
 
-            <span class="mdl-list__item-primary-content">
-                <span>
-                    {{ course.title }}
-                </span>
-                <span class="mdl-list__item-text-body">
-                    {{ course.data }}
-                </span>
-            </span>
-            <span class="mdl-list__item-secondary-content">
-                <a class="mdl-list__item-secondary-action" href="#">
-                    Edit
-                </a>
-                <a class="mdl-list__item-secondary-action" href="#">
-                    Publish
-                </a>
-                <a class="mdl-list__item-secondary-action" href="#">
-                    Statistics
-                </a>
-            </span>
-        </li>
-    {% endfor %}
-</ul>
+{% if courses.count > 0 %}
+    {% if showSubscriptions %}
+        {% partial "@subscriptions" course=course %}
+    {% else %}
+        {% for course in courses %}
+            {% partial "@user-courses" course=course %}
+        {% endfor %}
+    {% endif %}
+{% else %}
+    <div class="mdl-card">
+        <div class="mdl-card__title">
+            <div class="mdl-card__title-text">
+                You have no courses.
+            </div>
+        </div>
+    </div>
+{% endif %}
+

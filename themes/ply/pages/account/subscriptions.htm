@@ -1,0 +1,16 @@
+title = "Subscriptions"
+url = "/account/subscriptions"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[ru] = "/my-courses"
+
+[user_courses]
+showSubscriptions = 1
+==
+{% put sidemenu %}
+    {% partial 'account/navigation' %}
+{% endput %}
+
+{% component 'user_courses' %}

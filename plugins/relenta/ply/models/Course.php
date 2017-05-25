@@ -5,8 +5,7 @@ use Model;
 /**
  * Course Model
  */
-class Course extends Model
-{
+class Course extends Model {
 
     use \October\Rain\Database\Traits\Sluggable;
 
@@ -38,5 +37,13 @@ class Course extends Model
     public $belongsTo = [
         'category' => ['Relenta\Ply\Models\Category'],
         'author'   => ['RainLab\User\Models\User'],
+    ];
+
+    public $belongsToMany = [
+        'subscribers' => [
+            'Relenta\Ply\Models\User',
+            'table' => 'relenta_ply_user_subscription',
+            'pivot' => ['subscribed_at', 'subscription_expires_at'],
+        ],
     ];
 }
