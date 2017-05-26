@@ -121,7 +121,7 @@ class UserCourses extends ComponentBase {
                     //dd($knowledgeCoeff);
                     $learnedCardsCoeff = 1 / ($subscription->cards()->count() / count($userFlashcards));
 
-                    $subscriptionData['stats'] = round( 100 * $knowledgeCoeff * $knowledgeCoeff * $learnedCardsCoeff);
+                    $subscriptionData['stats'] = round( 100 * $knowledgeCoeff * $learnedCardsCoeff);
                 }
 
                 $subscriptions[] = $subscriptionData;
