@@ -1,5 +1,7 @@
-import swal from 'sweetalert2'
-import { playAudio } from '../helpers';
+import axios from 'axios';
+import swal from 'sweetalert2';
+import {playAudio} from '../helpers';
+
 export default {
     data() {
         return {
@@ -9,18 +11,26 @@ export default {
     },
     mounted() {
         axios.get(`/api/v1/learn${location.search}`).then(({data}) => {
-            this.cards = data.slice(0, 5);
+            this.cards = data;
         });
         let $vm = this;
-        document.querySelector('#progressbar').addEventListener('mdl-componentupgraded', function() {
+        document.querySelector('#progressbar').addEventListener('mdl-componentupgraded', function () {
             this.MaterialProgress.setProgress(0);
             $vm.progressBar = this.MaterialProgress;
         });
     },
     methods: {
         endLessonSuccess() {
-            swal('Great!', 'Lesson completed', 'success').then(() => {});
+            swal({
+                title: 'Great!',
+                text: 'Lesson completed',
+                type: 'success',
+                timer: 2000
+            }).then(this.redirectHome, this.redirectHome).catch(this.redirectHome);
             playAudio('/themes/ply/dist/sounds/tada.mp3', 0);
         },
+        redirectHome() {
+            window.location = '/account/subscriptions';
+        }
     }
 }

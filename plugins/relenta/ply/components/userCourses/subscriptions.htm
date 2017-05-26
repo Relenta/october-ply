@@ -3,21 +3,22 @@
     <div class="mdl-card mdl-shadow--4dp courses-card-list__card">
         <div class="mdl-card__title">
             <h3 class="mdl-card__title-text">
-                {{ course.title }}
+                {{ course.data.title }}
             </h3>
         </div>
         <div class="mdl-card__supporting-text mdl-card--expand">
             {% if course.data %}
-            {{ course.data }}
+            {{ course.data.data }}
             {% else %}
             There is no course data
             {% endif %}
-            <b>There will be statistics</b>
+            <br>
+            <p><b>Knowledge: {{ course.stats }}%</b></p>
         </div>
         <div class="mdl-card__actions mdl-card--border">
             {% if course.units.count > 0 %}
             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-               href="{{ 'course'|page({ slug: course.slug }) }}">
+               href="{{ 'course'|page({ slug: course.data.slug }) }}">
                 Open course
             </a>
             {% endif %}

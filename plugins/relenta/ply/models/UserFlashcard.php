@@ -26,10 +26,7 @@ class UserFlashCard extends Model
      * @var array Relations
      */
     public $belongTo = [
-        'user'   => ['RainLab\User\Models\User']
-    ];
-
-    public $hasOne = [
+        'user'   => ['RainLab\User\Models\User'],
         'card'   => ['Relenta\Ply\Models\Card']
     ];
 

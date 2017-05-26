@@ -1,6 +1,8 @@
 <?php namespace Relenta\Ply\Components;
 
 use Cms\Classes\ComponentBase;
+use Db;
+use Illuminate\Support\Collection;
 use RainLab\User\Facades\Auth;
 use Rainlab\User\Models\User;
 use Relenta\Ply\Models\Course;
@@ -81,6 +83,7 @@ class UserCourses extends ComponentBase {
     public function showSubscriptions()
     {
         $this->page["showSubscriptions"] = $this->property('showSubscriptions');
+
         return $this->page["showSubscriptions"];
     }
 
@@ -92,7 +95,39 @@ class UserCourses extends ComponentBase {
     public function getCourses()
     {
         if ($this->showSubscriptions()) {
-            return $this->user->course_subscriptions()->get();
+            $subscriptions = [];
+            foreach ($this->user->course_subscriptions as $subscription) {
+                $subscriptionData = [];
+                $subscriptionData['data'] = $subscription;
+
+                $currentUserId = Auth::getUser()->id;
+                $userFlashcards = $subscription->cards()->whereHas('stats', function ($query) use ($currentUserId) {
+                    $query->where('user_id', $currentUserId);
+                })->get();
+
+                $cardIds = (implode(',', $userFlashcards->pluck('id')->toArray()));
+
+                if (! count($userFlashcards)) {
+                    $subscriptionData['stats'] = 0;
+                } else {
+                    $queryDifficluty = Db::select("SELECT AVG(difficulty) AS avg_difficulty 
+                            FROM relenta_ply_user_flashcard 
+                            WHERE user_id = ? AND card_id IN ({$cardIds})", [
+                        $currentUserId,
+                    ]);
+
+                    $knowledgeCoeff = 1 - $queryDifficluty[0]->avg_difficulty;
+
+                    //dd($knowledgeCoeff);
+                    $learnedCardsCoeff = 1 / ($subscription->cards()->count() / count($userFlashcards));
+
+                    $subscriptionData['stats'] = round( 100 * $knowledgeCoeff * $knowledgeCoeff * $learnedCardsCoeff);
+                }
+
+                $subscriptions[] = $subscriptionData;
+            };
+
+            return collect($subscriptions);
         }
 
         return Course::where('author_id', $this->user->id)->get();
