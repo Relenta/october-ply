@@ -1,6 +1,6 @@
 function playAudio(url, timeout) {
     return new Promise(function(resolve, reject) {
-        var audio = new Audio();
+        let audio = new Audio();
         audio.preload = "auto";
         audio.autoplay = true;
         audio.onerror = reject;

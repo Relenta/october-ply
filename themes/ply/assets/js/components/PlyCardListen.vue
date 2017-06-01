@@ -47,7 +47,8 @@
                     return playAudio(side.media.path, this.sideTimeout);
                 } else {
                     return new Promise((resolve) => {
-                        setTimeout(resolve, this.sideTimeout + 1000);
+                        
+                        setTimeout(resolve, this.sideTimeout + 1);
                     });
                 }
             },
