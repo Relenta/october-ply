@@ -5,12 +5,12 @@ use Model;
 /**
  * User card SM2 statistics Model
  */
-class UserFlashCard extends Model
+class UserStats extends Model
 {
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'relenta_ply_user_flashcard';
+    public $table = 'relenta_ply_user_stats';
 
     /**
      * @var array Guarded fields

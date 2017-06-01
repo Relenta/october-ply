@@ -27,7 +27,7 @@ class Card extends Model
      */
     public $hasMany = [
         'sides' => ['Relenta\Ply\Models\CardSide'],
-        'stats' => ['Relenta\Ply\Models\UserFlashcard'],
+        'stats' => ['Relenta\Ply\Models\UserStats'],
     ];
 
 }

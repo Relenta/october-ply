@@ -111,7 +111,7 @@ class UserCourses extends ComponentBase {
                     $subscriptionData['stats'] = 0;
                 } else {
                     $queryDifficluty = Db::select("SELECT AVG(difficulty) AS avg_difficulty 
-                            FROM relenta_ply_user_flashcard 
+                            FROM relenta_ply_user_stats 
                             WHERE user_id = ? AND card_id IN ({$cardIds})", [
                         $currentUserId,
                     ]);

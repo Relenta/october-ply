@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use RainLab\User\Facades\Auth;
 use Relenta\Ply\Classes\SpacedRepetition;
-use Relenta\Ply\Models\UserFlashcard;
+use Relenta\Ply\Models\UserStats;
 
 class FlashCards extends Controller
 {
@@ -24,7 +24,7 @@ class FlashCards extends Controller
         $cardId = $request->input('card_id');
         $answer = $request->input('answer');
 
-        $userCard          = UserFlashcard::firstOrCreate(['card_id' => $cardId, 'user_id' => $user->id]);
+        $userCard          = UserStats::firstOrCreate(['card_id' => $cardId, 'user_id' => $user->id]);
         $performanceRating = $this->getPerformanceRating($answer);
         $today             = $this->getDaysSinceEpoch();
 
