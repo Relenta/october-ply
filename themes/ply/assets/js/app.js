@@ -89,6 +89,8 @@ Vue.component('PlyLearnListen', require('./components/PlyLearnListen.vue'));
 Vue.component('PlyLearnFlashcards', require('./components/PlyLearnFlashcards.vue'));
 Vue.component('PlyLearnTyped', require('./components/PlyLearnTyped.vue'));
 
+window.eventBus = new Vue();
+
 const app = new Vue({
     el: '#app'
 });

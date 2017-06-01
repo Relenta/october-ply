@@ -51,14 +51,14 @@
                 currentSide: 0
             }
         },
-        mounted() {
-            this.playCardMedia();
-        },
-        watch: {
-            card() {
+        created() {
+            window.eventBus.$on('cardChanged', () => {
                 this.currentSide = 0;
                 this.playCardMedia();
-            }
+            });
+        },
+        mounted() {
+            this.playCardMedia();
         },
         methods: {
             answer(answerType) {

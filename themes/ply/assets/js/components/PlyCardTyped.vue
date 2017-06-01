@@ -64,23 +64,18 @@
         },
         methods: {
             submitAnswer() {
-                if (stringSimilarity
-                        .compareTwoStrings(this.answer, this.card.sides[1].content) > 0.85) {
-                    this.answerStatus = 'Correct';
-                } else {
-                    this.answerStatus = 'Inorrect';
-                }
+                let similarity = stringSimilarity.compareTwoStrings(this.answer, this.card.sides[1].content);
+
+                this.answerStatus = similarity > 0.85;
                 this.answer = '';
-                this.showNextSide();
-            },
-            showNextSide() {
                 this.answered = true;
+
                 setTimeout(() => {
                     this.playSide(1).then(this.endCard);
                 }, this.sideTimeout);
             },
             endCard() {
-                this.$emit('endCard');
+                this.$emit('cardAnswered', this.answerStatus);
             },
             playSide(index) {
                 if (this.card.sides[index].hasOwnProperty['media']) {

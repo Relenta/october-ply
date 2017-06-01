@@ -20,9 +20,6 @@
         computed: {
             currentCard() {
                 return this.cards[0] || null;
-            },
-            currentIndex() {
-                return this.count - this.cards.length;
             }
         },
         methods: {
@@ -30,6 +27,9 @@
                 setTimeout(() => {
 
                     const currentCard = this.cards.shift();
+
+                    window.eventBus.$emit('cardChanged');
+
                     // Check type value
                     if (answer === 'no') {
                         this.cards.push(currentCard);

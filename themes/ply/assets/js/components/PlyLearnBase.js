@@ -10,6 +10,11 @@ export default {
             count: 0
         }
     },
+    computed: {
+        currentIndex() {
+            return this.count - this.cards.length;
+        }
+    },
     mounted() {
         axios.get(`/api/v1/learn${location.search}`).then(({data}) => {
             this.cards = data;
