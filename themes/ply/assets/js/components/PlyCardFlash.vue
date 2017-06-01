@@ -1,21 +1,19 @@
 <template>
     <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col" v-if="!answered">
+        <div class="mdl-cell mdl-cell--12-col">
             <div class="ply-simple-card mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__supporting-text">
                     <h2>{{ card.sides[0].content }}</h2>
                 </div>
-                <hr>
-                <div class="mdl-card__supporting-text">
-                    <h2>{{ card.sides[1].content }}</h2>
+            </div>
+            <div v-if="currentSide === 1">
+                <div class="ply-simple-card mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__supporting-text">
+                        <h2>{{ card.sides[1].content }}</h2>
+                    </div>
                 </div>
             </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <button
-                    @click="playCardMedia"
-                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Play
-                </button>
+            <div v-if="currentSide === 1" class="mdl-card__actions mdl-card--border">
                 <button
                     @click="answer('yes')"
                     class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -50,7 +48,7 @@
         props: ['card', 'sideTimeout'],
         data() {
             return {
-                answered: false
+                currentSide: 0
             }
         },
         mounted() {
@@ -58,7 +56,7 @@
         },
         watch: {
             card() {
-                this.answered = false;
+                this.currentSide = 0;
                 this.playCardMedia();
             }
         },
@@ -75,6 +73,7 @@
                 this.$emit('endCard');
             },
             playSide(index) {
+                this.currentSide = index;
                 if (this.card.sides[index].hasOwnProperty['media']) {
                     return playAudio(this.card.sides[index].media.path, this.sideTimeout);
                 }
