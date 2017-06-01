@@ -4,12 +4,22 @@
             <div class="ply-simple-card mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__supporting-text">
                     <h2>{{ card.sides[0].content }}</h2>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                            v-if="card.sides[0].media"
+                            @click="playSide(0)">
+                        Play
+                    </button>
                 </div>
             </div>
             <div v-if="currentSide === 1">
                 <div class="ply-simple-card mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__supporting-text">
                         <h2>{{ card.sides[1].content }}</h2>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                                v-if="card.sides[1].media"
+                                @click="playSide(1)">
+                            Play
+                        </button>
                     </div>
                 </div>
             </div>
@@ -54,11 +64,11 @@
         created() {
             window.eventBus.$on('cardChanged', () => {
                 this.currentSide = 0;
-                this.playCardMedia();
+                this.learnCard();
             });
         },
         mounted() {
-            this.playCardMedia();
+            this.learnCard();
         },
         methods: {
             answer(answerType) {
@@ -74,18 +84,21 @@
                 this.$emit('endCard');
             },
             playSide(index) {
+                return playAudio(this.card.sides[index].media.path, this.sideTimeout);
+            },
+            showSide(index) {
                 this.currentSide = index;
                 if (this.card.sides[index].hasOwnProperty['media']) {
-                    return playAudio(this.card.sides[index].media.path, this.sideTimeout);
+                    this.playSide(index);
                 }
                 return new Promise((resolve) => {
                     setTimeout(resolve, this.sideTimeout);
                 });
             },
-            playCardMedia() {
-                this.playSide(0).then(() => {
+            learnCard() {
+                this.showSide(0).then(() => {
                     setTimeout(() => {
-                        this.playSide(1);
+                        this.showSide(1);
                     }, this.sideTimeout);
                 });
             }

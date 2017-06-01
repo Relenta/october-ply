@@ -43,11 +43,10 @@
             },
             learnSide(side, index) {
                 this.currentSide = index;
-                if (side.hasOwnProperty['media']) {
+                if (side.media) {
                     return playAudio(side.media.path, this.sideTimeout);
                 } else {
                     return new Promise((resolve) => {
-                        
                         setTimeout(resolve, this.sideTimeout + 1);
                     });
                 }
