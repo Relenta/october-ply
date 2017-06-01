@@ -5,7 +5,7 @@
         <ply-card-flash
             v-if="currentCard"
             :card="currentCard"
-            @endCard="nextCard"
+            @cardAnswered="nextCard"
             :sideTimeout="sideTimeout">
         </ply-card-flash>
     </div>
@@ -19,17 +19,28 @@
         extends: PlyLearnBase,
         computed: {
             currentCard() {
-                return this.cards[this.current] || null;
+                return this.cards[0] || null;
+            },
+            currentIndex() {
+                return this.count - this.cards.length;
             }
         },
         methods: {
-            nextCard() {
+            nextCard(answer) {
                 setTimeout(() => {
-                    this.progressBar.setProgress(Math.round(100 * (this.current + 1) / this.cards.length));
 
-                    if(this.current < this.cards.length - 1) {
-                        this.current += 1;
-                    } else {
+                    const currentCard = this.cards.shift();
+                    // Check type value
+                    if (answer === 'no') {
+                        this.cards.push(currentCard);
+                        return;
+                    }
+
+                    // Update progress
+                    this.progressBar.setProgress(Math.round(100 * this.currentIndex / this.count));
+
+                    // Check course progress
+                    if(this.cards.length == 0) {
                         this.endLessonSuccess();
                     }
                 }, this.cardTimeout);

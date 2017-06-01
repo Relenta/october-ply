@@ -62,11 +62,12 @@
         },
         methods: {
             answer(answerType) {
-                // TODO: send stats request
                 axios.post('/api/v1/flash', {
                     card_id: this.card.id,
                     answer: answerType
-                }).then(this.endCard);
+                }).then(() => {
+                    this.$emit('cardAnswered', answerType);
+                });
 
             },
             endCard() {

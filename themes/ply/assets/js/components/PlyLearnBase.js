@@ -6,12 +6,14 @@ export default {
     data() {
         return {
             cards: [],
-            current: 0
+            current: 0,
+            count: 0
         }
     },
     mounted() {
         axios.get(`/api/v1/learn${location.search}`).then(({data}) => {
             this.cards = data;
+            this.count = data.length;
         });
         let $vm = this;
         document.querySelector('#progressbar').addEventListener('mdl-componentupgraded', function () {
