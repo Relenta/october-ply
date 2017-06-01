@@ -19,3 +19,6 @@
 1.0.4:
     - 'Add User subscription'
     - create_relenta_ply_user_subscription.php
+1.0.5:
+    - 'Rename flashcards to stats'
+    - rename_relenta_ply_user_flashcard_to_stats.php
