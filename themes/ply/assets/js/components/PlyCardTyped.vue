@@ -12,10 +12,7 @@
         </div>
         <div class="learn-card card-input mdl-card mdl-shadow--2dp" v-if="!answered">
             <div class="card-content mdl-card__supporting-text">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" id="card-answer-input" type="text">
-                    <label class="mdl-textfield__label" for="card-answer-input">Answer:</label>
-                </div>
+                <mdl-textfield floating-label="Answer:" v-model="answer"></mdl-textfield>
                 <div class="submit-container">
                     <button
                         @click="submitAnswer"

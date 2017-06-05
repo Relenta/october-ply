@@ -1,12 +1,12 @@
 {
   "devDependencies": {
-    "laravel-mix": "^0.11.3",
-    "vue": "^2.2.6",
     "axios": "^0.15.3",
-    "vue-loader": "^11.3.4",
-    "vue-template-compiler": "^2.2.6",
+    "env-cmd": "*",
+    "laravel-mix": "^0.11.3",
     "moment": "^2.18.1",
-    "env-cmd": "*"
+    "vue": "^2.2.6",
+    "vue-loader": "^11.3.4",
+    "vue-template-compiler": "^2.2.6"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
@@ -20,8 +20,10 @@
     "dialog-polyfill": "^0.4.7",
     "dotenv": "^4.0.0",
     "jquery": "^2.2.4",
+    "node-sass": "^4.5.3",
     "query-string": "^4.3.4",
     "string-similarity": "^1.1.0",
-    "sweetalert2": "^6.6.4"
+    "sweetalert2": "^6.6.4",
+    "vue-mdl": "^1.1.1"
   }
 }

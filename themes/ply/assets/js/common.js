@@ -3,6 +3,9 @@ window.$ = window.jQuery = require('jquery');
 
 //load Vue.js library
 window.Vue = require('vue');
+import VueMdl from 'vue-mdl';
+
+Vue.use(VueMdl);
 
 //load axios http client
 window.axios = require('axios');
