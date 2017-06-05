@@ -1,102 +1,164 @@
-<h1>
-    {{ course.title }}
-</h1>
+<div class="ply-course-view mdl-card mdl-shadow--0dp">
+    <div class="mdl-card__title title" style="background-image: url('/themes/ply/assets/images/bg-flags/uk.jpg');">
+        <h1 class="mdl-card__title-text name">
+            {% if parentUnit %}<a href="{{ 'course'|page({ slug: course.slug }) }}">{% endif %}{{ course.title }}{% if parentUnit %}</a>{% endif %}
+        </h1>
 {% if parentUnit %}
-    <h2>
-        {{ parentUnit.title }}
-    </h2>
+        <h2 class="mdl-card__subtitle-text parent">
+            {{ parentUnit.title }}
+        </h2>
+        <button class="button-show button-show_dialog_learning mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" data-learn-id="{{ parentUnit.id }}" data-learn-type="unit">
+          <i class="material-icons">play_arrow</i>
+        </button>
 {% endif %}
-
-{% if course.data %}
-    <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col">
-            <div class="mdl-card mdl-shadow--4dp courses-card-list__card">
-                <div class="mdl-card__supporting-text">
-                    {{ course.data }}
-                </div>
-            </div>
-        </div>
     </div>
-{% endif %}
-
-<div class="mdl-grid courses-card-list cards-container">
-    {% for unit in units %}
-        <div class="mdl-cell mdl-cell--4-col">
-            <div class="mdl-card mdl-shadow--4dp courses-card-list__card">
-                <div class="mdl-card__title">
-                    <h3 class="mdl-card__title-text">
-                        {{ unit.title }}
-                    </h3>
-                </div>
-                <div class="mdl-card__supporting-text mdl-card--expand">
-                    {% if unit.data %}
+    <div class="mdl-card__supporting-text description">
+        {{ course.data }}
+    </div>
+    <div class="mdl-card__supporting-text">
+        <ul class="mdl-list unit-list">
+{% for unit in units %}
+            <li class="mdl-list__item mdl-list__item--three-line unit-info" data-href="{{ 'course'|page({ slug: course.slug, child_slug: unit.slug }) }}">
+                <span class="mdl-list__item-primary-content">
+                    <span class="mdl-list__item-icon icon">
+                        {{ str_limit(unit.title, 1, '') }}
+                    </span>
+                    <span class="name">{{ unit.title }}</span>
+    {% if unit.data %}
+                    <span class="mdl-list__item-text-body description">
                         {{ unit.data }}
-                    {% else %}
-                        There is no unit data
-                    {% endif %}
+                    </span>
+    {% endif %}
+                </span>
+                <div class="mdl-list__item-secondary-content">
+                    <i class="material-icons action-icon">chevron_right</i>
                 </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    {% if unit.children.count > 0 %}
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                           href="{{ 'course'|page({ slug: course.slug, child_slug: unit.slug }) }}">
-                            Open unit
-                        </a>
-                    {% endif %}
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect ply-button-show ply-button-show_dialog_learning"
-                       data-learn-id="{{ unit.id }}" data-learn-type="unit">
-                        Start learning
-                    </a>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
+            </li>
+{% endfor %}
+        </ul>
+    </div>
 </div>
 
-{% put dialogs %}
-<dialog class="mdl-dialog ply-learning-dialog">
-    <form action="/learn" type="GET">
-        <h4 class="mdl-dialog__title">How do you want to learn?</h4>
+{% if 0 %}
+    <h1 class="page-title">
+        {{ course.title }}
+    </h1>
+    {% if parentUnit %}
+        <h2 class="page-subtitle">
+            {{ parentUnit.title }}
+        </h2>
+    {% endif %}
 
-        <div class="mdl-dialog__content">
-            <div class="form-row">
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-1">
-                    <input type="radio"
-                           id="learning-type-1"
-                           class="mdl-radio__button"
-                           name="mode"
-                           value="1"
-                           checked>
-                    <span class="mdl-radio__label">Listen</span>
-                </label>
-            </div>
-            <div class="form-row">
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-2">
-                    <input type="radio"
-                           id="learning-type-2"
-                           class="mdl-radio__button"
-                           name="mode"
-                           value="2">
-                    <span class="mdl-radio__label">Flash cards</span>
-                </label>
-            </div>
-            <div class="form-row">
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-3">
-                    <input type="radio"
-                           id="learning-type-3"
-                           class="mdl-radio__button"
-                           name="mode"
-                           value="3">
-                    <span class="mdl-radio__label">Typed input</span>
-                </label>
+    {% if course.data %}
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col">
+                <div class="mdl-card mdl-shadow--4dp courses-card-list__card">
+                    <div class="mdl-card__supporting-text">
+                        {{ course.data }}
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="mdl-dialog__actions">
-            <button type="submit" class="mdl-button">Submit</button>
-            <button type="button" class="mdl-button close">Disagree</button>
+    {% endif %}
+
+    <div class="mdl-grid courses-card-list cards-container">
+        {% for unit in units %}
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-card mdl-shadow--4dp courses-card-list__card">
+                    <div class="mdl-card__title">
+                        <h3 class="mdl-card__title-text">
+                            {{ unit.title }}
+                        </h3>
+                    </div>
+                    <div class="mdl-card__supporting-text mdl-card--expand">
+                        {% if unit.data %}
+                            {{ unit.data }}
+                        {% else %}
+                            There is no unit data
+                        {% endif %}
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        {% if unit.children.count > 0 %}
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                               href="{{ 'course'|page({ slug: course.slug, child_slug: unit.slug }) }}">
+                                Open unit
+                            </a>
+                        {% endif %}
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect ply-button-show ply-button-show_dialog_learning"
+                           data-learn-id="{{ unit.id }}" data-learn-type="unit">
+                            Start learning
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% put dialogs %}
+    <dialog class="mdl-dialog ply-dialog-learning">
+        <form action="/learn" type="GET">
+            <h4 class="mdl-dialog__title">How do you want to learn?</h4>
+
+            <div class="mdl-dialog__content">
+                <div class="form-row">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-1">
+                        <input type="radio"
+                               id="learning-type-1"
+                               class="mdl-radio__button"
+                               name="mode"
+                               value="1"
+                               checked>
+                        <span class="mdl-radio__label">Listen</span>
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-2">
+                        <input type="radio"
+                               id="learning-type-2"
+                               class="mdl-radio__button"
+                               name="mode"
+                               value="2">
+                        <span class="mdl-radio__label">Flash cards</span>
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="learning-type-3">
+                        <input type="radio"
+                               id="learning-type-3"
+                               class="mdl-radio__button"
+                               name="mode"
+                               value="3">
+                        <span class="mdl-radio__label">Typed input</span>
+                    </label>
+                </div>
+            </div>
+            <div class="mdl-dialog__actions">
+                <button type="submit" class="mdl-button">Begin</button>
+                <button type="button" class="mdl-button close">Cancel</button>
+            </div>
+            <input type="hidden" id="learn-id" name="learn-id">
+            <input type="hidden" id="learn-type" name="learn-type">
+        </form>
+    </dialog>
+
+    {% endput %}
+{% endif %}
+
+{% put dialogs %}
+<dialog class="mdl-dialog ply-dialog-learning">
+    <form action="/learn" type="GET">
+        <h4 class="mdl-dialog__title ply-dialog-title">How do you want to do this?</h4>
+        <div class="mdl-dialog__actions mdl-dialog__actions--full-width ply-dialog-actions">
+            <button type="button" class="mdl-button dialog-action-button" data-mode="2">Flash cards <i class="material-icons">remove_red_eye</i></button>
+            <button type="button" class="mdl-button dialog-action-button" data-mode="3">Typed input <i class="material-icons">text_format</i></button>
+            <button type="button" class="mdl-button dialog-action-button" data-mode="1">Listen <i class="material-icons">audiotrack</i></button>
         </div>
         <input type="hidden" id="learn-id" name="learn-id">
         <input type="hidden" id="learn-type" name="learn-type">
     </form>
+    <button class="mdl-button mdl-js-button close ply-dialog-button-close">
+      <i class="material-icons">close</i>
+    </button>
 </dialog>
 
 {% endput %}

@@ -1,0 +1,53 @@
+title = "Select Language"
+url = "/splash"
+layout = "clean"
+description = "Splash page for non-authorized visitors"
+is_hidden = 0
+==
+<div class="mdl-card mdl-shadow--16dp ply-splash-container">
+    <div class="mdl-card__title title">
+        <h1 class="mdl-card__title-text logo"><span class="text">GetPly</span></h1>
+    </div>
+    <div class="mdl-card__supporting-text content language_container">
+        <h2>Select your language:</h2>
+        <button id="select_language" class="mdl-button mdl-js-button mdl-js-ripple-effect language_button">
+            <div class="flag">
+                <img src="http://getply.com/storage/app/media/img/drop_item_en.png" width="29" height="21" alt="">
+            </div>
+            <div class="language">English</div>
+            <i class="material-icons">arrow_drop_down</i>
+        </button>
+        <ul for="select_language" class="mdl-menu mdl-js-menu language_dropdown">
+            <li class="mdl-menu__item language_item">
+                <span class="flag">
+                    <img src="http://getply.com/storage/app/media/img/drop_item_ru.png" width="29" height="21" alt="">
+                </span>
+                <span class="language">Русский</span>
+            </li>
+            <li class="mdl-menu__item language_item">
+                <span class="flag">
+                    <img src="http://getply.com/storage/app/media/img/drop_item_es.png" width="29" height="21" alt="">
+                </span>
+                <span class="language">Spanish</span>
+            </li>
+            <li class="mdl-menu__item language_item">
+                <span class="flag">
+                    <img src="http://getply.com/storage/app/media/img/drop_item_fr.png" width="29" height="21" alt="">
+                </span>
+                <span class="language">French</span>
+            </li>
+        </ul>
+    </div>
+    <div class="mdl-card__supporting-text content login_container">
+        <h3><span>Or login:</span></h3>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="username">
+            <label class="mdl-textfield__label" for="username">Login</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password" id="password">
+            <label class="mdl-textfield__label" for="password">Password</label>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect login_button">Login</button>
+    </div>
+</div>

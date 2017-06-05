@@ -1,6 +1,6 @@
 title = "Settings"
 url = "/account/settings"
-layout = "default"
+layout = "wide"
 is_hidden = 0
 
 [session]
@@ -11,8 +11,9 @@ redirect = "account/account"
 paramCode = "code"
 forceSecure = 0
 ==
+<div class="ply-account-content">
+	{% component 'account' %}
+</div>
 {% put sidemenu %}
     {% partial 'account/navigation' %}
 {% endput %}
-
-{% component 'account' %}

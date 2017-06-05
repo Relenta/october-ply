@@ -1,19 +1,20 @@
-<div class="mdl-grid">
+<div class="mdl-grid ply-category-list">
     {% for category in categories %}
-        <div class="mdl-cell mdl-cell--4-col">
-            <div class="mdl-card mdl-card--expand">
-                <div class="mdl-card__title">
+        <div class="mdl-cell mdl-cell--12-col ply-category-container closed">
+            <div class="mdl-card mdl-card--expand mdl-shadow--1dp">
+                <div class="mdl-card__title ply-category-title">
                     <h3 class="mdl-card__title-text">
                         {{ category.title }}
                     </h3>
+                    <i class="material-icons ply-category-container-toggle">expand_more</i>
                 </div>
-                <div class="mdl-card__supporting-text">
+                <div class="mdl-card__supporting-text ply-category-info">
                     {{ category.data }}
 
                     {% partial "@categories-sublist" categories=category.children %}
 
                 </div>
-                <div class="mdl-card__actions">
+                <div class="mdl-card__actions ply-category-actions">
                     {% if category.courses.count > 0 %}
                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
                        href="{{ 'courses'|page({ slug: category.slug }) }}">

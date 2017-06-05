@@ -1,17 +1,43 @@
 ==
+<?php
+function onStart()
+{
+    $this['menu'] = array(
+            array(
+                "id"    => "account-settings",
+                "name"  => "Settings",
+                "href"  => "account/settings"
+            ),
+            array(
+                "id"    => "account-courses",
+                "name"  => "Courses list",
+                "href"  => "account/courses"
+            ),
+        );
+}
+?>
+==
+<div class="ply-account-navigation mdl-components__nav mdl-shadow--4dp">
+{% for nav in menu %}
+    <a href="{{ nav.href |page }}" class="nav-button {% if this.page.id == nav.id %}active{% endif %}">
+        {{ nav.name }}
+    </a>
+{% endfor %}
+</div>
+<!-- 
 <div class="mdl-card mdl-shadow--8dp">
     <div class="mdl-card__supporting-text">
         <nav role="navigation">
             <ul class="mdl-list">
-                <!--<li class="{% if this.page.id == 'account-dashboard' %}active{% endif %}">
-                    <a href="{{ 'account/dashboard' |page }}">Dashboard</a>-->
+                < !--<li class="{% if this.page.id == 'account-dashboard' %}active{% endif %}">
+                    <a href="{{ 'account/dashboard' |page }}">Dashboard</a>
                 </li>
                 <li class="mdl-list__item {% if this.page.id == 'account-settings' %}active{% endif %}">
                     <a href="{{ 'account/settings' |page }}">Settings</a>
                 </li>
                 <!--<li class="{% if this.page.id == 'account-profile' %}active{% endif %}">
                     <a href="{{ 'account/profile' |page({ user_id: user.id }) }}">Profile</a>
-                </li>-->
+                </li>
                 <li class="mdl-list__item {% if this.page.id == 'account-courses' %}active{% endif %}">
                     <a href="{{ 'account/courses'|page }}">Courses list</a>
                 </li>
@@ -20,12 +46,12 @@
                 </li>
                 <!--<li class="{% if this.page.id == 'account-course-create' %}active{% endif %}">
                     <a href="{{ 'account/course-create'|page }}">Create course</a>
-                </li>-->
+                </li>
                 <li class="mdl-list__item {% if this.page.id == 'account-course-upload' %}active{% endif %}">
                     <a href="{{ 'account/course-upload'|page }}">Upload course</a>
                 </li>
             </ul>
         </nav>
     </div>
-
 </div>
+ -->

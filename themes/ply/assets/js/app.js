@@ -2,9 +2,61 @@ require('./common.js');
 
 require('../vendor/jquery_autocomplete/src/jquery.autocomplete.js');
 jQuery(document).ready(function($) {
+/*
+ * Header title "home" link
+ */
     $(".mdl-layout-title").on("click", function() {
         location.href = "/";
     });
+
+/*
+ * Cards on hover
+ */
+    // $(".mdl-card", ".ply-category-container")
+    $(".mdl-card", ".page-content")
+        .mouseenter(function(){
+            $(this).removeClass("mdl-shadow--1dp").addClass("mdl-shadow--3dp");
+        })
+        .mouseleave(function(){
+            $(this).removeClass("mdl-shadow--3dp").addClass("mdl-shadow--1dp");
+        })
+
+/*
+ * Course categories toggle
+ */
+    $(".ply-category-title", ".ply-category-list").on("click", function() {
+        $(this).closest(".ply-category-container").toggleClass("closed").toggleClass("open");
+        $(".ply-category-container-toggle", this).text(
+            $(this).closest(".ply-category-container").hasClass("open") ? "expand_less" : "expand_more"
+        )
+    });
+
+/*
+ * Course list cards 
+ */
+    $(".course-countainer", ".ply-course-list")
+        .on("click", function() {
+            if ($(this).data('href')) {
+                location.href = $(this).data('href');
+            }
+        })
+        .mouseenter(function(){
+            $(".chevron", this).show();
+        })
+        .mouseleave(function(){
+            $(".chevron", this).hide();
+        })
+
+/*
+ * Course unit list
+ */
+    $(".unit-info", ".ply-course-view")
+        .on("click", function() {
+            if ($(this).data('href')) {
+                location.href = $(this).data('href');
+            }
+        });
+
 /*
  * Autocomplete category
  */
@@ -59,8 +111,8 @@ jQuery(document).ready(function($) {
 /*
  * Learning dialog linking
  */
-    var dialog = document.querySelector('.ply-learning-dialog');
-    var showDialogButtons = document.querySelectorAll('.ply-button-show.ply-button-show_dialog_learning');
+    var dialog = document.querySelector('.ply-dialog-learning');
+    var showDialogButtons = document.querySelectorAll('.button-show.button-show_dialog_learning');
 
     if (dialog) {
         if (! dialog.showModal) {
@@ -68,11 +120,14 @@ jQuery(document).ready(function($) {
         }
         showDialogButtons.forEach((btn)=>{
             btn.addEventListener('click', function() {
-                var id = btn.getAttribute('data-learn-id');
-                var type = btn.getAttribute('data-learn-type');
+                $("input[name=learn-id]", dialog).val($(btn).data('learn-id'));
+                $("input[name=learn-type]", dialog).val($(btn).data('learn-type'));
 
-                document.getElementById('learn-id').value = id;
-                document.getElementById('learn-type').value = type;
+                // var id = btn.getAttribute('data-learn-id');
+                // var type = btn.getAttribute('data-learn-type');
+
+                // document.getElementById('learn-id').value = id;
+                // document.getElementById('learn-type').value = type;
 
                 dialog.showModal();
             });
@@ -83,6 +138,9 @@ jQuery(document).ready(function($) {
         });
     }
 
+    $(".dialog-action-button", dialog).on("click", function() {
+        location.href = $("form", dialog).attr("action")+"/?learn-id="+$("input[name=learn-id]",dialog).val()+"&learn-type="+$("input[name=learn-type]",dialog).val()+"&mode="+$(this).data("mode");
+    });
 });
 
 Vue.component('PlyLearnListen', require('./components/PlyLearnListen.vue'));

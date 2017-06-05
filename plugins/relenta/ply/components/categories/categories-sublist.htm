@@ -1,13 +1,11 @@
-<ul class="mdl-list">
+<ul class="mdl-list ply-category-entry-list">
     {% for category in categories %}
-        <li class="mdl-list__item">
+        <li class="mdl-list__item ply-category-entry-item">
             <a href="{{ 'courses'|page({ slug: category.slug }) }}">
                 {{ category.title }}
             </a>
-
         </li>
     {% endfor %}
-
 </ul>
 
 

@@ -1,56 +1,47 @@
 <template>
-    <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col">
-            <div class="ply-simple-card mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__supporting-text">
-                    <h2>{{ card.sides[0].content }}</h2>
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-                            v-if="card.sides[0].media"
-                            @click="playSide(0)">
-                        Play
+    <div class="mdl-cell--8-col learn-cards-container">
+        <div class="learn-card card-side-0 mdl-card mdl-shadow--2dp">
+            <div class="card-content mdl-card__supporting-text">
+                {{ card.sides[0].content }}
+            </div>
+            <div class="card-actions mdl-card__actions" v-if="card.sides[0].media">
+                <button class="card-play-media mdl-button mdl-js-button mdl-button--icon mdl-button--colored" @click="playSide(0)">
+                  <i class="material-icons">volume_up</i>
+                </button>
+            </div>
+        </div>
+        <div class="learn-card card-input mdl-card mdl-shadow--2dp" v-if="!answered">
+            <div class="card-content mdl-card__supporting-text">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" id="card-answer-input" type="text">
+                    <label class="mdl-textfield__label" for="card-answer-input">Answer:</label>
+                </div>
+                <div class="submit-container">
+                    <button
+                        @click="submitAnswer"
+                        class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Submit
                     </button>
                 </div>
-                <div v-if="answered">
-                    <hr>
-                    <div class="mdl-card__supporting-text" :class="answerStatus ? 'success' : 'error'">
-                        <h2>{{ answerStatus }}: {{ card.sides[1].content }}</h2>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-                                v-if="card.sides[1].media"
-                                @click="playSide(1)">
-                            Play
-                        </button>
-                    </div>
-                </div>
             </div>
-            <div class="mdl-card__actions mdl-card--border" v-if="!answered">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" v-model="answer">
-                    <label class="mdl-textfield__label">Answer...</label>
-                </div>
-                <button
-                    @click="submitAnswer"
-                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Submit
+        </div>
+        <!-- answer-correct answer-wrong -->
+        <div class="learn-card card-side-1 mdl-card mdl-shadow--2dp" :class="answerStatus ? 'answer-correct' : 'answer-wrong'" v-if="answered">
+            <div class="card-answer-status mdl-card__supporting-text">
+                <i class="material-icons correct">check_circle</i>
+                <i class="material-icons wrong">cancel</i>
+            </div>
+            <div class="card-content mdl-card__supporting-text">
+                {{ card.sides[1].content }}
+            </div>
+            <div class="card-actions mdl-card__actions" v-if="card.sides[1].media">
+                <button class="card-play-media mdl-button mdl-js-button mdl-button--icon mdl-button--colored" @click="playSide(1)">
+                  <i class="material-icons">volume_up</i>
                 </button>
             </div>
         </div>
     </div>
-
 </template>
-
-<style>
-    .ply-simple-card {
-        width: 100%;
-    }
-
-    .error {
-        background-color: darkred;
-    }
-
-    .success {
-        background-color: green;
-    }
-</style>
 
 <script>
     import {playAudio} from '../helpers.js';

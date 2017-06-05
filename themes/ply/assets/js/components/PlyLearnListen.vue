@@ -26,13 +26,6 @@
     </div>
 </template>
 
-<style>
-    #progressbar {
-        width: 100%;
-        height: 6px;
-    }
-</style>
-
 <script>
     import PlyLearnBase from './PlyLearnBase.js';
     import PlyCardListen from './PlyCardListen';

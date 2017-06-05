@@ -1,55 +1,49 @@
 <template>
-    <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col">
-            <div class="ply-simple-card mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__supporting-text">
-                    <h2>{{ card.sides[0].content }}</h2>
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-                            v-if="card.sides[0].media"
-                            @click="playSide(0)">
-                        Play
-                    </button>
-                </div>
+    <div class="mdl-cell--8-col learn-cards-container">
+        <div class="learn-card card-side-0 mdl-card mdl-shadow--2dp">
+            <div class="card-content mdl-card__supporting-text">
+                {{ card.sides[0].content }}
             </div>
-            <div v-if="currentSide === 1">
-                <div class="ply-simple-card mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__supporting-text">
-                        <h2>{{ card.sides[1].content }}</h2>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-                                v-if="card.sides[1].media"
-                                @click="playSide(1)">
-                            Play
-                        </button>
-                    </div>
-                </div>
+            <div class="card-actions mdl-card__actions" v-if="card.sides[0].media">
+                <button class="card-play-media mdl-button mdl-js-button mdl-button--icon mdl-button--colored" @click="playSide(0)">
+                  <i class="material-icons">volume_up</i>
+                </button>
             </div>
-            <div v-if="currentSide === 1" class="mdl-card__actions mdl-card--border">
-                <button
-                    @click="answer('yes')"
-                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Yes
+        </div>
+        <!-- answer-correct answer-wrong -->
+        <div class="learn-card card-side-1 mdl-card mdl-shadow--2dp" v-if="currentSide === 1">
+            <div class="card-answer-status mdl-card__supporting-text">
+                <i class="material-icons correct">check_circle</i>
+                <i class="material-icons wrong">cancel</i>
+            </div>
+            <div class="card-content mdl-card__supporting-text">
+                {{ card.sides[1].content }}
+            </div>
+            <div class="card-actions mdl-card__actions" v-if="card.sides[1].media">
+                <button class="card-play-media mdl-button mdl-js-button mdl-button--icon mdl-button--colored" @click="playSide(1)">
+                  <i class="material-icons">volume_up</i>
                 </button>
-                <button
-                    @click="answer('no')"
-                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    No
+            </div>
+        </div>
+        <div class="learn-card-actions mdl-grid" v-if="currentSide === 1">
+            <div class="mdl-cell mdl-cell--4-col">
+                <button @click="answer('no')" id="card-action-no" class="no mdl-button mdl-js-button mdl-button--raised">
+                    Wrong
                 </button>
-                <button
-                    @click="answer('maybe')"
-                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Maybe
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <button @click="answer('maybe')" id="card-action-maybe" class="maybe mdl-button mdl-js-button mdl-button--raised">
+                    Almost
+                </button>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <button @click="answer('yes')" id="card-action-yes" class="yes mdl-button mdl-js-button mdl-button--raised">
+                    Correct
                 </button>
             </div>
         </div>
     </div>
-
 </template>
-
-<style>
-    .ply-simple-card {
-        width: 100%;
-    }
-</style>
 
 <script>
     import {playAudio} from '../helpers.js';
