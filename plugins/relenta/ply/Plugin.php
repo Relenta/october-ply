@@ -87,11 +87,7 @@ class Plugin extends PluginBase {
 
                     return new HtmlString($manifestDirectory.$manifest[$path]);
                 },
-            ],
-            'filters'   => [
-                '_'  => ['Lang', 'get'],
-                '__' => ['Lang', 'choice'],
-            ],
+            ]
         ];
     }
 }

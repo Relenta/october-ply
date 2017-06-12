@@ -3,3 +3,4 @@ description: 'GetPly OctoberCMS theme. Demonstrates the basic concepts of the fr
 author: 'Relenta, Inc.'
 homepage: 'http://getply.com'
 code: ''
+translate: config/lang.yaml

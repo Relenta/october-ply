@@ -10,7 +10,7 @@
 
         <label class="mdl-textfield__label"
                for="accountName">
-            Full name
+            {{ 'partials.account.update.name'|_ }}
         </label>
     </div>
 </div>
@@ -25,7 +25,7 @@
 
         <label class="mdl-textfield__label"
                for="accountEmail">
-            Email
+            {{ 'partials.account.update.email'|_ }}
         </label>
     </div>
 </div>
@@ -39,7 +39,7 @@
 
         <label class="mdl-textfield__label"
                for="accountPassword">
-            New Password
+            {{ 'partials.account.update.password'|_ }}
         </label>
     </div>
 </div>
@@ -53,7 +53,7 @@
 
         <label class="mdl-textfield__label"
                for="accountPasswordConfirm">
-            Confirm New Password
+            {{ 'partials.account.update.confirm'|_ }}
         </label>
     </div>
 </div>
@@ -61,7 +61,7 @@
 <div class="form-row">
     <button type="submit"
             class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored signin-form__submit">
-        Save changes
+        {{ 'partials.account.update.save'|_ }}
     </button>
 </div>
 

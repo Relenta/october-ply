@@ -19,7 +19,7 @@
                     {% if course.data %}
                     {{ course.data }}
                     {% else %}
-                    There is no course data
+                    {{ 'components.courses.empty'|_ }}
                     {% endif %}
                 </div>
                 <!-- 
@@ -49,13 +49,13 @@
     <dialog class="mdl-dialog ply-dialog-learning">
         <form action="/learn" type="GET">
             <!-- <h4 class="mdl-dialog__title">How do you want to learn this course?</h4> -->
-            <h4 class="mdl-dialog__title ply-dialog-title">How do you want to do this?</h4>
+            <h4 class="mdl-dialog__title ply-dialog-title">{{ 'components.courses.how-to-learn'|_ }}</h4>
 
             <div class="mdl-dialog__actions mdl-dialog__actions--full-width ply-dialog-actions">
-                <button type="button" class="mdl-button">Listen <i class="material-icons">audiotrack</i></button>
-                <button type="button" class="mdl-button">Flash cards <i class="material-icons">remove_red_eye</i></button>
-                <button type="button" class="mdl-button">Typed input <i class="material-icons">text_format</i></button>
-                <button type="button" class="mdl-button close">Cancel <i class="material-icons">close</i></button>
+                <button type="button" class="mdl-button">{{ 'components.courses.listen'|_ }} <i class="material-icons">audiotrack</i></button>
+                <button type="button" class="mdl-button">{{ 'components.courses.flashcards'|_ }} <i class="material-icons">remove_red_eye</i></button>
+                <button type="button" class="mdl-button">{{ 'components.courses.typed-input'|_ }} <i class="material-icons">text_format</i></button>
+                <button type="button" class="mdl-button close">{{ 'components.courses.cancel'|_ }} <i class="material-icons">close</i></button>
             </div>
 <!-- 
             <div class="mdl-dialog__content">

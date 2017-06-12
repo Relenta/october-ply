@@ -12,18 +12,18 @@
               <i class="material-icons">search</i>
             </button>
  -->
-            <a class="mdl-navigation__link" href="{{ 'categories'|page }}">Courses</a>
+            <a class="mdl-navigation__link" href="{{ 'categories'|page }}">{{ 'partials.site.header.courses'|_ }}</a>
             <button id="ply-main-menu" class="mdl-button mdl-js-button mdl-button--icon">
               <i class="material-icons">more_vert</i>
             </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="ply-main-menu">
             {% if user %}
-                <li class="mdl-menu__item" onclick="location.href='{{ 'account/account'|page }}';">Account</li>
+                <li class="mdl-menu__item" onclick="location.href='{{ 'account/account'|page }}';">{{ 'partials.site.header.account'|_ }}</li>
                 <li>
-                    <a class="mdl-menu__item ply-navigation__logout-button" data-request="onLogout">Logout</a>
+                    <a class="mdl-menu__item ply-navigation__logout-button" data-request="onLogout">{{ 'partials.site.header.logout'|_ }}</a>
                 </li>
             {% else %}
-                <li class="mdl-menu__item" onclick="location.href='{{ 'account/account'|page }}';">Sign up</li>
+                <li class="mdl-menu__item" onclick="location.href='{{ 'account/account'|page }}';">{{ 'partials.site.header.sign-up'|_ }}</li>
             {% endif %}
             </ul>
         </nav>

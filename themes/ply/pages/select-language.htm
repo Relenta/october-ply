@@ -9,7 +9,7 @@ is_hidden = 0
         <h1 class="mdl-card__title-text logo"><span class="text">GetPly</span></h1>
     </div>
     <div class="mdl-card__supporting-text content language_container">
-        <h2>Select your language:</h2>
+        <h2>{{ 'pages.select-language.choose'|_ }}:</h2>
         <button id="select_language" class="mdl-button mdl-js-button mdl-js-ripple-effect language_button">
             <div class="flag">
                 <img src="http://getply.com/storage/app/media/img/drop_item_en.png" width="29" height="21" alt="">
@@ -39,15 +39,15 @@ is_hidden = 0
         </ul>
     </div>
     <div class="mdl-card__supporting-text content login_container">
-        <h3><span>Or login:</span></h3>
+        <h3><span>{{ 'pages.select-language.or-sign-in'|_ }}:</span></h3>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="username">
-            <label class="mdl-textfield__label" for="username">Login</label>
+            <label class="mdl-textfield__label" for="username">{{ 'pages.select-language.login'|_ }}</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="password" id="password">
-            <label class="mdl-textfield__label" for="password">Password</label>
+            <label class="mdl-textfield__label" for="password">{{ 'pages.select-language.password'|_ }}</label>
         </div>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect login_button">Login</button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect login_button">{{ 'pages.select-language.sign-in'|_ }}</button>
     </div>
 </div>
