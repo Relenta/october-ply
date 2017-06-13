@@ -13,7 +13,7 @@
 
                 <label class="control-label mdl-textfield__label"
                        for="course-create-form__course-name">
-                    Course name
+                    {{ 'components.courseUpload.name'|_ }}
                 </label>
             </div>
         </div>
@@ -31,7 +31,7 @@
                        id="course-category-id"
                        name="category"
                        required>
-                <label class="mdl-textfield__label" for="course-category">Category</label>
+                <label class="mdl-textfield__label" for="course-category">{{ 'components.courseUpload.category'|_ }}</label>
             </div>
         </div>
 
@@ -53,14 +53,14 @@
                            required>
                 </div>
             </div>
-            <span>Only .zip files required.</span>
+            <span>{{ 'components.courseUpload.only-zip'|_ }}</span>
         </div>
 
 
         <div class="form-row">
             <button type="submit"
                     class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored course-create-form__submit">
-                Create course
+                {{ 'components.courseUpload.create'|_ }}
             </button>
         </div>
         {{ form_close() }}
@@ -85,7 +85,7 @@
 {# This block shows created course, if form submitted correctly #}
 {% if course %}
     <div class="alert alert-success" role="alert">
-        <b>{{ course.title }}</b> has created.
-        Course category: <b>{{ course.category.title }}</b>
+        <b>{{ course.title }}</b> {{ 'components.courseUpload.created'|_ }}.
+        {{ 'components.courseUpload.category'|_ }}: <b>{{ course.category.title }}</b>
     </div>
 {% endif %}

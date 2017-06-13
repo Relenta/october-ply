@@ -2,6 +2,7 @@
 namespace Relenta\Ply\Classes\Factories;
 
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use October\Rain\Filesystem\Zip;
 use RainLab\User\Facades\Auth;
 use Relenta\Ply\Models\Card;
@@ -59,10 +60,13 @@ class CourseFactory
         try {
             File::makeDirectory($this->folderPath);
             Zip::extract($zipFile, $this->folderPath);
+            Log::info('Zip content exracted');
 
             if (!$this->isZipContentValid()) {
+                Log::error('Zip content invalid');
                 return null;
             }
+            Log::info('Zip content validated');
 
             $newCourse = Course::make([
                 'title' => $name
@@ -119,10 +123,10 @@ class CourseFactory
         }
 
         foreach ($csvArr as $rowIndex => $line) {
-            $cardIndex = $rowIndex + 1;
+            $cardIndex = $rowIndex;
             $rowArr    = str_getcsv($line);
 
-            $sizeLimiter = floor($cardIndex / $this->unitCardsCount);
+            $sizeLimiter = floor(($cardIndex + 1) / $this->unitCardsCount);
             if($sizeLimiter >= $unitCounter) {
                 $unitCounter++;
                 $cardHolder = $this->createCourseUnit($newCourse, $unitCounter);
@@ -158,13 +162,14 @@ class CourseFactory
     {
         $csvFilePath = $this->getCsvFilePath($this->folderPath);
         if (!$csvFilePath) {
+            Log::error('Zip file content not found at path specified');
             return false;
         }
 
         $csvArr = file($csvFilePath);
         foreach ($csvArr as $rowIndex => $line) {
             $rowArr = str_getcsv($line);
-            if (!$this->isCsvRowValid($rowArr, $rowIndex + 1)) {
+            if (!$this->isCsvRowValid($rowArr, $rowIndex)) {
                 return false;
             }
         }
@@ -180,12 +185,14 @@ class CourseFactory
     private function isCsvRowValid($rowArray, $rowIndex)
     {
         if (count($rowArray) < $this->csvMinColumns) {
+            Log::error('Zip file row count not match minimal count');
             return false;
         }
 
         for ($i = 1; $i < count($rowArray); $i++) {
             $mediaFilePath = $this->folderPath . '/' . $i . '/' . $rowIndex . '.mp3';
             if (!File::exists($mediaFilePath)) {
+                Log::error("Zip content row #{$rowIndex} in folder {$i} doesn't have media file attached");
                 return false;
             }
         }

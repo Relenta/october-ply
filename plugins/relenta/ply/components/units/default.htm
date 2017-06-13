@@ -74,19 +74,19 @@
                         {% if unit.data %}
                             {{ unit.data }}
                         {% else %}
-                            There is no unit data
+                            {{ 'components.units.empty'|_ }}
                         {% endif %}
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         {% if unit.children.count > 0 %}
                             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
                                href="{{ 'course'|page({ slug: course.slug, child_slug: unit.slug }) }}">
-                                Open unit
+                                {{ 'components.units.open'|_ }}
                             </a>
                         {% endif %}
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect ply-button-show ply-button-show_dialog_learning"
                            data-learn-id="{{ unit.id }}" data-learn-type="unit">
-                            Start learning
+                            {{ 'components.units.start'|_ }}
                         </a>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
     {% put dialogs %}
     <dialog class="mdl-dialog ply-dialog-learning">
         <form action="/learn" type="GET">
-            <h4 class="mdl-dialog__title">How do you want to learn?</h4>
+            <h4 class="mdl-dialog__title">{{ 'components.units.how-to-learn'|_ }}</h4>
 
             <div class="mdl-dialog__content">
                 <div class="form-row">
@@ -108,7 +108,7 @@
                                name="mode"
                                value="1"
                                checked>
-                        <span class="mdl-radio__label">Listen</span>
+                        <span class="mdl-radio__label">{{ 'components.units.listen'|_ }}</span>
                     </label>
                 </div>
                 <div class="form-row">
@@ -118,7 +118,7 @@
                                class="mdl-radio__button"
                                name="mode"
                                value="2">
-                        <span class="mdl-radio__label">Flash cards</span>
+                        <span class="mdl-radio__label">{{ 'components.units.flashcards'|_ }}</span>
                     </label>
                 </div>
                 <div class="form-row">
@@ -128,13 +128,13 @@
                                class="mdl-radio__button"
                                name="mode"
                                value="3">
-                        <span class="mdl-radio__label">Typed input</span>
+                        <span class="mdl-radio__label">{{ 'components.units.typed-input'|_ }}</span>
                     </label>
                 </div>
             </div>
             <div class="mdl-dialog__actions">
-                <button type="submit" class="mdl-button">Begin</button>
-                <button type="button" class="mdl-button close">Cancel</button>
+                <button type="submit" class="mdl-button">{{ 'components.units.begin'|_ }}</button>
+                <button type="button" class="mdl-button close">{{ 'components.units.cancel'|_ }}</button>
             </div>
             <input type="hidden" id="learn-id" name="learn-id">
             <input type="hidden" id="learn-type" name="learn-type">
@@ -147,11 +147,11 @@
 {% put dialogs %}
 <dialog class="mdl-dialog ply-dialog-learning">
     <form action="/learn" type="GET">
-        <h4 class="mdl-dialog__title ply-dialog-title">How do you want to do this?</h4>
+        <h4 class="mdl-dialog__title ply-dialog-title">{{ 'components.units.how-to-learn'|_ }}</h4>
         <div class="mdl-dialog__actions mdl-dialog__actions--full-width ply-dialog-actions">
-            <button type="button" class="mdl-button dialog-action-button" data-mode="2">Flash cards <i class="material-icons">remove_red_eye</i></button>
-            <button type="button" class="mdl-button dialog-action-button" data-mode="3">Typed input <i class="material-icons">text_format</i></button>
-            <button type="button" class="mdl-button dialog-action-button" data-mode="1">Listen <i class="material-icons">audiotrack</i></button>
+            <button type="button" class="mdl-button dialog-action-button" data-mode="2">{{ 'components.units.flashcards'|_ }} <i class="material-icons">remove_red_eye</i></button>
+            <button type="button" class="mdl-button dialog-action-button" data-mode="3">{{ 'components.units.typed-input'|_ }} <i class="material-icons">text_format</i></button>
+            <button type="button" class="mdl-button dialog-action-button" data-mode="1">{{ 'components.units.listen'|_ }} <i class="material-icons">audiotrack</i></button>
         </div>
         <input type="hidden" id="learn-id" name="learn-id">
         <input type="hidden" id="learn-type" name="learn-type">

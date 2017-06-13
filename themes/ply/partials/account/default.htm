@@ -4,7 +4,7 @@
         <div class="mdl-cell mdl-cell--6-col">
             <div class="mdl-card  mdl-shadow--2dp">
                 <div class="mdl-card__title">
-                    Sign in
+                    {{ 'partials.account.default.sign-in'|_ }}
                 </div>
                 <div class="mdl-card__supporting-text">
                     {% partial __SELF__ ~ '::signin' %}
@@ -15,7 +15,7 @@
         <div class="mdl-cell mdl-cell--6-col">
             <div class="mdl-card  mdl-shadow--2dp">
                 <div class="mdl-card__title">
-                    Register
+                    {{ 'partials.account.default.register'|_ }}
                 </div>
                 <div class="mdl-card__supporting-text">
                     {% partial __SELF__ ~ '::register' %}

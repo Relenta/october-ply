@@ -11,7 +11,7 @@
 
             <label class="mdl-textfield__label"
                    for="userSigninLogin">
-                Enter email
+                {{ 'partials.account.signin.email'|_ }}
             </label>
         </div>
     </div>
@@ -26,13 +26,13 @@
 
             <label class="mdl-textfield__label"
                    for="userSigninPassword">
-                Enter password
+                {{ 'partials.account.signin.password'|_ }}
             </label>
         </div>
     </div>
     <div class="form-row">
         <p class="text-right">
-            or sign in with
+            {{ 'partials.account.signin.sign-in-with'|_ }}
             {% for name, link in social_login_links %}
             <a href="{{ link }}">{{name}}</a>
             {% endfor %}
@@ -41,7 +41,7 @@
     <div class="form-row">
         <button type="submit"
                 class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored signin-form__submit">
-            Sign in
+            {{ 'partials.account.signin.sign-in'|_ }}
         </button>
     </div>
 </form>

@@ -18,7 +18,7 @@
                     {% if category.courses.count > 0 %}
                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
                        href="{{ 'courses'|page({ slug: category.slug }) }}">
-                        Open courses
+                        {{ 'components.categories.list.open-course'|_ }}
                     </a>
                     {% endif %}
                 </div>
