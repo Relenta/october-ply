@@ -22,10 +22,23 @@ mix
     // do not remove next 2 lines
     // this line is for `npm run dev`
     .copyDirectory('assets/images', 'dist/images')
+    .copyDirectory('assets/js/promo', 'dist/js/promo')
     //this line is necessary for `npm run hot`
     .copyDirectory('assets/images', 'images')
     .copyDirectory('assets/sounds', 'dist/sounds')
-    .js('assets/js/app.js', 'js/')
+    .combine(['assets/css/promo/options.css', 'assets/css/promo/styles.css', 'assets/css/promo/social-media.css'], 'dist/css/promo.css')
+    .js([
+        'assets/js/promo/jquery.flexslider.min.js',
+        'assets/js/promo/jquery.quote.rotator.min.js',
+        'assets/js/promo/jquery.sticky.js',
+        'assets/js/promo/jquery.fancybox.min.js',
+        'assets/js/promo/jquery.fitvids.js',
+        'assets/js/promo/jquery.easing.min.js',
+        'assets/js/promo/jquery.form.min.js',
+        'assets/js/promo/jquery.mobilemenu.js',
+        'assets/js/promo/jquery.isotope.min.js',
+        'assets/js/promo/custom.js',
+    ], 'js/promo.js')
     .sass('assets/scss/theme.scss', 'css')
     .sass('assets/scss/vendor.scss', 'css');
 

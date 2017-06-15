@@ -16,19 +16,7 @@
           type="text/css"
           media="all">
 
-    <link href="http://localhost:8080/dist/css/promo/options.css" rel="stylesheet">
-    <link href="http://localhost:8080/dist/css/promo/styles.css" rel="stylesheet">
-    <link href="http://localhost:8080/dist/css/promo/social-media.css" rel="stylesheet">
-    {% styles %}
-
-    <script
-            src="http://code.jquery.com/jquery-1.12.4.js"
-            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
-            crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="http://localhost:8080/dist/js/promo/modernizr-2.6.2.min.js?ver=4.0.18"></script>
-    <script src="http://localhost:8080/dist/js/promo/respond.min.js"></script>
-
+    <link href="{{ mix('/css/promo.css', 'themes/ply/dist')}}" rel="stylesheet">
 </head>
 <body>
 
@@ -45,16 +33,14 @@
     <!-- Footer -->
     {% partial 'site/promo/footer' %}
 
-    <script src="http://localhost:8080/dist/js/promo/jquery.flexslider.min.js"></script>
-    <script src="http://localhost:8080/dist/js/promo/jquery.quote.rotator.min.js"></script>
-    <script src="http://localhost:8080/dist/js/promo/jquery.sticky.js"></script>
-    <script src="http://localhost:8080/dist/js/promo/jquery.fancybox.min.js"></script>
-    <script src="http://localhost:8080/dist/js/promo/jquery.fitvids.js"></script>
-    <script src="http://localhost:8080/dist/js/promo/jquery.easing.min.js"></script>
-    <script src="http://localhost:8080/dist/js/promo/jquery.form.min.js"></script>
-    <script src="http://localhost:8080/dist/js/promo/jquery.isotope.min.js"></script>
-    <script src="http://localhost:8080/dist/js/promo/jquery.mobilemenu.js"></script>
-    <script src="http://localhost:8080/dist/js/promo/custom.js"></script>
+    <script
+        src="http://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/themes/ply/dist/js/promo/modernizr-2.6.2.min.js?ver=4.0.18"></script>
+    <script src="/themes/ply/dist/js/promo/respond.min.js"></script>
+    <script src="{{ mix('/js/promo.js', 'themes/ply/dist')}}"></script>
     {% framework extras %}
     {% scripts %}
 </body>
