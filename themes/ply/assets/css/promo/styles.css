@@ -2465,25 +2465,25 @@ a.launch-project-btn:hover > span {}
 }
 
 .active-header {
-    background: url('assets/img/accordion/active-header.gif');
+    background: url('../images/accordion/active-header.gif');
     background-repeat: no-repeat;
     background-position: left 50%;
 }
 
 .active-header:hover {
-    background: url('assets/img/accordion/active-header.gif');
+    background: url('../images/accordion/active-header.gif');
     background-repeat: no-repeat;
     background-position: left 50%;
 }
 
 .inactive-header {
-    background: url('assets/img/accordion/inactive-header.gif');
+    background: url('../images/accordion/inactive-header.gif');
     background-repeat: no-repeat;
     background-position: left 50%;
 }
 
 .inactive-header:hover {
-    background: url('assets/img/accordion/inactive-header.gif');
+    background: url('../images/accordion/inactive-header.gif');
     background-repeat: no-repeat;
     background-position: left 50%;
 }

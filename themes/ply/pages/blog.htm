@@ -1,5 +1,5 @@
 title = "Blog"
-url = "/blog"
+url = "/blog/:page?"
 layout = "promo"
 is_hidden = 0
 
@@ -8,12 +8,14 @@ localeUrl[ru] = "/blog"
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = 10
+postsPerPage = 5
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
-categoryPage = "blog/category"
-postPage = "blog/post"
+postPage = 404
 ==
 <section id="content">
-    {% component 'blogPosts' %}
+    <div class="container">
+        <h1>Blog<span>.</span></h1>
+        {% component 'blogPosts' %}
+    </div>
 </section>

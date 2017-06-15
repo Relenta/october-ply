@@ -290,5 +290,9 @@ p.trigger.active a {
     float: right;
 }
 
+.post-list li {
+    list-style-type: none;
+}
+
 /*---------------------- Custom CSS (Added from the Theme Options panel) --------------------------*/
 
