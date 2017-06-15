@@ -1,0 +1,53 @@
+{% set posts = __SELF__.posts %}
+
+<div class="post-list" id="articles">
+    {% for post in posts %}
+    <article class="article">
+        <h2>
+            <a href="{{ post.url }}">{{ post.title }}<span>.</span></a>
+        </h2>
+        <div class="meta">
+            <span>
+                Posted on <strong>{{ post.published_at|date('M d, Y') }}</strong>
+            </span>
+            <span>
+                {% if post.categories.count %} in {% endif %}
+                {% for category in post.categories %}
+                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            </span>
+        </div>
+
+        <p>{{ post.summary|raw }}</p>
+
+        <a href="{{ post.url }}" class="read-more-btn">Read more</a>
+    </article>
+    {% else %}
+        <li class="no-data">{{ noPostsMessage }}</li>
+    {% endfor %}
+</div>
+
+{% if posts.lastPage > 1 %}
+    <div class="pagination">
+        {% if posts.currentPage > 1 %}
+        <div class="custom-button small left">
+            <a target="_self" class="button black"
+               href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">Prev</a>
+        </div>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+        <div class="custom-button small left">
+            <a target="_self" class="button black {{ posts.currentPage == page ? 'active' : null }}"
+               href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+        </div>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+        <div class="custom-button small left">
+            <a target="_self" class="button black"
+               href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next</a>
+        </div>
+        {% endif %}
+    </div>
+{% endif %}

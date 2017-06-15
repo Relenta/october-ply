@@ -1,24 +1,21 @@
 /*---------------------- Body --------------------------*/
 
-.header-background-image {
-    background: url(/dist/images/group_of_people.jpg) bottom center no-repeat;
-}
 /*
 .header-background-image-inner {
     background: url(http://localhost:8888/kula-local-wp/wp-content/uploads/2013/04/header_background_placeholder.jpg) top center no-repeat;
-}
+} */
 
 .bg1 {
-    background: url(http://localhost:8888/kula-local-wp/wp-content/uploads/2013/04/background_placeholder.jpg) top center no-repeat;
+    background: url('../images/group-of-people-green.jpg') top center no-repeat;
 }
 
 .bg2 {
-    background: url(http://localhost:8888/kula-local-wp/wp-content/uploads/2013/04/background_placeholder.jpg) top center no-repeat;
+    background: url('../images/group-of-people-pink.jpg') top center no-repeat;
 }
 
 .bg3 {
-    background: url(http://localhost:8888/kula-local-wp/wp-content/uploads/2013/04/background_placeholder.jpg) top center no-repeat;
-}*/
+    background: url('../images/group-of-people-yellow.jpg') top center no-repeat;
+}
 
 body p,
 .accordion-content,
@@ -271,6 +268,8 @@ p.trigger.active a {
 
 #language-mastery {
     padding-top: 100px;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
 }
 
 .logo {
@@ -289,6 +288,10 @@ p.trigger.active a {
 
 .navigation-wide {
     float: right;
+}
+
+.post-list li {
+    list-style-type: none;
 }
 
 /*---------------------- Custom CSS (Added from the Theme Options panel) --------------------------*/
