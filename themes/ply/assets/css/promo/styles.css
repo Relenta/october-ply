@@ -1561,7 +1561,7 @@ a.view-article-btn:hover {
 
 #header-navigation[role="navigation"] li a,
 #header-navigation[role="navigation"] li a:visited {
-    color: #999;
+    color: #fff;
     margin-right: 20px;
     padding: 2px 5px;
     text-decoration: none;
@@ -1600,14 +1600,16 @@ nav select {
     background: #fff;
     position: relative;
     z-index: 300;
-    border-bottom: 10px solid #000;
+    /*border-bottom: 10px solid #000;*/
+    border-bottom: 1px solid transparent;
 }
 
 #any-language, #make-money, #user-differences {
     padding: 70px 0;
     -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
     box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
-    border-top: 10px solid #000;
+    border-top: 1px solid transparent;
+    /*border-top: 10px solid #000;*/
 }
 
 #portfolio-items {
@@ -2252,10 +2254,10 @@ a.launch-project-btn:hover > span {}
     padding: 70px 0;
     position: relative;
     z-index: 300;
-    -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
-    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
-    border-top: 10px solid #000;
-    border-bottom: 10px solid #000;
+    /*-webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);*/
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 
 #content ul {
@@ -3089,7 +3091,7 @@ a.sign-up-btn:hover {
 #section-divider-2,
 #section-divider-3 {
     width: 100%;
-    height: 500px;
+    height: 250px;
     /*background-color: #1c1f26;  */
     position: relative;
 }
