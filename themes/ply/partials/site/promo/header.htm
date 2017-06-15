@@ -1,6 +1,6 @@
 <header id="header-global" role="banner">
 
-    <div id="header-background">
+    {#<div id="header-background">
 
         <div class="logo-icons container">
 
@@ -28,7 +28,7 @@
 
         </div><!-- end .logo-icons container -->
 
-    </div><!-- end #header-background -->
+    </div><!-- end #header-background -->   #}
 
     <div id="header-background-nav">
 
@@ -36,7 +36,9 @@
 
             <div class="row">
 
-                <nav id="header-navigation" class="sixteen columns" role="navigation">
+                <div class="logo"></div>
+
+                <nav id="header-navigation" class="navigation-wide" role="navigation">
                     <ul id="navigation" class="menu">
                         <li><a href="{{ 'home'|page }}">Home</a></li>
                         <li><a href="{{ 'faq'|page }}">FAQ</a></li>

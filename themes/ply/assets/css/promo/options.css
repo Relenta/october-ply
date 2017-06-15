@@ -177,7 +177,10 @@ a.sign-up-btn,
     font-family: open sans;
 }
 
-#header-navigation[role="navigation"] #navigation li a:hover,
+#header-navigation[role="navigation"] #navigation li a:hover {
+    color: #fff;
+}
+
 #header-navigation[role="navigation"] li a:focus,
 #header-navigation[role="navigation"] li.nav-item a:hover,
 #header-navigation[role="navigation"] li.nav-item a:focus,
@@ -268,6 +271,24 @@ p.trigger.active a {
 
 #language-mastery {
     padding-top: 100px;
+}
+
+.logo {
+    background: url('../images/logo/white-horizontal.png');
+
+    background-size: 166px 45px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 45px;
+    position: relative;
+    width: 166px;
+    margin: 14px 0px 6px 0px;
+}
+
+.navigation-wide {
+    float: right;
 }
 
 /*---------------------- Custom CSS (Added from the Theme Options panel) --------------------------*/
