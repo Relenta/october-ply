@@ -1,14 +1,14 @@
 <template>
-    <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col">
-            <div class="ply-simple-card mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__supporting-text">
-                    <h2>{{ card.sides[0].content }}</h2>
-                </div>
-                <hr>
-                <div class="mdl-card__supporting-text">
-                    <h2>{{ card.sides[1].content }}</h2>
-                </div>
+    <div class="mdl-cell--8-col learn-cards-container">
+        <div class="learn-card card-side-0 mdl-card mdl-shadow--2dp" :class="{'answer-correct': currentSide == 0}">
+            <div class="card-content mdl-card__supporting-text">
+                {{ card.sides[0].content }}
+            </div>
+        </div>
+        <!-- answer-correct answer-wrong -->
+        <div class="learn-card card-side-1 mdl-card mdl-shadow--2dp" :class="{'answer-correct': currentSide == 1}">
+            <div class="card-content mdl-card__supporting-text">
+                {{ card.sides[1].content }}
             </div>
         </div>
     </div>
