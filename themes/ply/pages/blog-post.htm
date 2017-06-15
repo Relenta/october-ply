@@ -1,0 +1,17 @@
+title = "Blog post"
+url = "/blog/post/:slug"
+layout = "promo"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = 404
+
+[viewBag]
+localeUrl[ru] = "/blog-post"
+==
+<section id="content">
+    <div class="container">
+        {% component 'blogPost' %}
+    </div>
+</section>

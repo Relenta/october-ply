@@ -23,24 +23,31 @@
         <a href="{{ post.url }}" class="read-more-btn">Read more</a>
     </article>
     {% else %}
-    <li class="no-data">{{ noPostsMessage }}</li>
+        <li class="no-data">{{ noPostsMessage }}</li>
     {% endfor %}
 </div>
 
 {% if posts.lastPage > 1 %}
-<ul class="pagination">
-    {% if posts.currentPage > 1 %}
-    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
-    {% endif %}
+    <div class="pagination">
+        {% if posts.currentPage > 1 %}
+        <div class="custom-button small left">
+            <a target="_self" class="button black"
+               href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">Prev</a>
+        </div>
+        {% endif %}
 
-    {% for page in 1..posts.lastPage %}
-    <li class="{{ posts.currentPage == page ? 'active' : null }}">
-        <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-    </li>
-    {% endfor %}
+        {% for page in 1..posts.lastPage %}
+        <div class="custom-button small left">
+            <a target="_self" class="button black {{ posts.currentPage == page ? 'active' : null }}"
+               href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+        </div>
+        {% endfor %}
 
-    {% if posts.lastPage > posts.currentPage %}
-    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
-    {% endif %}
-</ul>
+        {% if posts.lastPage > posts.currentPage %}
+        <div class="custom-button small left">
+            <a target="_self" class="button black"
+               href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next</a>
+        </div>
+        {% endif %}
+    </div>
 {% endif %}
