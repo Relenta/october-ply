@@ -23,10 +23,10 @@ mix
     // this line is for `npm run dev`
     .copyDirectory('assets/images', 'dist/images')
     .copyDirectory('assets/js/promo', 'dist/js/promo')
+    .copy(['assets/css/promo/*'], 'dist/css/promo')
     //this line is necessary for `npm run hot`
     .copyDirectory('assets/images', 'images')
     .copyDirectory('assets/sounds', 'dist/sounds')
-    .combine(['assets/css/promo/options.css', 'assets/css/promo/styles.css', 'assets/css/promo/social-media.css'], 'dist/css/promo.css')
     .js([
         'assets/js/promo/jquery.flexslider.min.js',
         'assets/js/promo/jquery.quote.rotator.min.js',
