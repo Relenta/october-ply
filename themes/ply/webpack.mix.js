@@ -39,6 +39,7 @@ mix
         'assets/js/promo/jquery.isotope.min.js',
         'assets/js/promo/custom.js',
     ], 'js/promo.js')
+    .js('assets/js/app.js', 'js/')
     .sass('assets/scss/theme.scss', 'css')
     .sass('assets/scss/vendor.scss', 'css');
 
