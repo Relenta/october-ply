@@ -15,7 +15,7 @@
             <div class="progress-container">
                 <h3>Your progress:</h3>
                 <div id="progressbar" class="mdl-progress mdl-js-progress learn-progressbar"></div>
-                <div class="percent"><span class="number">10</span>%</div>
+                <div class="percent"><span class="number">{{ progress }}</span>%</div>
             </div>
         </div>
     </div>
@@ -52,7 +52,8 @@
                     }
 
                     // Update progress
-                    this.progressBar.setProgress(Math.round(100 * this.currentIndex / this.count));
+                    let _percent = Math.round(100 * this.currentIndex / this.count);
+                    this.updateProgress(_percent);
 
                     // Check course progress
                     if(this.cards.length === 0) {

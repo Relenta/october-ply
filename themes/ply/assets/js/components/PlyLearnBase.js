@@ -7,7 +7,8 @@ export default {
         return {
             cards: [],
             current: 0,
-            count: 0
+            count: 0,
+            progress: 0
         }
     },
     computed: {
@@ -36,6 +37,11 @@ export default {
             }).then(this.redirectHome, this.redirectHome).catch(this.redirectHome);
             playAudio('/themes/ply/dist/sounds/tada.mp3', 0);
         },
+        updateProgress(percent) {
+            this.progressBar.setProgress(percent);
+            this.progress = percent;
+        }
+        ,
         redirectHome() {
             window.location = '/account/subscriptions';
         }
