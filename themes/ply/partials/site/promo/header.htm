@@ -43,6 +43,22 @@
                         <li><a href="{{ 'home'|page }}">Home</a></li>
                         <li><a href="{{ 'faq'|page }}">FAQ</a></li>
                         <li><a href="{{ 'blog'|page }}">Blog</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                Language <img src="{{ mix('/images/drop_item_en.png', 'themes/ply/dist')}}" alt=""><span class="caret"></span></a>
+                            <ul class="dropdown-menu main_nav_dropdown">
+                                <li><a href="#" data-request="onSwitchLocale" data-request-data="locale: 'en'">English <img src="{{ mix('/images/drop_item_en.png', 'themes/ply/dist')}}" alt=""></a></li>
+                                <li><a href="#" data-request="onSwitchLocale" data-request-data="locale: 'fr'">French <img src="{{ mix('/images/drop_item_en.png', 'themes/ply/dist')}}" alt=""></a></li>
+                                <li><a href="#" data-request="onSwitchLocale" data-request-data="locale: 'es'">Spanish <img src="{{ mix('/images/drop_item_en.png', 'themes/ply/dist')}}" alt=""></a></li>
+                                <li><a href="#" data-request="onSwitchLocale" data-request-data="locale: 'zh'">Chinese <img src="{{ mix('/images/drop_item_en.png', 'themes/ply/dist')}}" alt=""></a></li>
+                                <li><a href="#" data-request="onSwitchLocale" data-request-data="locale: 'ar'">Arabic <img src="{{ mix('/images/drop_item_en.png', 'themes/ply/dist')}}" alt=""></a></li>
+                                <li><a href="#" data-request="onSwitchLocale" data-request-data="locale: 'ru'">russian <img src="{{ mix('/images/drop_item_en.png', 'themes/ply/dist')}}" alt=""></a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav><!-- end #header-navigation -->
 

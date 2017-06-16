@@ -6,15 +6,15 @@
 } */
 
 .bg1 {
-    background: url('../images/group-of-people-green.jpg') top center no-repeat;
+    background: url('../../images/group-of-people-green.jpg') top center no-repeat;
 }
 
 .bg2 {
-    background: url('../images/group-of-people-pink.jpg') top center no-repeat;
+    background: url('../../images/group-of-people-pink.jpg') top center no-repeat;
 }
 
 .bg3 {
-    background: url('../images/group-of-people-yellow.jpg') top center no-repeat;
+    background: url('../../images/group-of-people-yellow.jpg') top center no-repeat;
 }
 
 body p,
@@ -273,7 +273,7 @@ p.trigger.active a {
 }
 
 .logo {
-    background: url('../images/logo/white-horizontal.png');
+    background: url('../../images/logo/white-horizontal.png');
 
     background-size: 166px 45px;
     background-repeat: no-repeat;
@@ -292,6 +292,160 @@ p.trigger.active a {
 
 .post-list li {
     list-style-type: none;
+}
+
+.perk-list {
+    text-align: center;
+    margin-top: 20px;
+    border: medium double #ddd;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -moz-transition: all .4s;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -ms-transition: all .4s;
+    transition: all .4s;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.perk-list li:nth-child(odd) {
+    background: #f7f7f7;
+    font-size: 13px;
+    padding: 15px 5px;
+    font-style: italic;
+}
+
+.perk-list li:nth-child(odd) {
+    background: #f7f7f7;
+    font-size: 13px;
+    padding: 15px 5px;
+    font-style: italic;
+}
+
+.perk-list li:nth-child(even) {
+    background: #fff;
+    font-size: 13px;
+    padding: 15px 5px;
+    font-style: italic;
+}
+
+.perk-list li:nth-child(even) {
+    background: #fff;
+    font-size: 13px;
+    padding: 15px 5px;
+    font-style: italic;
+}
+
+.perk-list ul li {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0;
+}
+
+#users-teachers h2 {
+    text-align: center;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.dropdown img {
+    margin: 0 10px;
+    margin-bottom: 4px;
+    vertical-align: middle;
+}
+
+#header-navigation li > .dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background: #fff;
+}
+
+.main_nav_dropdown {
+    text-align: center;
+    background: none;
+    border: none;
+    -webkit-box-shadow: 0px 9px 15px 0px rgba(138,138,138,0.5);
+    -moz-box-shadow: 0px 9px 15px 0px rgba(138,138,138,0.5);
+    box-shadow: 0px 9px 15px 0px rgba(138,138,138,0.5);
+    padding: 0;
+    top: 85%;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none!important;
+    float: left;
+    min-width: 148px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+li .dropdown-menu a {
+    color: black!important;
+}
+
+.main_nav_dropdown li a {
+    color: #000 !important;
+    padding: 0px 22px !important;
+    padding-right: 0 !important;
+    border: none!important;
+}
+
+.main_nav_dropdown li a:hover {
+    border: none;
+}
+
+.dropdown-menu>li>a {
+    display: block;
+    clear: both;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    margin-right: 0!important;
+}
+
+#header-navigation .main_nav_dropdown li {
+    float: initial!important;
+}
+
+.main_nav_dropdown li a img {
+    margin-right: 18px !important;
+    float: right;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.main_nav_dropdown li a:hover {
+    background: none;
+    color: #fed24e !important;
+}
+
+.open>.dropdown-menu {
+    display: block!important;
 }
 
 /*---------------------- Custom CSS (Added from the Theme Options panel) --------------------------*/

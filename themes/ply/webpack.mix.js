@@ -23,7 +23,7 @@ mix
     // this line is for `npm run dev`
     .copyDirectory('assets/images', 'dist/images')
     .copyDirectory('assets/js/promo', 'dist/js/promo')
-    .copy(['assets/css/promo/*'], 'dist/css/promo')
+    .copyDirectory('assets/css/promo', 'dist/css/promo')
     //this line is necessary for `npm run hot`
     .copyDirectory('assets/images', 'images')
     .copyDirectory('assets/sounds', 'dist/sounds')
