@@ -1568,7 +1568,7 @@ a.view-article-btn:hover {
     padding: 2px 5px;
     text-decoration: none;
     zoom: 1;
-    border: 2px solid #232323;
+    border: 2px solid rgb(0, 176, 233);
     padding: 5px 10px;
 }
 
@@ -1598,7 +1598,7 @@ nav select {
 /* Latest Work (Homepage)
 --------------------------------------------------*/
 
-#users-teachers, #language-mastery, #any-language, #make-money, #user-differences {
+#get-early-access, #users-teachers, #language-mastery, #any-language, #make-money, #user-differences {
     background: #fff;
     position: relative;
     z-index: 300;
@@ -1606,7 +1606,7 @@ nav select {
     border-bottom: 1px solid transparent;
 }
 
-#users-teachers, #any-language, #make-money, #user-differences {
+#get-early-access, #users-teachers, #any-language, #make-money, #user-differences {
     padding: 70px 0;
     -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
     box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
@@ -3091,7 +3091,8 @@ a.sign-up-btn:hover {
 
 #section-divider-1,
 #section-divider-2,
-#section-divider-3 {
+#section-divider-3,
+#section-divider-4{
     width: 100%;
     height: 250px;
     /*background-color: #1c1f26;  */
