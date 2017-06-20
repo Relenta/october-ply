@@ -7,7 +7,12 @@ use System\Classes\PluginBase;
 
 class Plugin extends PluginBase {
 
-    public $require = ['RainLab.User', 'RainLab.Translate', 'Flynsarmy.SocialLogin'];
+    public $require = [
+        'RainLab.User',
+        'RainLab.Translate',
+        'Flynsarmy.SocialLogin',
+        'RainLab.Blog'
+    ];
 
     public function boot()
     {
