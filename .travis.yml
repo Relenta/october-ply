@@ -51,12 +51,14 @@ before_script:
   - composer self-update
 #  - sh plugins/relenta/ply/tests/build.sh
   - travis_retry composer install --no-interaction --prefer-source
-  - php artisan october:env
-  - rm -f .env
-  - cp plugins/relenta/ply/tests/.env ./
-  - "> storage/database.sqlite"
   - mkdir temp_rel
   - mv plugins/relenta temp_rel/
+  - php artisan october:env
+  - rm -f .env
+  - cp temp_rel/plugins/relenta/ply/tests/.env ./
+  - echo -n > storage/database.sqlite
+#  - mkdir temp_rel
+#  - mv plugins/relenta temp_rel/
   - php artisan october:up --no-interaction
   - php artisan plugin:install rainlab.user
   - php artisan plugin:install rainlab.translate
